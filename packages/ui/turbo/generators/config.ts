@@ -1,9 +1,16 @@
-import type { PlopTypes } from "@turbo/gen";
+import type { NodePlopAPI, ActionType, PlopGeneratorConfig } from 'plop';
+import * as fs from "fs";
+import * as path from "path";
 
-// Learn more about Turborepo Generators at https://turbo.build/repo/docs/core-concepts/monorepos/code-generation
+interface PlopAnswers {
+  name: string;
+  overwrite?: boolean;
+  newName?: string;
+}
 
-export default function generator(plop: PlopTypes.NodePlopAPI): void {
-  // A simple generator to add a new React component to the internal UI library
+export default function generator(plop: NodePlopAPI): void {
+  const projectRoot = plop.getDestBasePath();
+
   plop.setGenerator("react-component", {
     description: "Adds a new react component",
     prompts: [
@@ -12,19 +19,54 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
         name: "name",
         message: "What is the name of the component?",
       },
-    ],
-    actions: [
       {
+        type: "confirm",
+        name: "overwrite",
+        message: "Component already exists. Do you want to overwrite it?",
+        when: function(answers: any) {
+          const componentPath = path.resolve(projectRoot, "packages/ui/src", `${answers.name}.tsx`);
+          return fs.existsSync(componentPath);
+        },
+      },
+      {
+        type: "input",
+        name: "newName",
+        message: "Enter a new name for the component:",
+        when: function(answers: any) {
+          return !answers.overwrite && answers.overwrite !== undefined;
+        },
+      },
+    ],
+    actions: function(answers: any) {
+      const actions: ActionType[] = [];
+      const componentName = answers.newName || answers.name;
+      const componentPath = path.resolve(projectRoot, "packages/ui/src", `${componentName}.tsx`);
+      const indexPath = path.resolve(projectRoot, "packages/ui/src/index.ts");
+
+      actions.push({
         type: "add",
-        path: "src/{{kebabCase name}}.tsx",
-        templateFile: "templates/component.hbs",
-      },
-      {
+        path: componentPath,
+        templateFile: path.resolve(__dirname, "templates/component.hbs"),
+        force: true,
+      });
+
+      actions.push({
         type: "append",
-        path: "package.json",
-        pattern: /"exports": {(?<insertion>)/g,
-        template: '    "./{{kebabCase name}}": "./src/{{kebabCase name}}.tsx",',
-      },
-    ],
-  });
+        path: indexPath,
+        pattern: "// UI Component exports",
+        template: `export { ${componentName} } from './${componentName}';`,
+        skip: () => {
+          if (!fs.existsSync(indexPath)) {
+            fs.writeFileSync(indexPath, "// UI Component exports\n", "utf8");
+            return false;
+          }
+          const fileContent = fs.readFileSync(indexPath, "utf8");
+          return fileContent.includes(`export { ${componentName} }`);
+        },
+      });
+
+      return actions;
+    },
+  } as PlopGeneratorConfig);
 }
+

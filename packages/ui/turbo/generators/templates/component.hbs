@@ -1,8 +1,15 @@
-export const {{ pascalCase name }} = ({ children }: { children: React.ReactNode }) => {
+import React from 'react';
+
+interface {{pascalCase name}}Props {
+  // Define your props here
+}
+
+export const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = (props) => {
   return (
     <div>
-      <h1>{{ pascalCase name }} Component</h1>
-      {children}
+      <h2>{{pascalCase name}} Component</h2>
+      {/* Add your component logic here */}
     </div>
   );
 };
+
