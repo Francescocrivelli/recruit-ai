@@ -1,0 +1,4588 @@
+{
+  "profiles": [
+    {
+      "name": "Katherine Fang",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "degree": "J.D./Ph.D.",
+          "institution": "Yale Law School and Yale School of Management",
+          "year": "In progress"
+        },
+        {
+          "degree": "B.A.",
+          "institution": "Yale College",
+          "major": "Global Affairs and Modern Middle East Studies",
+          "year": 2017
+        }
+      ],
+      "experience": [
+        {
+          "title": "Research Assistant",
+          "organization": "The Center for Law, Brain, & Behavior at Harvard University",
+          "description": "Aided retired federal Judge Nancy Gertner in ongoing academic projects and in developing a training program to encourage federal judges to integrate scientific evidence on addiction and mental health into sentencing decisions."
+        },
+        {
+          "title": "Economics Research Associate",
+          "organization": "Harvard Business School",
+          "description": "Investigated issues of gender equity in the labor market"
+        },
+        {
+          "title": "Fulbright Scholar",
+          "organization": "United Nations Development Program",
+          "location": "Amman, Jordan",
+          "description": "Taught English and worked on refugee policy"
+        },
+        {
+          "title": "Speechwriter",
+          "organization": "International Organization for Migration",
+          "location": "Geneva, Switzerland"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Capital Assistance Project",
+          "description": "Co-runs project pairing law student interns with legal aid organizations seeking to overturn the death penalty"
+        },
+        {
+          "name": "Portrait Project 2.0",
+          "description": "Collaborates with California Supreme Court Justice Goodwin Liu on an empirical study into Asian American representation in law and politics"
+        },
+        {
+          "name": "COVID-19 Relief Initiative",
+          "organization": "Georgia Justice Project",
+          "location": "Atlanta",
+          "description": "Worked on an initiative to ensure COVID-19 relief checks remained in the hands of incarcerated individuals"
+        }
+      ],
+      "awards": [
+        {
+          "name": "Paul & Daisy Soros Fellowship for New Americans",
+          "year": 2021,
+          "description": "Merit-based fellowship for immigrants and children of immigrants in the United States"
+        },
+        {
+          "name": "Fulbright Scholarship",
+          "year": "Not specified"
+        }
+      ],
+      "publications": [
+        {
+          "title": "A Portrait of Asian Americans in the Law 2.0: Identity and Action in Challenging Times",
+          "year": 2022,
+          "coauthors": [
+            "Hon. Goodwin Liu",
+            "Tyler Dang",
+            "Michael Tayag"
+          ],
+          "link": "https://www.americanbarfoundation.org/people/katherine-fang/"
+        },
+        {
+          "title": "Portrait Project 2.0 Policy Brief: Identity and Action in Challenging Times",
+          "year": 2022,
+          "coauthors": [
+            "Tyler Dang",
+            "Benji Lu",
+            "Hon. Goodwin Liu",
+            "Michael Tayag"
+          ],
+          "link": "https://www.americanbarfoundation.org/people/katherine-fang/"
+        }
+      ],
+      "skills": [
+        "Legal research",
+        "Policy analysis",
+        "Quantitative methods",
+        "Economics",
+        "Arabic language",
+        "Speechwriting"
+      ],
+      "interests": [
+        "Government responsiveness",
+        "Political participation",
+        "Citizenship",
+        "Criminal justice reform",
+        "Public benefits access",
+        "Middle East studies"
+      ],
+      "languages": [
+        "English",
+        "Arabic"
+      ],
+      "additional_info": [
+        "Former Kerry Initiative Fellow, supporting Secretary John Kerry in researching and organizing conferences on pressing international challenges",
+        "Events coordinator at Yale Council on Middle East Studies",
+        "Participated in Directed Independent Language program (DILS) to learn Arabic dialects"
+      ],
+      "id": "b4188c92-a12b-4597-9dca-2b1881f2b620"
+    },
+    {
+      "name": "Ian Lee",
+      "phone_number": "ask_the_required_format_number",
+      "university": "Harvard University",
+      "degree": "Master of Public Health",
+      "concentration": "Social and Behavioral Sciences",
+      "class_year": 2026,
+      "hometown": "Seoul, South Korea",
+      "personal_info": {
+        "gender_pronouns": "He/Him",
+        "interests": [
+          "Global health",
+          "Health equity",
+          "Technology and innovation",
+          "AI-driven healthcare solutions"
+        ]
+      },
+      "experience": [
+        {
+          "position": "Graduate Research Assistant",
+          "organization": "Harvard Global Health Institute",
+          "description": "Conducted extensive review of over 800 academic publications to identify researchers working at the intersection of AI, digital health, global health, and health equity. Produced a strategic report for the Harvard Digital Health Initiative."
+        },
+        {
+          "position": "Management Consultant",
+          "description": "Specialized in optimizing operations and implementing data-driven decision-making for healthcare institutions, improving patient outcomes and operational efficiency."
+        },
+        {
+          "position": "Intern",
+          "organization": "Korean Ministry of Foreign Affairs",
+          "location": "Asunci\u00f3n, Paraguay",
+          "description": "Gained firsthand experience of systemic health challenges faced by developing nations."
+        }
+      ],
+      "projects": [
+        {
+          "title": "AI in Healthcare Research",
+          "description": "Explored the intersection of artificial intelligence and healthcare innovation as part of the AI in Healthcare Student Association."
+        },
+        {
+          "title": "Health Equity Through AI-Driven Healthcare Solutions",
+          "description": "Contributed to strategic report outlining key opportunities to promote equity through AI-driven healthcare solutions."
+        }
+      ],
+      "skills": [
+        "Data analysis",
+        "Strategic planning",
+        "Healthcare operations optimization",
+        "AI in healthcare applications",
+        "Global health policy"
+      ],
+      "activities": [
+        {
+          "organization": "AI in Healthcare Student Association",
+          "role": "Active Member"
+        },
+        {
+          "organization": "Harvard Global Health Institute",
+          "role": "Graduate Research Assistant"
+        }
+      ],
+      "career_goals": "Aspires to a leadership role bridging technology and healthcare to address global health challenges, creating scalable and sustainable solutions that empower underserved communities and advance health equity.",
+      "additional_info": {
+        "languages": [
+          "English",
+          "Korean"
+        ],
+        "hobbies": [
+          "Weight training",
+          "Boxing",
+          "Exploring Boston"
+        ]
+      },
+      "id": "6776849f-ab2e-42ec-baf0-7da1d2aaed11"
+    },
+    {
+      "name": "Bobby Cupps",
+      "phone": "ask_the_required_format_number",
+      "university": "Harvard University",
+      "class_year": 2026,
+      "major": "Undeclared",
+      "personal_info": {
+        "hometown": "Chicago, Illinois",
+        "high_school": "Walter Payton College Prep",
+        "interests": [
+          "squash",
+          "soccer",
+          "tennis",
+          "saxophone",
+          "basketball",
+          "reading"
+        ]
+      },
+      "athletics": {
+        "soccer": {
+          "team": "Harvard Crimson men's soccer",
+          "position": "Midfielder",
+          "jersey_number": 19,
+          "achievements": [
+            "Played in seven games with one start in 2024 season",
+            "Scored one goal against Merrimack (Oct. 1, 2024)",
+            "Appeared in 163 minutes in 2024 season"
+          ]
+        },
+        "squash": {
+          "team": "Harvard Crimson men's squash",
+          "achievements": [
+            "Ranked eighth in U19 division of US Squash",
+            "Went 2-0 at No. 8 and 9 positions in first year (2022-23)",
+            "Debuted with 3-0 victory over Andrew Willwerth (Brown) on Nov. 15, 2022",
+            "Defeated Harrison Callaway (St. Lawrence) 3-0"
+          ]
+        }
+      },
+      "high_school_achievements": [
+        "All-State and All-Midwest Region honors in soccer as a senior",
+        "Soccer team captain as junior and senior",
+        "Led soccer team to regional and sectional titles in 2021-22",
+        "Set school's single-season record for goals scored",
+        "Earned three varsity letters in soccer and two in tennis",
+        "Competed for Chicago Fire City Soccer Club (2016-22)",
+        "All-State Academic Team Illinois (2021-22)"
+      ],
+      "leadership": {
+        "role": "HoCo Games Commissioner & IM Rep",
+        "organization": "Mather House, Harvard University"
+      },
+      "publications": [
+        {
+          "title": "Where is Joe Manchin's Place in the US Today?",
+          "publication": "Harvard Political Review",
+          "date": "August 29, 2023",
+          "link": "https://harvardpolitics.com/author/bcupps/"
+        }
+      ],
+      "family": {
+        "father": "Andrew Cupps",
+        "mother": "Danielle Cupps",
+        "note": "Both parents attended Harvard"
+      },
+      "id": "00d3ad56-bb61-41fd-9837-788dce2fa14d"
+    },
+    {
+      "name": "Maher Harp",
+      "phone": "ask_the_required_format_number",
+      "education": {
+        "university": "Harvard University",
+        "major": "Environmental Science and Public Policy",
+        "class": "2028"
+      },
+      "personal_info": {
+        "location": "Dearborn Heights, MI",
+        "email": "m***@college.harvard.edu"
+      },
+      "experience": [
+        {
+          "position": "Campus Lead",
+          "company": "Liner",
+          "duration": "2025-present"
+        },
+        {
+          "position": "Participant",
+          "company": "Susquehanna International Group",
+          "duration": "2025"
+        },
+        {
+          "position": "2025 Engineering Possibilities Summit",
+          "company": "Goldman Sachs Group",
+          "duration": "2024"
+        },
+        {
+          "position": "Wintern",
+          "company": "Andromeda Labs",
+          "duration": "2024-2025"
+        },
+        {
+          "position": "Technology Intern",
+          "company": "Youphoria",
+          "duration": "2024-2025"
+        },
+        {
+          "position": "Technology Vertical Fellow",
+          "company": "HeadStart Fellowship",
+          "duration": "2024"
+        }
+      ],
+      "projects": [
+        {
+          "name": "AI and Machine Learning Educational App",
+          "description": "Developed an educational app on Artificial Intelligence (AI) and Machine Learning (ML), translated into Arabic for accessibility in Arabic-speaking schools. The app has been integrated into multiple school curriculums.",
+          "award": "Congressional App Challenge winner"
+        },
+        {
+          "name": "Learnly",
+          "description": "An efficient way to study for exams, using AI and Natural Language Processing.",
+          "link": "https://cs50.harvard.edu/college/2024/fall/"
+        }
+      ],
+      "research": [
+        {
+          "topic": "Fine Particulate Matter Collection",
+          "description": "Modified a NASA TerraRover 2 to sense and record fine particulate matter along with its normal measurement of surface temperature.",
+          "link": "https://ui.adsabs.harvard.edu/abs/2022AGUFMED44D..01H/abstract"
+        }
+      ],
+      "awards": [
+        "Congressional App Challenge winner",
+        "20 Under 20 Awardee by Arab America Foundation (2024)",
+        "Coca-Cola Scholar (2024)"
+      ],
+      "skills": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "App Development",
+        "Environmental Science",
+        "Public Policy",
+        "Leadership"
+      ],
+      "activities": [
+        "NASA GLOBE",
+        "FIRST Robotics",
+        "National Honor Society"
+      ],
+      "achievements": [
+        "Valedictorian at Crestwood High School (GPA: 4.755)",
+        "Spoke at Capitol Hill about AI and ML literacy mission"
+      ],
+      "id": "a98b84e3-62f7-48c5-8ae5-eb67f276ddc7"
+    },
+    {
+      "name": "Jack Fan",
+      "university": "Harvard University",
+      "phone_number": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's Degree",
+          "field_of_study": "Computer Science",
+          "graduation_year": 2025
+        }
+      ],
+      "experience": [
+        {
+          "position": "Research Assistant",
+          "organization": "Harvard Computer Science Department",
+          "duration": "Summer 2023"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Machine Learning for Climate Change Prediction",
+          "description": "Developed a machine learning model to predict climate change impacts using historical weather data and satellite imagery.",
+          "technologies": [
+            "Python",
+            "TensorFlow",
+            "Scikit-learn"
+          ]
+        }
+      ],
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Data Analysis",
+        "Java",
+        "C++"
+      ],
+      "awards": [
+        {
+          "name": "Dean's List",
+          "year": 2023,
+          "issuer": "Harvard University"
+        }
+      ],
+      "research_interests": [
+        "Artificial Intelligence",
+        "Climate Change Modeling",
+        "Computer Vision"
+      ],
+      "id": "48905e5b-39fa-4046-8d98-bc872e36deb2"
+    },
+    {
+      "name": "Samuel Hahn",
+      "phone_number": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's in Economics",
+          "year": "2024 - 2028 (expected)",
+          "minors": [
+            "History",
+            "Mathematics"
+          ]
+        },
+        {
+          "institution": "Larchmont Charter High School",
+          "graduation_year": 2024
+        }
+      ],
+      "experience": [
+        {
+          "position": "Teacher's Assistant",
+          "subjects": [
+            "AP Calculus AB",
+            "AP Calculus BC"
+          ],
+          "duration": "2022 - 2024"
+        },
+        {
+          "position": "Tutor",
+          "organization": "Scholars Circle",
+          "duration": "4 years"
+        }
+      ],
+      "skills": [
+        "Tutoring",
+        "Mathematics",
+        "Economics"
+      ],
+      "interests": [
+        "Sports",
+        "Table Tennis (Professional)",
+        "Writing short stories"
+      ],
+      "achievements": [
+        "Professional Table Tennis player"
+      ],
+      "projects": [
+        {
+          "name": "Hahn Tutoring Company",
+          "description": "Founded a tutoring company to help students worldwide"
+        }
+      ],
+      "additional_info": [
+        "Born and raised in Los Angeles, California",
+        "Passionate about helping students in academic settings"
+      ],
+      "id": "60c83b4e-fd71-4666-a906-4b15cd86ca16"
+    },
+    {
+      "name": "Charles Zhou",
+      "university": "Harvard University",
+      "phone_number": "ask_the_required_format_number",
+      "personal_info": {
+        "class_year": "2027",
+        "program": "Biological and Biomedical Sciences (BBS) PhD"
+      },
+      "education": [
+        {
+          "degree": "PhD",
+          "field": "Biological and Biomedical Sciences",
+          "institution": "Harvard University",
+          "year_started": 2023
+        }
+      ],
+      "experience": [
+        {
+          "position": "Associate",
+          "organization": "Harvard Association for U.S. - China Relations"
+        }
+      ],
+      "research_interests": [
+        "Protein engineering",
+        "Biological systems"
+      ],
+      "projects": [],
+      "publications": [],
+      "awards": [],
+      "skills": [],
+      "id": "182906ba-6a44-4a60-8e46-36d99ee109e6"
+    },
+    {
+      "name": "Ryan Brewington",
+      "personalInfo": {
+        "university": "Harvard University",
+        "class": "2028",
+        "major": "Undeclared",
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "athleticProfile": {
+        "sport": "Men's Lightweight Rowing",
+        "position": "Rower",
+        "team": "Harvard Crimson",
+        "achievements": [
+          "Member of the Harvard Lightweight Rowing team for the 2024-25 season",
+          "Competed in the Head of the Charles Regatta 2024",
+          "Part of the Men's Club Fours boat that finished 13th out of 42 boats"
+        ]
+      },
+      "highSchoolBackground": {
+        "school": "The Haverford School",
+        "location": "Haverford, Pennsylvania",
+        "graduationYear": "2024",
+        "achievements": [
+          "Captain of the Haverford Crew team",
+          "Four-year member of Spring Crew",
+          "Two-year full-time rower",
+          "Won City Championships with Varsity Quad on May 5, 2024"
+        ]
+      },
+      "leadershipExperience": {
+        "role": "Captain",
+        "organization": "Haverford Crew",
+        "responsibilities": [
+          "Served as a role model for younger rowers",
+          "Participated in alumni events and boat christenings",
+          "Led the team on waters and demonstrated successful rowing techniques",
+          "Promoted team culture and unity"
+        ]
+      },
+      "researchAndAnalysis": {
+        "role": "Quantitative Analyst",
+        "organization": "Patriot Polling",
+        "description": "Contributed to political polling and data analysis as part of a student-led polling organization"
+      },
+      "competitions": [
+        {
+          "name": "Head of the Charles Regatta 2024",
+          "result": "13th place out of 42 boats in Men's Club Fours division"
+        },
+        {
+          "name": "City Championships 2024",
+          "result": "1st place with Varsity Quad"
+        }
+      ],
+      "skills": [
+        "Rowing",
+        "Team Leadership",
+        "Data Analysis",
+        "Quantitative Research"
+      ],
+      "interests": [
+        "Competitive Rowing",
+        "Political Polling",
+        "Data Science"
+      ],
+      "id": "cb6c78bf-baac-451c-8a0e-b2a5da9c2cac"
+    },
+    {
+      "name": "Ishaan Sinha",
+      "university": "Harvard University",
+      "personal_info": {
+        "location": "San Francisco Bay Area",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Princeton University",
+          "degree": "A.B.",
+          "field_of_study": "Computer Science"
+        },
+        {
+          "institution": "Bellarmine College Preparatory",
+          "degree": "High School"
+        }
+      ],
+      "work_experience": [
+        {
+          "company": "LinkedIn",
+          "position": "Product",
+          "location": "San Francisco Bay Area"
+        },
+        {
+          "company": "Point72 Ventures",
+          "position": "Partner, Investment Team",
+          "description": "Co-leads consumer investments"
+        },
+        {
+          "company": "Point72",
+          "position": "Long/Short Analyst"
+        },
+        {
+          "company": "Human Capital",
+          "position": "Investor",
+          "focus": "Fintech and consumer investments"
+        },
+        {
+          "company": "Goldman Sachs",
+          "position": "Investment Banker"
+        }
+      ],
+      "skills": [
+        "Consumer Investments",
+        "Fintech",
+        "Data Analysis",
+        "Consumer Behavior",
+        "Investment Banking"
+      ],
+      "interests": [
+        "Guitar",
+        "New England Patriots",
+        "Rescue Dogs",
+        "Travel"
+      ],
+      "additional_info": [
+        "Developed expertise in consumer-facing businesses and fintech",
+        "International background contributing to diverse perspectives in consumer investing",
+        "Experienced in analyzing data and human psychology for investment decisions"
+      ],
+      "id": "6bee5834-12fe-4db7-9724-66e7336ee24f"
+    },
+    {
+      "name": "Benjamin Megan",
+      "university": "Harvard University",
+      "position": "Forward",
+      "personal_info": {
+        "height": "5'11\"",
+        "weight": "165 lbs",
+        "shoots": "Left",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "athletic_profile": {
+        "team": "Harvard University Men's Ice Hockey",
+        "division": "MD3",
+        "jersey_number": "28"
+      },
+      "academic_info": {
+        "major": "Undisclosed",
+        "year": "Undisclosed"
+      },
+      "athletic_stats": {
+        "note": "Detailed game statistics not available in the provided search results"
+      },
+      "id": "6ead1ce5-e303-4948-9bb7-a7a3e5e70e74"
+    },
+    {
+      "personalInfo": {
+        "name": "Logan Hine",
+        "university": "Harvard University",
+        "major": "Applied Mathematics",
+        "graduationYear": 2025,
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "experience": [
+        {
+          "title": "Co-founder",
+          "company": "Arcadia Ventures",
+          "startDate": "August 2024",
+          "description": "Focusing on investments in transformative ventures related to government, climate, and deep tech"
+        },
+        {
+          "title": "Associate and Deal Flow Lead",
+          "company": "Newlin Ventures",
+          "startDate": "2024",
+          "description": "Current role"
+        },
+        {
+          "title": "Venture Partner",
+          "company": "GoAhead Ventures",
+          "description": "Participated in the inaugural Venture Partner Cohort, leading to a project refining investment strategies for specific startup subsets"
+        },
+        {
+          "title": "Investment Scout",
+          "company": "GoAhead Ventures"
+        },
+        {
+          "title": "Operations Lead",
+          "company": "Ridge"
+        },
+        {
+          "title": "Growth Intern",
+          "company": "Atmos AI",
+          "description": "Contributed to significant revenue growth"
+        },
+        {
+          "title": "Industry Analyst",
+          "company": "ChargePoint",
+          "description": "Through the Harvard Undergraduate Clean Energy Group"
+        }
+      ],
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor of Arts",
+          "field": "Applied Mathematics",
+          "inProgress": true
+        },
+        {
+          "institution": "North Hagerstown High School",
+          "achievements": [
+            "Valedictorian",
+            "International Baccalaureate Diploma recipient"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "ESG Impact",
+          "role": "Intern",
+          "description": "Contributed to a startup focused on ESG (Environmental, Social, and Governance) solutions"
+        }
+      ],
+      "skills": [
+        "Investment analysis",
+        "Venture capital",
+        "Operations management",
+        "Clean energy",
+        "Applied mathematics"
+      ],
+      "id": "f283e3f0-a095-43cd-b1a5-d81507f4f20a"
+    },
+    {
+      "name": "Sriram Elango",
+      "university": "Harvard University",
+      "phone": "ask_the_required_format_number",
+      "email": "sriramelango@college.harvard.edu",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's Degree",
+          "field": "Computer Science",
+          "graduationYear": 2025
+        }
+      ],
+      "research": [
+        {
+          "title": "CNN Mosquito Detection Research",
+          "organization": "NASA SEES",
+          "year": 2021
+        },
+        {
+          "title": "Discovering Numerous Interstellar Objects with A Dedicated Space Telescope",
+          "year": 2025,
+          "link": "https://arxiv.org/html/2502.08478v1"
+        }
+      ],
+      "projects": [
+        {
+          "name": "ML Models and Streamlit Website for Data Analysis on Political Discourse",
+          "description": "Developed machine learning models and a Streamlit website for analyzing political discourse data",
+          "language": "Python"
+        },
+        {
+          "name": "Streamlit Website for Data Analysis on Happydb Dataset",
+          "description": "Created a Streamlit website for analyzing the Happydb dataset"
+        },
+        {
+          "name": "CHS Precalculus Period 8 Lowest Unique Possible Integer (LUPI) Game Analysis and Results",
+          "description": "Analyzed and presented results for the LUPI game in a precalculus class",
+          "language": "Jupyter Notebook"
+        },
+        {
+          "name": "Quick Data Analysis of 2001 MZ7 Orbital Evolution",
+          "description": "Performed data analysis on the orbital evolution of asteroid 2001 MZ7",
+          "language": "Python"
+        },
+        {
+          "name": "The A3Sat Emulator",
+          "description": "Developed an emulator for CubeSat and space technology education",
+          "role": "Co-author",
+          "organization": "Harvard University, Institute for Earth Observations"
+        }
+      ],
+      "publications": [
+        {
+          "title": "The A3Sat Emulator: A Catalyst in Disruptive CubeSat and Space Technology Education",
+          "authors": [
+            "Sriram Elango",
+            "Maxwell Friedman"
+          ],
+          "affiliation": "Harvard University, Institute for Earth Observations",
+          "link": "https://ieeexplore.ieee.org/iel8/10664657/10664671/10664989.pdf"
+        }
+      ],
+      "skills": [
+        "Machine Learning",
+        "Data Analysis",
+        "Python",
+        "Jupyter Notebook",
+        "Streamlit",
+        "Space Technology",
+        "CubeSat Development"
+      ],
+      "profiles": [
+        {
+          "platform": "GitHub",
+          "username": "sriramelango",
+          "url": "https://github.com/sriramelango"
+        },
+        {
+          "platform": "LinkedIn",
+          "url": "https://www.linkedin.com/in/sriram-e-a55b561b4/"
+        },
+        {
+          "platform": "Google Scholar",
+          "url": "https://scholar.google.com/citations?user=l1optYkAAAAJ&hl=en&oi=sra"
+        }
+      ],
+      "id": "3f09e5f8-f19f-4ff4-89ae-a356fa0addf5"
+    },
+    {
+      "name": "Reza Shamji",
+      "phone": "ask_the_required_format_number",
+      "university": "Harvard University",
+      "graduation_year": 2025,
+      "major": "Computer Science",
+      "personal_info": {
+        "hometown": "Los Angeles, California",
+        "high_school": "Brentwood School",
+        "religion": "Ismaili Muslim"
+      },
+      "experiences": [
+        {
+          "position": "Student",
+          "organization": "Harvard University",
+          "duration": "2021 - Present"
+        },
+        {
+          "position": "Campaign Worker",
+          "organization": "Biden/Harris Presidential Campaign",
+          "duration": "2020 (3 months during gap year)"
+        }
+      ],
+      "projects": [
+        {
+          "name": "PalPursuit",
+          "description": "A website application developed as part of CS50 final project",
+          "course": "CS50: Introduction to Computer Science"
+        }
+      ],
+      "interests": [
+        "Investment banking",
+        "Entrepreneurship",
+        "Coding",
+        "Chess",
+        "Surfing",
+        "Stock market research"
+      ],
+      "achievements": [
+        "Admitted to Harvard University",
+        "Admitted to Princeton University"
+      ],
+      "community_involvement": [
+        {
+          "role": "Active member",
+          "organization": "Harvard Islamic Society"
+        }
+      ],
+      "skills": [
+        "Public speaking",
+        "Leadership",
+        "Networking",
+        "Coding (aspiring to improve)"
+      ],
+      "languages": [
+        "English"
+      ],
+      "hobbies": [
+        "Sushi appreciation",
+        "Traveling and collecting hotel key cards",
+        "Writing meaningful birthday messages for friends"
+      ],
+      "cultural_background": "East African Indian Ismaili Muslim",
+      "notable_quotes": [
+        "I love to explore and learn.",
+        "I view life as a chance to help others."
+      ],
+      "social_media": [
+        {
+          "platform": "TikTok",
+          "username": "@rezashamji",
+          "followers": 1764,
+          "likes": 16400
+        }
+      ],
+      "academic_interests": [
+        "Computer Science",
+        "Business",
+        "Finance"
+      ],
+      "campus_involvement": [
+        {
+          "role": "Advocate",
+          "description": "Advocated for increased Shia Muslim representation on campus"
+        }
+      ],
+      "id": "f85a26ae-e29f-44f6-8f05-8d1c0e11fadd"
+    },
+    {
+      "name": "Daniel Sun-Friedman",
+      "university": "Harvard University",
+      "class_year": "2025",
+      "phone": "ask_the_required_format_number",
+      "email": "dsunfriedman@college.harvard.edu",
+      "research_experience": [
+        {
+          "position": "Undergraduate Researcher",
+          "lab": "metareflection lab",
+          "advisor": "Prof. Nada Amin",
+          "duration": "Summer 2023",
+          "description": "Conducted research on programming languages and program synthesis at Harvard SEAS."
+        }
+      ],
+      "projects": [
+        {
+          "name": "DafnyBench",
+          "description": "Worked on a project related to the Dafny programming language and verification system.",
+          "advisor": "Prof. Nada Amin"
+        }
+      ],
+      "skills": [
+        "Programming Languages",
+        "Program Synthesis",
+        "Software Engineering"
+      ],
+      "publications": [],
+      "awards": [],
+      "github": "https://github.com/dsunfriedman",
+      "linkedin": "https://www.linkedin.com/in/daniel-sun-friedman/",
+      "additional_info": "Daniel Sun-Friedman is an undergraduate researcher at Harvard University, working in the metareflection lab under the supervision of Prof. Nada Amin. His research interests appear to be in the areas of programming languages and program synthesis. While specific details about his projects and contributions are limited in the available information, his involvement in the DafnyBench project suggests an interest in formal verification and programming language theory.",
+      "id": "35f81ed0-d00f-4f2b-bbe8-ee150012631f"
+    },
+    {
+      "name": "Joyce Lu",
+      "phone": "ask_the_required_format_number",
+      "university": "Harvard University",
+      "class_year": 2026,
+      "major": "Statistics",
+      "minor": "Computer Science",
+      "personal_info": {
+        "hometown": "New Jersey",
+        "interests": [
+          "fall foliage",
+          "citrus fruits"
+        ]
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's in Statistics",
+          "year": "2022-2026"
+        }
+      ],
+      "activities": [
+        {
+          "organization": "Harvard-Radcliffe Orchestra",
+          "role": "Violinist"
+        },
+        {
+          "organization": "Bach Society Orchestra",
+          "role": "Violinist"
+        },
+        {
+          "organization": "WHRB (Harvard's radio station)",
+          "role": "DJ"
+        }
+      ],
+      "awards": [
+        {
+          "name": "National Community Service Ambassador Award",
+          "year": "2019-2020"
+        }
+      ],
+      "volunteer_experience": {
+        "total_hours": 62,
+        "areas": [
+          "Rights/Peace",
+          "Health",
+          "Education"
+        ],
+        "global_impact_hours": 57
+      },
+      "skills": [
+        "Data Analysis",
+        "Violin",
+        "Radio Broadcasting"
+      ],
+      "languages": [
+        "English"
+      ],
+      "projects": [
+        {
+          "name": "Data Analysis for Community Service Impact",
+          "description": "Analyzed volunteer hours and impact across different service areas using statistical methods."
+        }
+      ],
+      "id": "314b1fca-346a-40fa-b202-8c62fca55876"
+    },
+    {
+      "name": "Aditya Gupta",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "degree": "LL.M.",
+          "field": "Intellectual Property Rights",
+          "institution": "Harvard Law School",
+          "year": "2014"
+        },
+        {
+          "degree": "B.A. LL.B. (Hons.)",
+          "institution": "National Law University, Jodhpur",
+          "year": "2010"
+        }
+      ],
+      "experience": [
+        {
+          "title": "Senior Associate",
+          "company": "Anand and Anand",
+          "startDate": "2014",
+          "endDate": "Present",
+          "description": "Intellectual property litigator focusing on trademark, copyright, and patent law"
+        },
+        {
+          "title": "Research Associate",
+          "company": "Harvard Law School",
+          "supervisor": "Professor William W. Fisher III",
+          "duration": "6 months",
+          "description": "Worked on a multi-jurisdictional analysis of intellectual property law in the fashion industry"
+        },
+        {
+          "title": "Associate",
+          "company": "Anand and Anand",
+          "startDate": "2010",
+          "endDate": "2013",
+          "description": "Intellectual property litigation and drafting"
+        },
+        {
+          "title": "Visiting Faculty",
+          "institution": "National Law University, Delhi",
+          "duration": "1 semester",
+          "course": "Practicing IP law"
+        }
+      ],
+      "awards": [
+        "Gold Medallist, National Law University, Jodhpur",
+        "Microsoft Intellectual Property Rights Scholarship, 2009"
+      ],
+      "publications": [
+        {
+          "title": "Do India's compulsory licenses violate TRIPs",
+          "coAuthor": "Anand",
+          "publication": "Managing IP",
+          "date": "December 2012 \u2013 January 2013"
+        },
+        {
+          "title": "Compulsory Licensing: What the Controller got wrong",
+          "coAuthor": "Anand",
+          "publication": "Managing IP (India IP Focus)",
+          "year": "2012"
+        }
+      ],
+      "skills": [
+        "Intellectual Property Law",
+        "Litigation",
+        "Patent Law",
+        "Trademark Law",
+        "Copyright Law",
+        "Legal Research",
+        "Client Management"
+      ],
+      "notable_cases": [
+        {
+          "case": "Novartis case",
+          "description": "Part of the legal team in high-profile pharmaceutical patent litigation decided by the Indian Supreme Court"
+        }
+      ],
+      "interests": [
+        "Innovation and creativity in law",
+        "Intersection of health care and intellectual property law",
+        "Patent law reform in developed and developing countries"
+      ],
+      "id": "1ce63816-18fc-4a28-b8c7-990c646e945d"
+    },
+    {
+      "personalInfo": {
+        "name": "Kimia Esmaeili Adabi",
+        "university": "Harvard University",
+        "location": "Cambridge, Massachusetts",
+        "phone": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Undergraduate",
+          "field": "Computer Science",
+          "year": "Current"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Square Eats",
+          "description": "A website that recommends food in Harvard Square based on user preferences and allows users to add food to their favorites.",
+          "technologies": [
+            "Web Development"
+          ],
+          "link": "https://cs50.yale.edu/2024/summer/"
+        },
+        {
+          "name": "Deep Dive: Crime in Boston",
+          "description": "An analysis project investigating crime patterns and safety in Boston.",
+          "collaborators": [
+            "Sunshine Chen",
+            "Samantha Wu",
+            "Jesse Huang",
+            "Mira Yu"
+          ],
+          "link": "https://www.hodp.org/project/crime-in-boston/"
+        }
+      ],
+      "organizations": [
+        {
+          "name": "Harvard Open Data Project (HODP)",
+          "role": "Contributor",
+          "responsibilities": [
+            "Data analysis",
+            "Project collaboration",
+            "Content creation"
+          ]
+        }
+      ],
+      "skills": [
+        "Data Analysis",
+        "Web Development",
+        "Project Collaboration",
+        "Research"
+      ],
+      "awards": [
+        {
+          "name": "Beachwood Schools Foundation Scholarship",
+          "year": "2023",
+          "amount": "$500"
+        }
+      ],
+      "id": "1f3b7534-0d22-4fc9-a19c-79028b58c1cc"
+    },
+    {
+      "name": "Diego Gonzalez Gauss",
+      "university": "Harvard University",
+      "phone": "ask_the_required_format_number",
+      "personal_info": {
+        "major": "Mathematics",
+        "expected_graduation": 2025
+      },
+      "academic_experience": [
+        {
+          "position": "Undergraduate Researcher",
+          "project": "Mathematical Modeling of Addiction",
+          "description": "Developed a modified SIR epidemiological model to treat addiction as an infectious disease, accounting for unique factors and depicting its perpetuation throughout communities and populations. The model examines the impact of different treatment interventions and demonstrates the efficacy of recovery programs in lowering addiction rates.",
+          "mentor": "Dr. Padmanabhan Seshaiyer",
+          "institution": "George Mason University",
+          "program": "SIAM-Simons Undergraduate Summer Research Program",
+          "year": 2023
+        }
+      ],
+      "presentations": [
+        {
+          "title": "Mathematical Modeling of Addiction",
+          "event": "16th Annual International Symposium on Biomathematics and Ecology Education and Research",
+          "location": "Virginia Commonwealth University",
+          "date": "November 2023",
+          "type": [
+            "Poster",
+            "Full Talk"
+          ]
+        },
+        {
+          "title": "Mathematical Modeling of Addiction",
+          "event": "Joint Mathematics Meetings",
+          "location": "San Francisco, California",
+          "date": "January 2024",
+          "type": [
+            "Presentation"
+          ]
+        }
+      ],
+      "athletic_experience": [
+        {
+          "sport": "Rugby",
+          "team": "Harvard Rugby Football Club",
+          "location": "Boston, MA"
+        }
+      ],
+      "skills": [
+        "Mathematical Modeling",
+        "Data Analysis",
+        "Scientific Computing",
+        "Research Methodology",
+        "Public Speaking"
+      ],
+      "honors": [
+        "Selected participant for the inaugural 2023 SIAM-Simons Undergraduate Summer Research Program"
+      ],
+      "publications": [
+        {
+          "status": "In preparation",
+          "topic": "Mathematical modeling of addiction using modified SIR framework",
+          "coauthors": [
+            "Adan Baca",
+            "Dr. Padmanabhan Seshaiyer"
+          ]
+        }
+      ],
+      "id": "72174f87-c70f-425d-a7a5-41e050093b46"
+    },
+    {
+      "name": "William Tang",
+      "phoneNumber": "ask_the_required_format_number",
+      "university": "Harvard University",
+      "education": [
+        {
+          "degree": "Ph.D.",
+          "field": "Psychology",
+          "institution": "Harvard University",
+          "year": 1981
+        }
+      ],
+      "currentPosition": {
+        "title": "Lecturer with Rank of Professor",
+        "department": "Department of Astrophysical Sciences",
+        "institution": "Princeton University"
+      },
+      "previousPositions": [
+        {
+          "title": "Instructor",
+          "institution": "Harvard Medical School"
+        },
+        {
+          "title": "Retina Surgeon",
+          "institution": "Massachusetts Eye and Ear Infirmary"
+        }
+      ],
+      "clinicalExperience": {
+        "specialty": "Retina Specialist and Surgeon",
+        "location": "Natick, Massachusetts",
+        "yearsOfExperience": "over 20 years"
+      },
+      "affiliations": [
+        "Mass General Brigham",
+        "Tufts Medical Center",
+        "Newton-Wellesley Hospital",
+        "Beth Israel Deaconess Medical Center Needham",
+        "Metrowest Medical Center"
+      ],
+      "academicAppointments": [
+        {
+          "institution": "Tufts University School of Medicine",
+          "position": "Faculty"
+        },
+        {
+          "institution": "UMass Medical School",
+          "position": "Faculty"
+        }
+      ],
+      "professionalMemberships": [
+        "American Society of Retina Specialists",
+        "American Academy of Ophthalmology (Fellow)"
+      ],
+      "certifications": [
+        {
+          "name": "Board Certification",
+          "issuingBody": "American Board of Ophthalmology"
+        }
+      ],
+      "clinicalExpertise": [
+        "Macular Degeneration",
+        "Retinal detachment",
+        "Macular hole",
+        "Complications after cataract surgery",
+        "Complex eye problems related to systemic health"
+      ],
+      "procedures": [
+        "Eye injections (Avastin, Eylea, Lucentis)",
+        "In-office retinal laser treatments",
+        "Gas bubble treatments",
+        "Urgent retinal detachment repairs"
+      ],
+      "publications": [
+        {
+          "title": "Spectrum Machine Language for the Absolute Beginner",
+          "year": 1982,
+          "description": "Introduction to 8-bit machine code programming for ZX Spectrum",
+          "impact": "Credited by many game writers as their starting point in programming"
+        }
+      ],
+      "teaching": {
+        "activity": "Lectures to other eye doctors in Massachusetts",
+        "program": "Continuing Education program"
+      },
+      "researchInterests": [
+        "Retinal disorders",
+        "Complex eye problems related to systemic health"
+      ],
+      "id": "daac62bb-ea76-4a81-9d97-60d30cabd0a9"
+    },
+    {
+      "name": "Melody Cao",
+      "personalInfo": {
+        "university": "Harvard University",
+        "expectedGraduation": "May 2026",
+        "major": "Computer Science and Economics",
+        "minor": "Drama, Dance, and Media",
+        "location": "Cambridge, MA / Toronto, Canada",
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's",
+          "major": "Computer Science and Economics",
+          "minor": "Drama, Dance, and Media",
+          "startDate": "August 2022",
+          "endDate": "May 2026 (expected)"
+        }
+      ],
+      "experience": [
+        {
+          "role": "Actress",
+          "projects": [
+            {
+              "title": "The Next Step",
+              "character": "Daisy",
+              "type": "TV Show",
+              "year": "2013-present"
+            },
+            {
+              "title": "13: The Musical",
+              "type": "Netflix Movie",
+              "year": "2022"
+            },
+            {
+              "title": "Mustache",
+              "character": "Liz Park",
+              "type": "Movie",
+              "year": "2023"
+            }
+          ]
+        },
+        {
+          "role": "Dancer",
+          "achievements": [
+            "Participated with hip hop dance crew on Canada's Got Talent Show, received Golden Buzzer"
+          ]
+        },
+        {
+          "role": "Social Media/Marketing Chair",
+          "organization": "The Signet Society",
+          "year": "2024-25"
+        }
+      ],
+      "skills": [
+        "Computer Science",
+        "Economics",
+        "Acting",
+        "Dancing",
+        "Social Media Marketing"
+      ],
+      "projects": [
+        {
+          "name": "FlappyTurd",
+          "description": "A game where you make a poo fly in the air and through tubes",
+          "language": "Swift",
+          "link": "https://github.com/melodycao/flappyturd"
+        },
+        {
+          "name": "niceprice",
+          "language": "HTML",
+          "link": "https://github.com/melodycao/niceprice"
+        },
+        {
+          "name": "bethtchess",
+          "language": "JavaScript",
+          "link": "https://github.com/melodycao/bethtchess"
+        }
+      ],
+      "achievements": [
+        "Golden Buzzer recipient on Canada's Got Talent Show with hip hop dance crew"
+      ],
+      "interests": [
+        "Dance (Contemporary, Jazz, Jazz Funk)",
+        "Acting",
+        "Computer Science",
+        "Economics",
+        "Entrepreneurship"
+      ],
+      "additionalInfo": [
+        "Took two weeks off at the beginning of the fall 2024 semester to film episodes of a television show",
+        "Regularly pursues auditions for acting roles during the school year",
+        "Advocates for flexibility in academic policies to allow students to pursue professional opportunities alongside their studies"
+      ],
+      "githubProfile": "https://github.com/melodycao",
+      "imdbProfile": "https://www.imdb.com/name/nm9153972/",
+      "id": "43b5fd45-52d0-4cb9-a0e3-c92086a1e6db"
+    },
+    {
+      "personalInfo": {
+        "name": "Lucas Chu",
+        "university": "Harvard University",
+        "major": "Economics and Computer Science",
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "background": {
+        "birthplace": "Germany",
+        "upbringing": "Grew up in New York",
+        "education": [
+          {
+            "institution": "Fordham Preparatory School",
+            "type": "High School",
+            "location": "Bronx, NY",
+            "achievements": [
+              "Student government president",
+              "Cadet Captain in Civil Air Patrol",
+              "Raised tens of thousands for charities"
+            ]
+          },
+          {
+            "institution": "Harvard University",
+            "type": "Undergraduate",
+            "status": "On leave",
+            "achievements": [
+              "Perfect 5.0 GPA at MIT",
+              "High school GPA: 4.0 (unweighted), 4.38 (weighted)",
+              "ACT score: 36",
+              "SAT score: 1600",
+              "AP exams: 5s on all 8 taken"
+            ]
+          },
+          {
+            "institution": "Massachusetts Institute of Technology",
+            "type": "Cross-registration",
+            "major": "Computer Science"
+          }
+        ]
+      },
+      "entrepreneurialExperience": [
+        {
+          "name": "DAOHQ",
+          "role": "Co-founder",
+          "description": "World's first DAO marketplace",
+          "achievements": [
+            "Raised $1.3 million in pre-seed funding",
+            "Mark Cuban among investors"
+          ]
+        },
+        {
+          "name": "Erevna",
+          "role": "Founder",
+          "description": "Federation of 12 initiatives",
+          "achievements": [
+            "One initiative entered TechStars",
+            "Reached over 10,000 students"
+          ]
+        },
+        {
+          "name": "Cerebral Valley",
+          "role": "Co-founder",
+          "description": "Largest AI founder community in San Francisco",
+          "achievements": [
+            "Organized hackathons with OpenAI, Anthropic, and Hugging Face",
+            "Reached 6,000 members online"
+          ]
+        },
+        {
+          "name": "Veer Squared (Veer 2)",
+          "role": "Founder",
+          "description": "Google Plus GPT-like project",
+          "outcome": "IP sold to Starlight, which was later acquired"
+        }
+      ],
+      "researchExperience": [
+        {
+          "institution": "Harvard University",
+          "projects": [
+            "Worked with Census Bureau",
+            "Collaborated with metaLAB @ Harvard",
+            "Contributed to Opportunity Insights",
+            "Co-authored paper featured in New York Times, Washington Post, and NPR"
+          ]
+        },
+        {
+          "institution": "Various",
+          "description": "Worked on over 20 research projects for partners like Stanford GSB Venture Capital Initiative, McKinsey, and Steve Ballmer's USAFacts"
+        }
+      ],
+      "communityInitiatives": [
+        {
+          "name": "Coronavirus Visualization Team",
+          "role": "Founder",
+          "description": "Created projects and graphics illustrating impacts of Covid-19"
+        },
+        {
+          "name": "The Pandemic Policython",
+          "role": "Lead Organizer",
+          "achievements": [
+            "Created hundreds of policy briefs",
+            "Research led to reallocation of $20b+ in federal funding"
+          ]
+        },
+        {
+          "name": "C-House (Harvard Hacker House)",
+          "role": "Organizer",
+          "description": "Runs demo nights every two weeks for showcasing projects"
+        }
+      ],
+      "academicAchievements": [
+        "Took 20 courses in junior year",
+        "Double majoring in Economics and Computer Science",
+        "Considering double thesis"
+      ],
+      "skills": [
+        "Entrepreneurship",
+        "Community building",
+        "Research",
+        "Data visualization",
+        "Blockchain and cryptocurrency",
+        "AI and machine learning"
+      ],
+      "interests": [
+        "Making card games",
+        "Playing board games",
+        "Nonprofits",
+        "Tutoring",
+        "3D printing",
+        "Origami"
+      ],
+      "publications": [
+        {
+          "title": "Paper on economic impacts (specific title not provided)",
+          "featured_in": [
+            "New York Times (front page)",
+            "Washington Post",
+            "NPR"
+          ]
+        }
+      ],
+      "onlinePresence": {
+        "website": "https://lucas-chus-portfolio.webflow.io",
+        "github": "Not provided in the search results",
+        "devpost": "Not provided in the search results"
+      },
+      "id": "0c06b7aa-53fb-4c02-a126-8dcd201a6384"
+    },
+    {
+      "name": "Ecaterina Boboc",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone": "ask_the_required_format_number",
+        "email": "ecaterina_boboc@college.harvard.edu",
+        "location": "Cambridge, Massachusetts"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor of Arts - AB",
+          "field": "Computer Science",
+          "years": "2021 - 2025 (expected)"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Tech Board Member",
+          "organization": "Harvard Advocate",
+          "duration": "2022 - Present"
+        },
+        {
+          "position": "Co-President",
+          "organization": "Harvard Undergraduate Romanian Association",
+          "duration": "2022 - 2023"
+        }
+      ],
+      "projects": [
+        {
+          "name": "150th Online Anthology",
+          "role": "Design Board Member and Managing Editor",
+          "organization": "Harvard Advocate"
+        }
+      ],
+      "skills": [
+        "C++",
+        "SQL",
+        "Python"
+      ],
+      "languages": [
+        "English",
+        "Romanian"
+      ],
+      "extracurricular": [
+        {
+          "activity": "Harvard Undergraduate Romanian Association",
+          "role": "Co-President",
+          "duration": "2022 - 2023"
+        }
+      ],
+      "id": "35dbbccc-572e-434d-ba4d-14d281b85d7d"
+    },
+    {
+      "personal_info": {
+        "name": "Justin Liu",
+        "university": "Harvard University",
+        "major": "Computer Science and Statistics (AB/SM)",
+        "year": "Junior",
+        "hometown": "Los Gatos, California",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": {
+        "current": {
+          "institution": "Harvard University",
+          "degree": "Concurrent AB/SM in Computer Science and Statistics",
+          "additional": "Cross-registered at Massachusetts Institute of Technology"
+        }
+      },
+      "experience": [
+        {
+          "position": "Software Engineer Intern",
+          "company": "Concierge AI",
+          "current": true
+        },
+        {
+          "position": "Machine Learning Researcher",
+          "company": "Mass General Brigham",
+          "current": true
+        },
+        {
+          "position": "Venture Fellow",
+          "company": "REMUS Capital",
+          "description": "Leading funding efforts for DeepTech startups",
+          "current": true
+        },
+        {
+          "position": "Principal",
+          "company": "Harvard Undergraduate Capital Partners",
+          "current": true
+        },
+        {
+          "position": "Founder",
+          "company": "YouthHacks",
+          "description": "Initiative promoting computer science education in disadvantaged communities"
+        },
+        {
+          "position": "Lead Instructor",
+          "company": "Youth In Code",
+          "description": "Leading a global team of instructors"
+        }
+      ],
+      "research": [
+        {
+          "title": "A Novel Implementation of Machine Learning for the Efficient, Explainable Diagnosis of COVID-19 from Chest CT",
+          "publication": "arXiv preprint arXiv:2207.07117",
+          "year": 2022,
+          "citations": 3
+        },
+        {
+          "title": "Eye-Net: An Interpretable Machine Learning Ensemble for Feature Engineering, Classification, and Lesion Localization of Diabetic Retinopathy",
+          "conference": "2022 IEEE MIT Undergraduate Research Technology Conference (URTC)",
+          "year": 2022
+        },
+        {
+          "title": "Comparing the Accuracy in Classifying Brain Tumors Using Various Convolutional Neural Networks",
+          "publication": "Young Scientists Journal",
+          "year": 2021
+        }
+      ],
+      "athletics": {
+        "sport": "Fencing",
+        "team": "Harvard Varsity Fencing Team",
+        "position": "Foil",
+        "achievements": [
+          "Team Captain (2023-24 season)",
+          "Second Team All-Northeast Region (2022-23 season)",
+          "Qualified for NCAA Championships (2022-23 season)",
+          "Finished 8th at the NCAA Northeast Regionals (2022-23 season)"
+        ]
+      },
+      "extracurricular_activities": [
+        "Harvard Undergraduate Capital Partners",
+        "Harvard Data Analytics Group (HDAG)",
+        "Harvard Financial Analysts Club (HFAC)",
+        "Leverett House Committee (Formals Chair)"
+      ],
+      "skills": [
+        "Software Engineering",
+        "Machine Learning",
+        "Computer Vision",
+        "Deep Neural Networks",
+        "Image Enhancement",
+        "Venture Capital"
+      ],
+      "awards": [
+        "US Fencing All-American 1st Team (2019, 2020)",
+        "2020 U17 World Team Alternate",
+        "U20 Junior Olympics Bronze",
+        "2 Team Gold medals for U17 international circuit",
+        "3 individual top-8 results for U17 international circuit",
+        "November North America Cup U17 Bronze",
+        "Y14 National Championships Bronze",
+        "National Merit Commended Scholar",
+        "AP Scholar with Distinction",
+        "US Fencing All-Academic 1st Team (2019, 2020)"
+      ],
+      "interests": [
+        "Playing poker",
+        "Hitting the gym",
+        "Playing piano",
+        "Playing clarinet",
+        "Playing bassoon"
+      ],
+      "id": "cbe27b90-fae3-4d00-8e54-718586ecc728"
+    },
+    {
+      "personal_info": {
+        "name": "Amulya Garimella",
+        "university": "Harvard University",
+        "major": "Computer Science",
+        "year": "Senior",
+        "email": "agarimella@college.harvard.edu",
+        "phone_number": "ask_the_required_format_number",
+        "website": "https://amulyagarimella.github.io",
+        "github": "https://github.com/amulyagarimella",
+        "linkedin": "Not available in the provided information"
+      },
+      "education": [
+        {
+          "institution": "Harvard College",
+          "degree": "Bachelor's in Computer Science",
+          "year": "Expected 2025"
+        }
+      ],
+      "research_interests": [
+        "Computational biology",
+        "Solving biological problems with computational methods",
+        "3D organization of the genome",
+        "Spatial transcriptomics",
+        "Epigenomics",
+        "Machine learning in biology"
+      ],
+      "experience": [
+        {
+          "position": "Undergraduate Researcher",
+          "organization": "Xia Lab",
+          "description": "Studying the 3D organization of the genome",
+          "start_date": "2024-06"
+        },
+        {
+          "position": "Undergraduate Researcher",
+          "organization": "Buenrostro Lab, Harvard",
+          "description": "Conducted spatial transcriptomics research"
+        },
+        {
+          "position": "Intern",
+          "organization": "Praxis Precision Medicine",
+          "description": "Developed novel clinical trial biomarkers"
+        },
+        {
+          "position": "Researcher",
+          "organization": "Kellis Lab, MIT",
+          "description": "Conducted Alzheimer's epigenomics research"
+        },
+        {
+          "position": "Researcher",
+          "organization": "Neurogenomics Lab, CMU",
+          "description": "Conducted Alzheimer's epigenomics research"
+        },
+        {
+          "position": "Teaching Fellow",
+          "organization": "Harvard University",
+          "description": "Taught CS50 (Harvard's largest computer science class) and CS121 (theoretical CS class)"
+        },
+        {
+          "position": "Co-president",
+          "organization": "Harvard's Women in Computer Science (WiCS) club",
+          "description": "Led recruitment, resulting in the largest-ever new member class of over 200 women and people of marginalized genders"
+        },
+        {
+          "position": "Director of Programming",
+          "organization": "Harvard WECode",
+          "description": "Organized the world's largest student-run conference for women in computer science"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Research Rewind",
+          "description": "A project related to research, possibly involving TypeScript",
+          "link": "https://github.com/amulyagarimella/research-rewind"
+        },
+        {
+          "name": "Privazy",
+          "description": "An educational quiz game designed to teach Gen Z students about digital privacy",
+          "link": "https://github.com/amulyagarimella/privazy"
+        },
+        {
+          "name": "Smart Teleprompter",
+          "description": "A smart teleprompter that uses voice recognition to scroll through scripts as the user speaks",
+          "link": "https://github.com/amulyagarimella/smart-teleprompter"
+        },
+        {
+          "name": "CS50 Labs",
+          "description": "CS fundamentals curriculum, accompanying CS50 @ Harvard",
+          "link": "https://github.com/amulyagarimella/ag-cs50-labs"
+        },
+        {
+          "name": "Theoretical CS Section Materials",
+          "description": "Materials for CS121 @ Harvard College",
+          "link": "https://github.com/amulyagarimella/Theoretical-CS-section-materials-from-CS121-Harvard-College-created-by-Amulya-Garimella"
+        },
+        {
+          "name": "Slab",
+          "description": "A streamlined and organized electronic lab notebook (ELN) for scientific protocols"
+        }
+      ],
+      "publications": [
+        {
+          "title": "Archetypal analysis for single-cell sequencing data",
+          "description": "Paper on interpretable dimensionality reduction for determining cell types in mixed populations"
+        },
+        {
+          "title": "In vivo direct lineage reprogramming as a potential treatment for neurodegeneration",
+          "description": "Short paper on brain regeneration and cellular reprogramming",
+          "link": "https://amulyagarimella.github.io/projects.html"
+        }
+      ],
+      "awards": [
+        {
+          "name": "2015 Young Scientist Challenge Finalist",
+          "organization": "3M"
+        }
+      ],
+      "skills": [
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "C",
+        "Machine Learning",
+        "Data Analysis",
+        "Bioinformatics",
+        "Teaching",
+        "Research"
+      ],
+      "leadership": [
+        {
+          "position": "Co-president",
+          "organization": "Harvard's Women in Computer Science (WiCS) club"
+        },
+        {
+          "position": "Director of Programming",
+          "organization": "Harvard WECode"
+        }
+      ],
+      "outreach": [
+        {
+          "name": "The STEM Symposium",
+          "description": "Ran an annual STEM conference for high schoolers, sponsored by Carnegie Mellon Software Engineering Institute, Argo AI, and Carnegie Mellon University's Computational Biology Department"
+        },
+        {
+          "name": "Art Project",
+          "description": "Created a series of portraits of essential workers and community organizers"
+        }
+      ],
+      "additional_info": [
+        "Writes a newsletter about computational biology",
+        "Staff writer for The Harvard Crimson",
+        "Created CS fundamentals curriculum and taught a seminar on Python for statistical analysis and visualization"
+      ],
+      "id": "340c1070-a0f1-4276-8d30-adb33c9e0b66"
+    },
+    {
+      "name": "Pranav Sitaraman",
+      "university": "Harvard University",
+      "major": "Computer Science, Mathematics, and Statistics",
+      "class_year": 2027,
+      "phone_number": "ask_the_required_format_number",
+      "personal_website": "https://pranavsitaraman.github.io",
+      "github": "https://github.com/PranavSitaraman",
+      "bio": "Enterprising engineer & researcher. CS, Math, & Stat @ Harvard.",
+      "location": "Cambridge, Massachusetts",
+      "experience": [
+        {
+          "position": "Research Intern",
+          "organization": "Stony Brook University",
+          "details": "Conducted research in computer science"
+        },
+        {
+          "position": "Research Intern",
+          "organization": "New Jersey Institute of Technology (NJIT)",
+          "details": "Worked on research projects in technology"
+        },
+        {
+          "position": "Robotics Instructor",
+          "details": "Taught robotics to students"
+        },
+        {
+          "position": "President",
+          "organizations": [
+            "Math League",
+            "Computer Science Club",
+            "Science Olympiad team",
+            "Robotics Club"
+          ],
+          "details": "Organized competitions such as MCAMC, MCAIC, and HackMCA"
+        }
+      ],
+      "projects": [
+        {
+          "name": "RCJ-Rescue-Line-2021",
+          "language": "C++",
+          "description": "Project related to robotics rescue line competition",
+          "link": "https://github.com/PranavSitaraman/RCJ-Rescue-Line-2021"
+        },
+        {
+          "name": "ClusterDuck-Protocol",
+          "description": "Firmware for an ad-hoc mesh network of Internet-of-Things devices based on LoRa (Long Range radio) that can be deployed quickly and at low cost",
+          "link": "https://github.com/ClusterDuck-Protocol/ClusterDuck-Protocol"
+        },
+        {
+          "name": "Quant-Trading",
+          "language": "Jupyter Notebook",
+          "description": "Project related to quantitative trading",
+          "link": "https://github.com/PranavSitaraman/Quant-Trading"
+        }
+      ],
+      "awards": [
+        "President's Volunteer Service Gold Award"
+      ],
+      "volunteer_work": [
+        {
+          "organization": "Habitat for Humanity",
+          "details": "Contributed to community service projects"
+        },
+        {
+          "organization": "Community Food Bank of New Jersey",
+          "details": "Volunteered in food distribution and community support"
+        }
+      ],
+      "skills": [
+        "Coding",
+        "Robotics",
+        "Mathematics",
+        "Leadership",
+        "Research"
+      ],
+      "interests": [
+        "Soccer",
+        "Piano"
+      ],
+      "career_goals": [
+        "Study computer science in college",
+        "Create positive societal impact as an entrepreneur"
+      ],
+      "leadership_roles": [
+        {
+          "position": "Board Member",
+          "organization": "Harvard GUSH (Global Undergraduate Statistics Hub)",
+          "year": "2024-25"
+        }
+      ],
+      "achievements": [
+        {
+          "title": "Student of the Month",
+          "organization": "Edison Academy Magnet School",
+          "date": "October 2023"
+        }
+      ],
+      "id": "4f96f4a3-d313-4fd5-86e2-b611137e86e1"
+    },
+    {
+      "personalInfo": {
+        "name": "Petr Berlizov",
+        "university": "Harvard University",
+        "class": "2024",
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "The Hotchkiss School",
+          "graduationYear": "2024"
+        },
+        {
+          "institution": "Harvard University",
+          "expectedGraduationYear": "2028"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Editor-in-Chief",
+          "organization": "The Hotchkiss Record",
+          "duration": "2023-2024"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Veritas and Varieties",
+          "description": "A website that aggregates events in the Boston area using several API calls, a database, and extensive programming",
+          "course": "CS50 (Harvard)",
+          "link": "https://cs50.harvard.edu/college/2024/fall/"
+        }
+      ],
+      "publications": [
+        {
+          "title": "A Conversation With Dr. Atalia Omer",
+          "publication": "The Hotchkiss Record",
+          "date": "November 16, 2023",
+          "link": "https://hotchkissrecord.org/2023/11/a-conversation-with-dr-atalia-omer/"
+        },
+        {
+          "title": "Ukraine Global Scholars Join School Community",
+          "publication": "The Hotchkiss Record",
+          "date": "October 13, 2023"
+        },
+        {
+          "title": "Film Club Hosts 12th Annual Festival of Student Shorts",
+          "publication": "The Hotchkiss Record",
+          "date": "June 2, 2023"
+        },
+        {
+          "title": "Ellen Fontaine Keeps School Running From Behind the Scenes",
+          "publication": "The Hotchkiss Record",
+          "date": "April 27, 2023"
+        },
+        {
+          "title": "Queen Elizabeth II: A Symbol of Unity",
+          "publication": "The Hotchkiss Record",
+          "date": "September 15, 2022"
+        },
+        {
+          "title": "Hungarian Election: A Model for Democracies?",
+          "publication": "The Hotchkiss Record",
+          "date": "January 27, 2022"
+        }
+      ],
+      "awards": [
+        {
+          "name": "Jack Kent Cooke Foundation College Scholarship Semifinalist",
+          "year": "2024"
+        }
+      ],
+      "skills": [
+        "Journalism",
+        "Writing",
+        "Editing",
+        "Web Development",
+        "API Integration",
+        "Database Management"
+      ],
+      "interests": [
+        "International Relations",
+        "Politics",
+        "Technology",
+        "Current Events"
+      ],
+      "id": "09a804e0-e34c-46cd-894a-021eacfd8716"
+    },
+    {
+      "name": "Aadil Nathani",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Master in Liberal Education (MLE)",
+          "year": "Unknown"
+        },
+        {
+          "institution": "University of Toronto",
+          "degree": "Honours B.A.",
+          "year": "Unknown"
+        },
+        {
+          "institution": "University of Windsor - Faculty of Law",
+          "degree": "J.D.",
+          "year": "Unknown"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Program Manager",
+          "organization": "Natural Curiosity",
+          "description": "Supports transformative and inquiry-based professional learning opportunities"
+        }
+      ],
+      "interests": [
+        "Environmental education",
+        "Indigenous perspectives in education",
+        "Equity in education",
+        "Mental health in education",
+        "Inquiry-based learning"
+      ],
+      "skills": [
+        "Program management",
+        "Education",
+        "Professional development",
+        "Environmental awareness"
+      ],
+      "achievements": [
+        "Recent graduate of the Master of Teaching program at the Ontario Institute for Studies in Education"
+      ],
+      "projects": [
+        {
+          "name": "Natural Curiosity Program",
+          "description": "Supports educators across Turtle Island to bring Indigenous perspectives into education, in the spirit of Truth and Reconciliation"
+        }
+      ],
+      "id": "7129369b-972f-428c-8349-b07583da0daf"
+    },
+    {
+      "personalInfo": {
+        "name": "Jordan Mittler",
+        "university": "Harvard University",
+        "major": "Economics and Computer Science",
+        "graduationYear": 2027,
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's degree",
+          "field": "Economics and Computer Science",
+          "startYear": 2023,
+          "endYear": 2027
+        },
+        {
+          "institution": "Ramaz Upper School",
+          "location": "Manhattan",
+          "graduationYear": 2022
+        }
+      ],
+      "experience": [
+        {
+          "position": "Associate",
+          "organization": "Harvard Undergraduate Venture Capital Group",
+          "responsibilities": [
+            "Primary liaison between venture capital partners and analysts",
+            "Voting member of the investment committee"
+          ]
+        },
+        {
+          "position": "Member",
+          "organization": "TAMID Group",
+          "responsibilities": [
+            "Mentoring",
+            "Financial management",
+            "Connecting students with startups"
+          ]
+        },
+        {
+          "positions": [
+            "Legal Operations",
+            "Research",
+            "Business Development",
+            "Project Management"
+          ],
+          "organizations": [
+            "Republic",
+            "Hiltzik Strategies",
+            "Autofleet",
+            "Ghetto Film School",
+            "GetSetUp",
+            "Aloe Care Health"
+          ]
+        }
+      ],
+      "projects": [
+        {
+          "name": "Mittler Senior Technology",
+          "description": "Founded organization focusing on computer and smartphone education for senior citizens",
+          "achievements": [
+            "Empowered over 3,500 seniors across 10 different countries",
+            "Inspired more than 150 teens to volunteer",
+            "Conducted over 450 classes",
+            "Partnered with Web-Ready to enhance website efficiency and reduce carbon footprint",
+            "Planted over 125 trees through sustainability efforts"
+          ],
+          "link": "https://mittlerseniortech.com/"
+        }
+      ],
+      "awards": [
+        {
+          "name": "CNN Young Wonders Award",
+          "year": 2021,
+          "description": "Recognized for his work with Mittler Senior Technology"
+        }
+      ],
+      "skills": [
+        "Entrepreneurship",
+        "Technology Education",
+        "Curriculum Development",
+        "Community Building",
+        "Volunteer Management",
+        "Adaptability (shifted to online classes during COVID-19)",
+        "Public Speaking",
+        "Leadership"
+      ],
+      "publications": [],
+      "additionalInfo": [
+        "Started teaching technology to seniors at age 12, beginning with his grandparents",
+        "Developed a 10-week program for seniors to learn new technology",
+        "Adapted curriculum during COVID-19 to focus on relevant digital skills for isolation periods",
+        "Featured in various media outlets including People magazine, Teen Vogue, and CBS This Morning",
+        "Participated in CNN Heroes event, introduced by Anderson Cooper and Kelly Ripa",
+        "Expanded program globally during the pandemic, reaching up to 2000 seniors in 10 countries",
+        "Created a virtual portal for seniors to access pre-recorded classes and learn at their own pace",
+        "Produces 'Tech Tip Tuesday' videos offering quick technology tips in under 60 seconds"
+      ],
+      "id": "ee0aab59-da53-4696-800e-f4b870fac791"
+    },
+    {
+      "personal_info": {
+        "name": "Aarna Pal-Yadav",
+        "university": "Harvard University",
+        "class_year": "2027",
+        "concentration": "Computer Science and Economics",
+        "secondary": "Integrative Biology",
+        "house": "Kirkland",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "roles": [
+        {
+          "title": "Director, AI Project Incubator",
+          "organization": "HUMIC (Harvard Undergraduate Machine Intelligence Community)",
+          "description": "Directs the AI Project Incubator program, empowering students from diverse backgrounds to learn about and leverage AI for meaningful projects."
+        },
+        {
+          "title": "Associate of Finance",
+          "organization": "The World Pre-Health Conference"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Birdingdex",
+          "description": "An AI-powered bird identification and tracking app that gamifies conservation efforts to connect more people with nature.",
+          "role": "Developer",
+          "technologies": [
+            "AI",
+            "Mobile App Development"
+          ]
+        },
+        {
+          "name": "DNA Alignment",
+          "description": "A program that enables biologists to score DNA alignments.",
+          "technologies": [
+            "Bioinformatics",
+            "Programming"
+          ]
+        }
+      ],
+      "interests": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Ornithology",
+        "Conservation",
+        "Interdisciplinary applications of technology"
+      ],
+      "skills": [
+        "AI/ML",
+        "Computer Science",
+        "Economics",
+        "Biology",
+        "Project Management"
+      ],
+      "achievements": [
+        "Selected as Director of AI Project Incubator at HUMIC",
+        "Developed Birdingdex as part of the AI Project Incubator"
+      ],
+      "id": "a510b60b-b91e-48cb-9aee-7c10a5d25f91"
+    },
+    {
+      "name": "Henry deForest Webster",
+      "phone_number": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard Medical School",
+          "degree": "MD",
+          "year": 1952
+        },
+        {
+          "institution": "Amherst College",
+          "degree": "Bachelor's",
+          "year": 1948
+        }
+      ],
+      "career": [
+        {
+          "position": "Chief of Laboratory of Experimental Neuropathology",
+          "organization": "National Institutes of Health",
+          "startYear": 1984,
+          "endYear": 1997
+        },
+        {
+          "position": "Chief of Section on Cellular Neuropathology",
+          "organization": "National Institutes of Health",
+          "startYear": 1969,
+          "endYear": 1984
+        },
+        {
+          "position": "Professor",
+          "organization": "Harvard Medical School",
+          "startYear": null,
+          "endYear": 1969
+        },
+        {
+          "position": "Professor",
+          "organization": "University of Miami Medical School",
+          "startYear": null,
+          "endYear": 1969
+        }
+      ],
+      "research": {
+        "focus": "Nervous system functioning and malfunctioning, causes and spread of multiple sclerosis, electron microscopic methods to study nervous system cells",
+        "achievements": [
+          "Advanced knowledge of multiple sclerosis causes and potential treatments",
+          "Pioneered electron microscopic methods for studying normal and diseased nervous system cells"
+        ]
+      },
+      "publications": [
+        {
+          "title": "Fine Structure of the Nervous System",
+          "type": "Book",
+          "editions": 3
+        }
+      ],
+      "awards": [
+        {
+          "name": "U.S. Public Health Service Superior Service Award",
+          "year": 1977
+        },
+        {
+          "name": "Alexander von Humboldt Foundation Senior U.S. Scientist Award",
+          "year": null
+        },
+        {
+          "name": "American Association of Neuropathologists Meritorious Contributions to Neuropathology Award",
+          "year": 2001
+        }
+      ],
+      "honors": [
+        {
+          "name": "Phi Beta Kappa",
+          "organization": "Amherst College"
+        },
+        {
+          "name": "Plimpton Fellowship",
+          "organization": "Amherst College"
+        }
+      ],
+      "contributions": [
+        {
+          "item": "William Blake painting 'The Raising of Jairus's Daughter'",
+          "recipient": "Mead Art Museum at Amherst College",
+          "year": 2011
+        }
+      ],
+      "personal": {
+        "birthDate": "1927-04-22",
+        "birthPlace": "New York City",
+        "deathDate": "2012-11-16",
+        "deathPlace": "Cockeysville, Maryland"
+      },
+      "id": "6fe1ead6-ac4c-44cb-a782-d65a6a79c303"
+    },
+    {
+      "name": "Hanjing Wang",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Undergraduate",
+          "field": "Comparative Literature (intended)",
+          "startDate": "2024",
+          "endDate": "Present"
+        },
+        {
+          "institution": "Shanghai American School",
+          "degree": "High School",
+          "endDate": "2024"
+        }
+      ],
+      "interests": [
+        "Creative writing",
+        "Debate",
+        "Volleyball",
+        "Service clubs",
+        "Esoteric poetry collections",
+        "Taylor Swift",
+        "Sudoku"
+      ],
+      "achievements": [
+        "Admitted to Harvard University for undergraduate studies"
+      ],
+      "projects": [
+        {
+          "name": "Pocket Caf\u00e9",
+          "description": "An all-in-one platform for coffee lovers at Harvard",
+          "technologies": [
+            "CSS",
+            "HTML",
+            "JavaScript",
+            "Python",
+            "SQL"
+          ],
+          "type": "Python-Based Website"
+        }
+      ],
+      "activities": [
+        "Debate",
+        "Original oratory",
+        "Impromptu speaking"
+      ],
+      "skills": [
+        "Creative writing",
+        "Public speaking",
+        "Critical thinking"
+      ],
+      "presentations": [
+        {
+          "title": "Intersections Between STEM and the Humanities",
+          "event": "TEDx event",
+          "description": "Focused on interdisciplinary concepts throughout history that stem from the cross-sections between STEM and humanities, and ways to better encompass the diminishing boundaries between subjects in curriculums",
+          "link": "https://www.youtube.com/watch?v=jznu2kc9L5g"
+        }
+      ],
+      "id": "6344e1bc-6537-4941-bfa9-de53dd984d62"
+    },
+    {
+      "personal_info": {
+        "name": "Catherine Li",
+        "university": "Harvard University",
+        "major": "Electrical Engineering",
+        "class_year": "Sophomore",
+        "hometown": "Ann Arbor, Michigan",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor of Arts",
+          "field_of_study": "Electrical Engineering",
+          "graduation_year": "Expected 2026"
+        },
+        {
+          "institution": "Huron High School",
+          "degree": "High School Diploma",
+          "graduation_year": "2022"
+        }
+      ],
+      "extracurricular_activities": [
+        {
+          "organization": "Harvard-Radcliffe Orchestra",
+          "position": "Trumpetist",
+          "description": "Plays trumpet in the orchestra"
+        },
+        {
+          "organization": "Harvard Varsity Sailing Team",
+          "position": "Member",
+          "description": "Competes on the varsity sailing team"
+        },
+        {
+          "organization": "OAASIS",
+          "position": "Member",
+          "description": "Involved in OAASIS organization at Harvard"
+        }
+      ],
+      "awards": [
+        "National Merit Finalist",
+        "National AP Scholar with Distinction",
+        "Gold Medalist for Scholastic Art and Writing"
+      ],
+      "research_interests": [
+        "Leveraging technology to improve lives",
+        "Engineering innovations bridging medicine and technology"
+      ],
+      "leadership": [
+        {
+          "organization": "Inno Education",
+          "position": "Board Chairwoman",
+          "description": "Excited to continue work with Inno and see the organization thrive and expand"
+        }
+      ],
+      "athletic_achievements": [
+        {
+          "sport": "Sailing",
+          "team": "Harvard Varsity Sailing Team",
+          "position": "Coxswain",
+          "achievements": [
+            "Coxswain of 6V8 at Eastern Sprints",
+            "Coxed fifth varsity eight to win over Princeton",
+            "Coxed various boats in competitions against Cornell, Penn, Columbia, Georgetown, Dartmouth, Navy, Yale, and others"
+          ]
+        }
+      ],
+      "skills": [
+        "Trumpet playing",
+        "Sailing",
+        "Leadership",
+        "Engineering",
+        "Research"
+      ],
+      "interests": [
+        "Country music",
+        "Outdoor activities",
+        "Potato chips",
+        "Seltzer water",
+        "65-degree sunny weather"
+      ],
+      "id": "6f8c79d9-75bd-406d-9836-ca921a47f21e"
+    },
+    {
+      "name": "Wency Suo",
+      "university": "Harvard University",
+      "class_year": "2027",
+      "phone_number": "ask_the_required_format_number",
+      "personal_info": {
+        "hometown": "Boise, Idaho",
+        "previous_school": "Boise High School"
+      },
+      "academic_achievements": [
+        {
+          "award": "NCWIT Award for Aspirations in Computing (AiC)",
+          "year": "2022"
+        }
+      ],
+      "extracurricular_activities": [
+        {
+          "organization": "Harvard Computer Society",
+          "position": "Director of Finance"
+        }
+      ],
+      "research_experience": [
+        {
+          "project": "iGEM Team LINKS China",
+          "year": "2020",
+          "description": "Participated in synthetic biology research as a 9th grader"
+        }
+      ],
+      "public_speaking": [
+        {
+          "event": "TEDxSanNewSchool",
+          "title": "The Power of a Playdough Brain",
+          "year": "2021",
+          "description": "Discussed personal experiences and cognitive adaptability after moving from Boise, Idaho to Wuhan, China"
+        }
+      ],
+      "interests": [
+        "Computer Science",
+        "Synthetic Biology",
+        "LGBTQ+ Rights",
+        "Youth Advocacy"
+      ],
+      "notable_experiences": [
+        {
+          "event": "Harvard Journal of Law and Gender Fall Conference",
+          "year": "2023",
+          "description": "Attended panels on LGBTQ+ youth rights and advocacy"
+        }
+      ],
+      "id": "28b2b53e-8a4b-402a-b9ff-df667321c18e"
+    },
+    {
+      "name": "Zach Chen",
+      "personal_info": {
+        "university": "Harvard University",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Undergraduate",
+          "field_of_study": "Unspecified",
+          "start_date": "2024",
+          "end_date": "Present"
+        },
+        {
+          "institution": "Boston Latin School",
+          "degree": "High School",
+          "end_date": "2024"
+        }
+      ],
+      "achievements": [
+        "Qualified for national debate tournament multiple times",
+        "Finalist at the International Science and Engineering Fair",
+        "Placed third at a Model UN conference"
+      ],
+      "extracurricular_activities": [
+        {
+          "organization": "Model United Nations",
+          "role": "Member",
+          "description": "Participated in Harvard and Boston University's Model UN conferences"
+        },
+        {
+          "organization": "Speech and Debate",
+          "role": "Member",
+          "description": "Participated in Congressional Debate"
+        }
+      ],
+      "skills": [
+        "Debate",
+        "Public Speaking",
+        "Model UN"
+      ],
+      "id": "8f89f4ca-e0e9-46f1-acc3-04d85acdea88"
+    },
+    {
+      "personalInfo": {
+        "name": "Ryan Whalen",
+        "university": "Harvard University",
+        "major": "Data Science and Economics",
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Undergraduate",
+          "field": "Data Science and Economics",
+          "status": "Current student"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Instructor",
+          "organization": "DebateDrills",
+          "description": "Specializes in policy debate, with emphasis on DAs, CPs, and Aff strategy, and congress debate."
+        },
+        {
+          "position": "Debate Team Captain",
+          "organization": "High School Debate Team",
+          "duration": "4 years"
+        },
+        {
+          "position": "Debate Coach",
+          "description": "Coached middle school and novice high school debate teams"
+        }
+      ],
+      "achievements": [
+        "Top speaker at the National Longhorn Classic",
+        "Top speaker at Grapevine Invitational",
+        "Top speaker at Heritage Hall Invitational",
+        "Finalist at Churchill Invitational",
+        "Finalist at New York City Classic",
+        "3-time Tournament of Champions qualifier",
+        "Coached teams to 2-time qualification to the TFA State tournament"
+      ],
+      "skills": [
+        "Policy debate",
+        "Congress debate",
+        "Debate coaching",
+        "Data Science",
+        "Economics"
+      ],
+      "projects": [],
+      "publications": [],
+      "links": [],
+      "id": "c9725377-8b21-41fd-8643-c7ce91abc71d"
+    },
+    {
+      "name": "Mohamed Noorani",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Unknown"
+        }
+      ],
+      "position": "Deputy CEO and Programs Director",
+      "organization": "Human Concern International",
+      "experience": [
+        {
+          "title": "Deputy CEO and Programs Director",
+          "organization": "Human Concern International",
+          "description": "Brings extensive international project management experience"
+        }
+      ],
+      "expertise": [
+        "International project management",
+        "Humanitarian work"
+      ],
+      "projects": [],
+      "publications": [],
+      "awards": [],
+      "skills": [
+        "Project management",
+        "International development",
+        "Humanitarian aid"
+      ],
+      "id": "d8604dfb-b10e-4cd3-8d0e-3bb0d0852b9d"
+    },
+    {
+      "name": "Adolfo Balderas",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's Degree",
+          "field_of_study": "Molecular and Cellular Biology",
+          "year": "2013"
+        }
+      ],
+      "projects": [
+        {
+          "name": "ElectronicChessBoard",
+          "description": "Created a chessboard that allows chess enthusiasts to provide an immediate record of the game played over a physical chess board. The project uses magnets on the bottom of pieces with Hall-effect sensors to read what is happening on the physical chessboard.",
+          "technologies": [
+            "Magnets",
+            "Hall-effect sensors"
+          ],
+          "team_members": [
+            "Daniel Kocot",
+            "Gil'i Zaid",
+            "Jinho Park"
+          ],
+          "course": "Harvard ES 50",
+          "link": "https://www.youtube.com/watch?v=IsGImzHYFQc"
+        },
+        {
+          "name": "Finder",
+          "description": "A website that matches people based on similar interests",
+          "technologies": [
+            "CSS",
+            "HTML",
+            "JavaScript",
+            "Python",
+            "SQL"
+          ],
+          "course": "CS50"
+        }
+      ],
+      "immigration_status": {
+        "event": "Faced possible deportation in 2010",
+        "outcome": "Granted deferred action, permitted to stay in the U.S. indefinitely",
+        "details": "Immigrated illegally to the United States from Mexico with his family at age 4. Was detained in San Antonio, Texas when trying to board a plane to Boston with a consulate card and Harvard identification."
+      },
+      "additional_info": [
+        "Became the center of national debate about undocumented youth in the country and immigration reform",
+        "Aspiring molecular and cellular biology concentrator in Eliot House at Harvard"
+      ],
+      "id": "721e2298-132e-4031-b001-dff14c245686"
+    },
+    {
+      "name": "Aryan Sharma",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": {
+        "institution": "Harvard University",
+        "program": "Summer Institute in Biomedical Informatics (SIBMI)",
+        "year": 2024
+      },
+      "research_experience": [
+        {
+          "institution": "Harvard University",
+          "lab": "Farhat Lab",
+          "project": "Analysis of paired genomes and metagenomes of Mycobacterium tuberculosis",
+          "description": "Analyzed a novel dataset of paired genomes and metagenomes of Mycobacterium tuberculosis directly obtained from patient samples with and without intervening culture. The project focused on using computational biology techniques to address challenges in global health, particularly in tuberculosis research."
+        }
+      ],
+      "skills": [
+        "Computational biology",
+        "Genome analysis",
+        "Bioinformatics",
+        "Data analysis"
+      ],
+      "achievements": [
+        "Selected for the prestigious Summer Institute in Biomedical Informatics (SIBMI) program at Harvard University"
+      ],
+      "interests": [
+        "Interdisciplinary approaches in medical and computational research",
+        "Global health challenges",
+        "Tuberculosis research"
+      ],
+      "mentors": [
+        "Dr. Maha Farhat",
+        "Dr. Brendon Mann",
+        "Max Marin",
+        "Haoyang Hu",
+        "Shandu Mulaudzi"
+      ],
+      "additional_info": {
+        "program_impact": "SIBMI 2024 provided Aryan with valuable experience in blending computational methodologies with medical research, deepening his understanding of biomedical informatics and reinforcing his passion for interdisciplinary approaches in addressing global health challenges."
+      },
+      "id": "b790ef7d-d122-4157-8607-38907c059038"
+    },
+    {
+      "name": "Michael Shaari",
+      "university": "Harvard University",
+      "personal_info": {
+        "class_year": "2027",
+        "major": "Computer Science and Economics",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's degree",
+          "field_of_study": "Computer Science and Economics",
+          "start_date": "2023",
+          "end_date": "2027 (expected)"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Director of Professional Development",
+          "organization": "Harvard Computer Society",
+          "start_date": "2023",
+          "end_date": "Present"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Harvard Summer School at Doshisha University",
+          "location": "Kyoto, Japan",
+          "date": "Summer 2024",
+          "description": "Participated in a summer program at Doshisha University in Kyoto, Japan."
+        }
+      ],
+      "awards": [
+        {
+          "name": "Reischauer Institute and Asia Center grant",
+          "organization": "Edwin O. Reischauer Institute of Japanese Studies",
+          "date": "2024"
+        }
+      ],
+      "skills": [
+        "Computer Science",
+        "Economics",
+        "Professional Development"
+      ],
+      "languages": [
+        "English"
+      ],
+      "interests": [
+        "Japanese culture and language",
+        "Computer Science",
+        "Economics"
+      ],
+      "id": "427f5199-98bc-4baa-abc5-1ca6e6b524a1"
+    },
+    {
+      "name": "Tomas Gonzalez",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Master of Public Policy",
+          "year": "2022"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Guest Blogger",
+          "organization": "Building State Capability at Harvard University",
+          "description": "Wrote about implementing public policy and problem-driven iterative adaptation (PDIA) in Oaxaca, Mexico"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Improving Public Finance Capabilities in Oaxaca, Mexico",
+          "description": "Worked on addressing financial responsibility issues in the public budget of Oaxaca using the PDIA approach",
+          "duration": "5 months"
+        }
+      ],
+      "publications": [
+        {
+          "title": "Adopting PDIA to Create Better Capabilities in the Public Finance of Oaxaca, Mexico",
+          "url": "https://bsc.hks.harvard.edu/2023/06/15/adopting-pdia-to-create-better-capabilities-in-the-public-finance-of-oaxaca-mexico/"
+        }
+      ],
+      "skills": [
+        "Problem-Driven Iterative Adaptation (PDIA)",
+        "Public Policy Implementation",
+        "Public Finance",
+        "Government Relations"
+      ],
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "id": "e2f74d41-61fa-40d3-8ddf-5b0100596f46"
+    },
+    {
+      "name": "Michel Arab",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone_number": "ask_the_required_format_number",
+        "email": "marab@college.harvard.edu"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Undergraduate",
+          "field_of_study": "Computer Science",
+          "start_date": "2020",
+          "end_date": "Present"
+        }
+      ],
+      "research_experience": [
+        {
+          "position": "Undergraduate Researcher",
+          "supervisor": "Prof. Nada Amin",
+          "department": "Computer Science",
+          "institution": "Harvard University",
+          "start_date": "Summer 2024",
+          "end_date": "Present",
+          "description": "Conducting research under the supervision of Prof. Nada Amin in the field of programming languages and software engineering."
+        }
+      ],
+      "projects": [],
+      "publications": [],
+      "awards": [],
+      "skills": [
+        "Programming",
+        "Research"
+      ],
+      "languages": [
+        "English",
+        "Arabic"
+      ],
+      "id": "a44d2953-ecab-4576-992f-e129ce058c9c"
+    },
+    {
+      "name": "Wilson Cheung",
+      "university": "Harvard University",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "degree": "Masters of Public Health",
+          "institution": "Harvard University"
+        },
+        {
+          "degree": "MD",
+          "institution": "University of British Columbia"
+        }
+      ],
+      "current_position": {
+        "title": "Full Professor of Medicine and Oncology",
+        "institution": "University of Calgary",
+        "role": "Director of the Oncology Outcomes (O2) Research Program"
+      },
+      "specialization": [
+        "Medical oncology",
+        "Health services and outcomes research",
+        "Real-world data and evidence generation"
+      ],
+      "clinical_expertise": "Management of gastrointestinal malignancies",
+      "research_interests": [
+        "Understanding factors driving real-world practice patterns in cancer care",
+        "Improving processes to better inform care",
+        "Ensuring appropriate access and delivery of cancer care"
+      ],
+      "achievements": [
+        "Published over 300 peer-reviewed scientific articles",
+        "Secured 20+ million dollars in grant funding"
+      ],
+      "awards": [
+        "National Cancer Institute of Canada Dorothy Lamont Award",
+        "Novartis Oncology Young Canadian Investigator Mentor Award",
+        "Multinational Association of Supportive Care in Cancer Investigator Award",
+        "Several merit awards from the American Society of Clinical Oncology"
+      ],
+      "professional_memberships": [
+        "Fellow of the Royal College of Physicians of Canada (FRCPC)"
+      ],
+      "id": "7001a2d7-fcc4-49d8-9c00-54280e18677b"
+    },
+    {
+      "personalInfo": {
+        "name": "Mahdi Nassereddine",
+        "location": "Cambridge, MA",
+        "education": {
+          "university": "Harvard University",
+          "degree": "Bachelor of Arts",
+          "major": "Computer Science",
+          "minor": "Mathematics",
+          "expectedGraduation": "May 2028",
+          "gpa": 3.92
+        },
+        "phoneNumber": "ask_the_required_format_number"
+      },
+      "experience": [
+        {
+          "position": "AI Research Intern",
+          "organization": "Harvard Medical School",
+          "location": "Cambridge, MA",
+          "duration": "November 2024 - Present"
+        },
+        {
+          "position": "Researcher",
+          "organization": "Harvard Quantum Computing Association & qBraid",
+          "location": "Cambridge, MA",
+          "duration": "October 2024 - Present"
+        },
+        {
+          "position": "Software Mentor",
+          "organization": "FIRST Robotics Competition",
+          "location": "Dearborn Heights, MI",
+          "duration": "August 2020 - Present"
+        },
+        {
+          "position": "Researcher",
+          "organization": "NASA GLOBE Research Program",
+          "location": "Dearborn Heights, MI",
+          "duration": "September 2022 - April 2024"
+        },
+        {
+          "position": "President",
+          "organization": "Michigan Robotics Youth Advisory Council",
+          "location": "Dearborn Heights, MI",
+          "duration": "August 2023 - August 2024",
+          "responsibilities": [
+            "Collaborated with the president of FIRST in Michigan to initiate a state-wide youth advisory council",
+            "Worked with school districts around Michigan to initiate new robotics teams",
+            "Organized 200+ person Zoom call with new FIRST in Michigan sponsor, Altair"
+          ]
+        },
+        {
+          "position": "President",
+          "organization": "FIRST Robotics Competition Team",
+          "location": "Dearborn Heights, MI",
+          "duration": "August 2020 - May 2024"
+        }
+      ],
+      "projects": [
+        {
+          "name": "UV Radiation Analysis",
+          "description": "Published a research project analyzing UV radiation, cloud coverage, surface temperature, and other factors using an Arduino-based device",
+          "outcome": "Won 4/4 stars"
+        }
+      ],
+      "skills": [
+        "Python",
+        "Flask",
+        "SQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Arduino",
+        "Artificial Intelligence",
+        "Automation",
+        "Robotics Design and Production",
+        "Linear Algebra",
+        "Differential Equations",
+        "Numerical Analysis",
+        "Research Skills"
+      ],
+      "awards": [
+        "FIRST Dean's List Award",
+        "Chairman's Award (highest award given to FRC teams)",
+        "Winner of MITES Engineering and Design robotics competition",
+        "Coca-Cola Scholar Semifinalist (2024)"
+      ],
+      "achievements": [
+        "Led robotics team to World Championships",
+        "Oversaw fundraising of $60k/year for robotics team",
+        "Published research paper on UV radiation through the GLOBE Program",
+        "Completed 5 college-level courses in high school",
+        "Won 1st place in Engineering and Design Symposium robotics tournament"
+      ],
+      "volunteerWork": [
+        {
+          "role": "Secretary of Tutoring",
+          "organization": "National Honor Society",
+          "responsibilities": [
+            "Organized and gathered volunteers for daily tutoring at 5 schools throughout the year",
+            "In charge of the district's largest event, managing 50+ volunteers"
+          ]
+        },
+        {
+          "description": "Worked with a student with autism to build a Lego Sumo Bot and compete at Unified Tournament",
+          "outcome": "Student won 1st place and the Inclusion Award"
+        }
+      ],
+      "interests": [
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Quantum Computing",
+        "Robotics",
+        "Mathematics",
+        "Physics"
+      ],
+      "id": "74c97f5f-f35a-4791-93bd-90d60ac08443"
+    },
+    {
+      "name": "Nathaniel Misha Amshen",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's",
+          "major": "Mathematics and Computer Science",
+          "startDate": "August 2023",
+          "endDate": "May 2027 (expected)"
+        }
+      ],
+      "location": [
+        "Cambridge, MA",
+        "New York City, NY"
+      ],
+      "projects": [
+        {
+          "name": "Robin50",
+          "description": "A front-end implementation of a stock portfolio and research website",
+          "technologies": [
+            "CSS",
+            "HTML",
+            "JSON",
+            "JavaScript",
+            "TypeScript"
+          ],
+          "type": "Node.js-Based React.js-based Website",
+          "details": "Robin50 is a comprehensive stock portfolio and research website. It leverages modern web technologies to provide users with an intuitive interface for managing their stock portfolios and conducting in-depth market research. The project demonstrates Nathaniel's proficiency in front-end development and his ability to work with financial data and APIs."
+        }
+      ],
+      "skills": [
+        "Front-end Development",
+        "React.js",
+        "Node.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "JSON",
+        "Financial Data Analysis",
+        "API Integration"
+      ],
+      "achievements": [
+        "Developed Robin50, a sophisticated stock portfolio and research website, showcasing skills in front-end development and financial technology"
+      ],
+      "id": "506331c8-7797-41f1-86ab-f688c2dea222"
+    },
+    {
+      "name": "Michelle Wu",
+      "phoneNumber": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor of Arts",
+          "field": "Economics",
+          "year": 2007
+        },
+        {
+          "institution": "Harvard Law School",
+          "degree": "Juris Doctor",
+          "year": 2012
+        }
+      ],
+      "currentPosition": {
+        "title": "Mayor of Boston",
+        "startYear": 2021
+      },
+      "politicalAffiliation": "Democratic Party",
+      "previousPositions": [
+        {
+          "title": "Boston City Councilor",
+          "years": "2014-2021"
+        },
+        {
+          "title": "President of Boston City Council",
+          "years": "2016-2018"
+        }
+      ],
+      "achievements": [
+        "First woman and person of color elected as Mayor of Boston",
+        "First Asian American woman to serve on the Boston City Council",
+        "Youngest person elected as Mayor of Boston in nearly a century"
+      ],
+      "notableWork": [
+        {
+          "title": "Ordinance preventing city from contracting with health insurers discriminating against transgender individuals",
+          "year": 2014
+        },
+        {
+          "title": "Ordinances on wetland protection, climate change adaptation, and plastic bag ban",
+          "description": "Authored while serving on Boston City Council"
+        },
+        {
+          "title": "Municipal Green New Deal",
+          "description": "Advocated for as Mayor of Boston"
+        },
+        {
+          "title": "Fare-free public transportation pilot program",
+          "description": "Expanded program to three MBTA bus routes"
+        }
+      ],
+      "recognition": [
+        {
+          "award": "Gold House honoree",
+          "year": 2022,
+          "description": "Recognized for impact in advocacy and policy"
+        },
+        {
+          "award": "Time100 Next",
+          "year": 2022,
+          "description": "Listed as an emerging leader"
+        },
+        {
+          "award": "Catalyst for Justice Award",
+          "organization": "Massachusetts Public Health Association",
+          "year": 2022
+        },
+        {
+          "award": "Voice of Change Award",
+          "organization": "Boston Bar Association",
+          "year": 2023
+        },
+        {
+          "award": "Champion Award",
+          "organization": "Boston Arts Academy Foundation",
+          "year": 2023
+        }
+      ],
+      "personalBackground": {
+        "birthDate": "January 14, 1985",
+        "birthPlace": "Chicago, Illinois",
+        "parents": {
+          "father": "Han Wu",
+          "mother": "Yu-Min Wu"
+        },
+        "ethnicity": "Taiwanese American",
+        "languages": [
+          "English",
+          "Mandarin Chinese"
+        ]
+      },
+      "familyLife": {
+        "spouse": "Conor Pewarski",
+        "marriageYear": 2012,
+        "children": 2
+      },
+      "publications": [
+        {
+          "title": "72-page report on Boston Planning & Development Agency reform",
+          "year": 2019
+        }
+      ],
+      "speakingEngagements": [
+        {
+          "event": "Harvard College Class Day",
+          "role": "Speaker",
+          "year": 2022
+        }
+      ],
+      "id": "e6888add-4d04-4c02-b597-9255403c1b2e"
+    },
+    {
+      "name": "Raheel Sayeed",
+      "title": "Research Associate in Biomedical Informatics",
+      "affiliation": "Harvard Medical School",
+      "phone": "ask_the_required_format_number",
+      "email": "raheel_sayeed@meei.harvard.edu",
+      "education": [
+        {
+          "degree": "MB, BS",
+          "institution": "Unknown",
+          "country": "India"
+        },
+        {
+          "degree": "Post-doctoral fellowship",
+          "institution": "Computational Health Informatics Program, Boston Children's Hospital",
+          "country": "USA"
+        }
+      ],
+      "research_interests": [
+        "Personalized health information technologies",
+        "Clinical decision making",
+        "Patient-generated health data (PGHD)",
+        "Interoperable health standards"
+      ],
+      "projects": [
+        {
+          "name": "SMART Markers framework",
+          "description": "Designed and developed a framework that integrates patient-generated health data with routine care using interoperable health standards.",
+          "technologies": [
+            "HL7 FHIR",
+            "Argonaut",
+            "SMART Health IT"
+          ]
+        },
+        {
+          "name": "People Heart Study",
+          "description": "A digital mHealth research initiative to understand people's access to their own health data and its impact on shared decision-making with doctors.",
+          "technologies": [
+            "FHIR"
+          ]
+        }
+      ],
+      "publications": [
+        {
+          "title": "Unknown",
+          "journal": "J Am Med Inform Assoc",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/"
+        },
+        {
+          "title": "Unknown",
+          "journal": "NPJ Digit Med",
+          "link": "https://pubmed.ncbi.nlm.nih.gov/"
+        }
+      ],
+      "contributions": [
+        "Contributing to open health standards such as HL7 FHIR, Argonaut, and SMART Health IT"
+      ],
+      "leadership": [
+        "Leads the People Heart Study with Isaac Kohane"
+      ],
+      "id": "992bdaef-332e-4729-b2b0-a72b7ad90bdb"
+    },
+    {
+      "personal_info": {
+        "name": "Riya Sikand",
+        "university": "Harvard University",
+        "class_year": "2028",
+        "major": "Computer Science, Biology, and Government",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "academic_achievements": [
+        "New Jersey Governor's School Scholar",
+        "World Science Scholar",
+        "Regeneron ISEF Finalist (2021)",
+        "Valedictorian, Ranney School Class of 2024"
+      ],
+      "leadership_roles": [
+        "Northeast Policy Researcher at Dear Asian Youth",
+        "Civic Innovation Fellow at Civics Unplugged",
+        "Teen Leader at New-York Historical Society",
+        "Founder of Girls Explore Math and Technology",
+        "AI4ALL Changemaker",
+        "Inspirit AI Leadership Fellow"
+      ],
+      "research_projects": [
+        {
+          "title": "Machine Learning Algorithm for Pothole Recognition",
+          "description": "Developed an algorithm to recognize potholes in images, presented at 2021 Regeneron ISEF",
+          "year": 2021
+        },
+        {
+          "title": "AI Classification of Leukemia Subtypes",
+          "description": "Used artificial intelligence to classify leukemia subtypes"
+        }
+      ],
+      "publications": [
+        {
+          "title": "Prmt-1 and P120-catenin as emt mediators in osimertinib resistance in nsclc",
+          "authors": "KS Racherla, K Dovalovsky, M Patel, E Harper, J Barnard, R Sikand",
+          "journal": "Cancers",
+          "year": 2023,
+          "citations": 3,
+          "link": "https://scholar.google.com/citations?user=H_zjIlgAAAAJ&hl=en"
+        },
+        {
+          "title": "Application of Nanoimprint Lithography to Conducting Polymers for Infrared Photonics",
+          "authors": "R Sikand, D Man, M Oliveira, N Guntupalli, Y Wykoff, H Pacheco",
+          "conference": "2023 IEEE MIT Undergradute Research Technology Conference (URTC)",
+          "year": 2024,
+          "link": "https://scholar.google.com/citations?user=H_zjIlgAAAAJ&hl=en"
+        }
+      ],
+      "awards": [
+        "Faculty Prize, Ranney School",
+        "History Award, Ranney School",
+        "Spanish Award, Ranney School",
+        "Honorable Mention, Harvard Model Congress (Senate Judiciary Committee)"
+      ],
+      "extracurricular_activities": [
+        "Harvard Undergraduate Biotechnology Club",
+        "Harvard Undergraduate Foreign Policy Initiative",
+        "Asian American Dance Troupe",
+        "IOP Policy Program",
+        "The Crimson Sports",
+        "Junior Staffer, Senate Select Committee on Intelligence at Harvard Model Congress"
+      ],
+      "high_school": {
+        "name": "Ranney School",
+        "graduation_year": 2024,
+        "activities": [
+          "Co-founder of Ranney Computer Science Club",
+          "Active participant in Ranney Girls in STEM club",
+          "Model Congress Club leader"
+        ]
+      },
+      "id": "fd3df45e-ebfe-4f1c-bd9b-81555e37c97a"
+    },
+    {
+      "name": "Kate Vandermel",
+      "university": "Harvard University",
+      "class_year": "2025",
+      "phone_number": "ask_the_required_format_number",
+      "personal_info": {
+        "interests": [
+          "Music",
+          "Theater",
+          "Performing Arts"
+        ]
+      },
+      "academic_info": {
+        "major": "Undeclared",
+        "expected_graduation": 2025
+      },
+      "performances": [
+        {
+          "event": "ARTS FIRST Performance Fair",
+          "date": "April 29, 2023",
+          "description": "Classical, jazz and pop vocals performance",
+          "location": "1350 Mass Ave, Cambridge MA 02138"
+        },
+        {
+          "event": "ARTS FIRST Performance Fair",
+          "date": "April 27, 2024",
+          "description": "Original jazz-folk crossover songs",
+          "location": "Cambridge, MA 02138"
+        }
+      ],
+      "theater_experience": [
+        {
+          "production": "The Milk Made",
+          "role": "Lead Role",
+          "company": "Harvard-Radcliffe Gilbert and Sullivan Players",
+          "date": "March 24-27, 2022",
+          "description": "Played the lead role in an adaptation of Arthur Sullivan's operetta 'The Mikado', rewritten to eliminate racism and promote inclusivity"
+        },
+        {
+          "production": "Legally Blonde",
+          "role": "Elle's Mom/Store Manager (Courtney, Take Your Break)/Judge",
+          "company": "Harvard-Radcliffe Dramatic Club",
+          "date": "Fall 2023"
+        }
+      ],
+      "musical_background": {
+        "vocal_experience": [
+          "Classical",
+          "Jazz",
+          "Pop",
+          "Musical Theater"
+        ],
+        "songwriting": "Creates original jazz-folk crossover songs"
+      },
+      "achievements": [
+        {
+          "title": "Great Composers Competition Series Participant",
+          "description": "Performed at venues including Carnegie Hall, Lincoln Center, the Kaufman Music Center, Greenfield Hall, Alice Tully Hall, and the National Opera Center"
+        }
+      ],
+      "community_involvement": {
+        "organizations": [
+          "Harvard-Radcliffe Gilbert and Sullivan Players",
+          "Harvard-Radcliffe Dramatic Club"
+        ]
+      },
+      "id": "deadc0e2-7000-496d-a6c7-3dd7ca8356d7"
+    },
+    {
+      "name": "Carl Scandelius",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone_number": "ask_the_required_format_number",
+        "current_role": "BSc student"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "BSc",
+          "field": "Philosophy",
+          "status": "Current"
+        },
+        {
+          "institution": "Eton College",
+          "degree": "High School",
+          "status": "Completed"
+        }
+      ],
+      "research_interests": [
+        "Philosophy",
+        "Psychology",
+        "Logic",
+        "Linguistics"
+      ],
+      "projects": [
+        {
+          "title": "Constraining Conceptual Relativism",
+          "description": "Research on the assertion of standardisation on conceptual schemes, discussing constraining relativism to allow benefits of both realism and relativism.",
+          "institution": "CCIR Academy"
+        }
+      ],
+      "publications": [
+        {
+          "title": "Reconciling Variable Objective Truths",
+          "conference": "SOPhiA 2025",
+          "date": "September 6, 2025",
+          "link": "https://sophia-conference.org/2023/07/17/reconciling-variable-objective-truths/"
+        }
+      ],
+      "achievements": [
+        "Finalist in the 30th International Philosophy Olympiad (IPO)",
+        "Placed in Top 7 in the UK at the National Finals of the Goethe Institute IDO (German Language Olympiad)",
+        "First-ever two-time winner of the Ibn Battuta Prize"
+      ],
+      "experience": [
+        {
+          "position": "Visiting Researcher",
+          "institution": "EML Munich",
+          "status": "Completed"
+        }
+      ],
+      "skills": [
+        "Philosophy",
+        "Research",
+        "Critical Thinking",
+        "Writing",
+        "Linguistics"
+      ],
+      "id": "28bd3a10-2c61-4f11-a165-2b363f278641"
+    },
+    {
+      "name": "Shaurya Jeloka",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone": "ask_the_required_format_number",
+        "email": "sjeloka@college.harvard.edu"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "A.B. candidate",
+          "major": "Computer Science and Applied Mathematics",
+          "expected_graduation": 2025
+        }
+      ],
+      "research": [
+        {
+          "title": "Governance at a Crossroads: Artificial Intelligence and the Future of Innovation in America",
+          "authors": [
+            "Yam Atir",
+            "Shaurya Jeloka",
+            "Brian Zhou"
+          ],
+          "institution": "Harvard University - Harvard Kennedy School (HKS)",
+          "date": "February 10, 2025",
+          "abstract": "This paper explores the potential of dynamic, collaborative public-private governance to foster safe innovation in AI. Drawing from primary research, including interviews with tech industry leaders, U.S. Members of Congress, and staff, and an analysis of 150 AI-related bills introduced by the 118th U.S. Congress, this work identifies emerging areas of alignment between policymakers and industry stakeholders. It proposes a Dynamic Governance Model that brings government and industry together while combining the foresight of ex-ante measures with the adaptability needed to address technological advancements.",
+          "link": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5131048"
+        }
+      ],
+      "projects": [
+        {
+          "name": "ComputeZero",
+          "description": "A cloud compute recommendation tool designed to help users select the best cloud provider for their needs",
+          "course": "CS50: Introduction to Computer Science",
+          "semester": "Fall 2024"
+        }
+      ],
+      "skills": [
+        "Intelligent algorithms",
+        "AI governance",
+        "Cloud computing",
+        "Data analysis",
+        "Research methodology"
+      ],
+      "interests": [
+        "Artificial Intelligence",
+        "Public policy",
+        "Technology governance",
+        "Innovation"
+      ],
+      "id": "4f6dc84a-dbd7-4510-8213-f0730dc5d7a5"
+    },
+    {
+      "name": "Yahya Handulle",
+      "university": "Harvard University",
+      "class_year": "2027",
+      "concentration": "Computer Science",
+      "secondary": "Economics",
+      "house": "Quincy House",
+      "phone_number": "ask_the_required_format_number",
+      "hometown": "London, England",
+      "personal_info": {
+        "interests": [
+          "Technology",
+          "Food from different cultures",
+          "Video games"
+        ]
+      },
+      "leadership_roles": [
+        {
+          "organization": "Harvard Black Men's Forum",
+          "position": "Secretary"
+        },
+        {
+          "organization": "First-Year International Program (FIP)",
+          "position": "Leader"
+        }
+      ],
+      "extracurricular_activities": [
+        {
+          "organization": "Phillips Brooks House Association (PBHA)",
+          "role": "Volunteer"
+        },
+        {
+          "organization": "Institute of Politics",
+          "role": "Event Attendee"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Progressions Trims",
+          "description": "A website for a London barber shop",
+          "technologies": [
+            "CSS",
+            "HTML",
+            "JavaScript",
+            "Python",
+            "SQL"
+          ],
+          "type": "Python-Based Website"
+        }
+      ],
+      "work_experience": [
+        {
+          "company": "diiVe",
+          "position": "Consulting Intern",
+          "location": "London, GB"
+        }
+      ],
+      "skills": [
+        "Web Development",
+        "Python",
+        "SQL",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "additional_info": [
+        "Born and raised in London",
+        "Enjoys visiting restaurants alone to immerse in culinary experiences",
+        "Appreciates the bustling energy of Boston, which reminds him of London",
+        "Often found in his dorm room taking naps or playing PlayStation"
+      ],
+      "id": "2df02c59-2811-47e0-90bf-cfcb2c13fdd0"
+    },
+    {
+      "name": "Himal Bamzai-Wokhlu",
+      "university": "Harvard University",
+      "class_year": 2027,
+      "major": "Statistics and Economics",
+      "phone": "ask_the_required_format_number",
+      "email": "hbamzaiwokhlu@college.harvard.edu",
+      "location": "Cambridge, Massachusetts, United States",
+      "positions": [
+        {
+          "title": "Co-President",
+          "organization": "Charles River Economics Labs",
+          "description": "Himal is a sophomore from Florida studying Statistics and Economics. Previously, she has worked on machine learning and natural-language processing research, and she is interested in applying these methodologies to economics."
+        },
+        {
+          "title": "Co-Director of Research",
+          "organization": "Charles River Economics Labs"
+        }
+      ],
+      "research_experience": [
+        {
+          "title": "Machine Learning for COVID-19 Detection",
+          "description": "Developed a COVID-19 detection model using deep convolutional neural networks (DCNNs) on chest x-ray images. The model achieved 82.0% sensitivity, 96.5% specificity, 81.5% F-score, and 94.5% accuracy.",
+          "techniques": [
+            "Data augmentation",
+            "Transfer learning",
+            "ResNet18 architecture"
+          ],
+          "awards": [
+            "Air Force Research Laboratory First Award of $750",
+            "Air Force Research Laboratory Glass trophy and USAF medal"
+          ],
+          "link": "https://abstracts.societyforscience.org/Home/FullAbstract?Category=Any+Category&AllAbstracts=True&FairCountry=Any+Country&FairState=Any+State&ProjectId=22076"
+        }
+      ],
+      "projects": [
+        {
+          "name": "Cards Against Humor",
+          "description": "A Cards Against Humanity game that rates how funny you are",
+          "technologies": [
+            "CSS",
+            "HTML",
+            "Python",
+            "SQL"
+          ],
+          "type": "Python-Based Website",
+          "link": "https://cs50.harvard.edu/college/2023/fall/"
+        }
+      ],
+      "coursework": [
+        {
+          "course": "CS50: Introduction to Computer Science",
+          "description": "Completed Harvard's introductory computer science course, which covers topics such as abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web programming."
+        },
+        {
+          "course": "Gen Ed 1068: The United States and China",
+          "description": "Participated in a course with strict engagement policies, including laptop bans, graded attendance, and frequent cold-calling."
+        }
+      ],
+      "skills": [
+        "Machine Learning",
+        "Natural Language Processing",
+        "Python",
+        "SQL",
+        "HTML",
+        "CSS",
+        "Data Analysis",
+        "Research"
+      ],
+      "interests": [
+        "Applying machine learning and NLP methodologies to economics",
+        "Pilates",
+        "Playing poker"
+      ],
+      "publications": [
+        {
+          "title": "Machine Learning Algorithm for COVID-19 Detection from Chest X-Rays",
+          "year": 2022,
+          "type": "Research Abstract",
+          "venue": "International Science and Engineering Fair (ISEF)",
+          "link": "https://abstracts.societyforscience.org/Home/FullAbstract?Category=Any+Category&AllAbstracts=True&FairCountry=Any+Country&FairState=Any+State&ProjectId=22076"
+        }
+      ],
+      "youtube_channel": {
+        "name": "Himal Bamzai-Wokhlu",
+        "url": "https://www.youtube.com/@himalbamzai-wokhlu2065/videos",
+        "subscribers": 17,
+        "videos": 15
+      },
+      "id": "c3aff495-00bc-418c-9e0d-3221fd882132"
+    },
+    {
+      "personal_info": {
+        "name": "Bright Liu",
+        "university": "Harvard University",
+        "class_year": 2026,
+        "house": "Mather",
+        "email": "brightliu@college.harvard.edu",
+        "linkedin": "www.linkedin.com/in/bright-liu-ma",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "education": {
+        "degree": "Bachelor's in Mathematics and Computer Science",
+        "planned_master": "Statistics"
+      },
+      "research_experience": [
+        {
+          "field": "Astrophysics",
+          "location": "Copenhagen"
+        },
+        {
+          "field": "Medical AI",
+          "institution": "Massachusetts General Hospital"
+        }
+      ],
+      "interests": [
+        "Machine Learning",
+        "Medical AI",
+        "Algorithms",
+        "Systems",
+        "Quant Finance",
+        "AI/Statistics Theory and Applications",
+        "Startups"
+      ],
+      "courses_taken": [
+        "CS 61",
+        "CS 124",
+        "CS 128",
+        "MIT 6.S898",
+        "Stat 110",
+        "Stat 111",
+        "Stat 210",
+        "Stat 212",
+        "Math 55"
+      ],
+      "extracurricular_activities": [
+        "Peer Concentration Advisor for Computer Science"
+      ],
+      "skills": [
+        "Machine Learning",
+        "Data Analysis",
+        "Programming",
+        "Mathematics",
+        "Statistics"
+      ],
+      "personal_interests": [
+        "Reading",
+        "Socializing",
+        "Karaoke",
+        "Guitar",
+        "Workouts",
+        "Hiking",
+        "Meditation",
+        "Journaling",
+        "Stargazing"
+      ],
+      "career_goals": [
+        "Pursuing a career in quant finance",
+        "Exploring AI/statistics applications",
+        "Considering entrepreneurship",
+        "Potential graduate school"
+      ],
+      "additional_info": {
+        "tags": [
+          "Research",
+          "Internships",
+          "AB/SM",
+          "Study Abroad",
+          "Joint Concentration"
+        ]
+      },
+      "id": "1f916782-ed73-4bf8-93ff-2c320b8cafeb"
+    },
+    {
+      "name": "Agastya Sridharan",
+      "university": "Harvard University",
+      "class_year": "Freshman",
+      "phone_number": "ask_the_required_format_number",
+      "academic_interests": [
+        "Computational Biology",
+        "Economics",
+        "Artificial Intelligence"
+      ],
+      "achievements": [
+        {
+          "title": "2nd Place Nationally in Lincoln-Douglas Debate",
+          "details": "Ranked 2nd nationally in Lincoln-Douglas debate"
+        },
+        {
+          "title": "Nationals Tournament Champion",
+          "details": "Won the Nationals tournament in Lincoln-Douglas debate"
+        },
+        {
+          "title": "Harvard Invitational",
+          "details": "Won or received first speaker awards twice"
+        },
+        {
+          "title": "Harvard Round Robin Finalist",
+          "details": "Reached finals of the Harvard Round Robin in Lincoln-Douglas debate"
+        },
+        {
+          "title": "Stanford Invitational",
+          "details": "Won or received first speaker award"
+        },
+        {
+          "title": "Duke Invitational",
+          "details": "Won or received first speaker award"
+        },
+        {
+          "title": "Regeneron ISEF",
+          "details": "Received 2nd Grand Award"
+        },
+        {
+          "title": "Air Force Research Laboratory Award",
+          "details": "Received special award from the Air Force at Regeneron ISEF"
+        },
+        {
+          "title": "National Security Agency Research Directorate Award",
+          "details": "Received Second Place Award for 'Principles of Security and Privacy' at Regeneron ISEF"
+        }
+      ],
+      "experience": [
+        {
+          "title": "Humanities Tutor",
+          "organization": "Hamilton Education",
+          "details": "Tutored students in debate and STEM fields"
+        },
+        {
+          "title": "Board Member",
+          "organization": "PepTalk Debate",
+          "details": "Mentored 100+ disadvantaged students"
+        },
+        {
+          "title": "Co-founder",
+          "organization": "YouthStem",
+          "details": "Provided popular hands-on videos with science experiments and analysis"
+        },
+        {
+          "title": "Instructor",
+          "organization": "BreakDebate",
+          "details": "Training the next generation of debaters in developing creative, novel strategies"
+        }
+      ],
+      "projects": [
+        {
+          "title": "Mesh Neural Network (MNN)",
+          "description": "Created a novel class of neural networks modeled after the visual cortex, incorporating recursive feedback mechanisms. Tested on MNIST database with a trainset of just 100 digits, achieving 91% test set accuracy.",
+          "link": "https://abstracts.societyforscience.org/Home/FullAbstract?Category=Any+Category&AllAbstracts=True&FairCountry=Any+Country&FairState=Any+State&ProjectId=24058"
+        },
+        {
+          "title": "Joke Dad-abase",
+          "description": "A website to rate and provide feedback on dad jokes, built using CSS, HTML, JavaScript, and Python.",
+          "link": "https://cs50.harvard.edu/college/2024/fall/"
+        },
+        {
+          "title": "Automated News Bias Classifier",
+          "description": "Developed using Caenorhabditis Elegans inspired recursive feedback network architecture.",
+          "link": "https://arxiv.org/abs/2207.12724"
+        }
+      ],
+      "publications": [
+        {
+          "title": "An Automated News Bias Classifier Using Caenorhabditis Elegans Inspired Recursive Feedback Network Architecture",
+          "authors": "A Sridharan",
+          "journal": "arXiv preprint",
+          "year": 2022,
+          "link": "https://arxiv.org/abs/2207.12724"
+        }
+      ],
+      "skills": [
+        "Debate",
+        "Public Speaking",
+        "AI Research",
+        "Machine Learning",
+        "Neural Networks",
+        "Python",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "extracurricular": [
+        {
+          "activity": "Carnatic Flute",
+          "details": "Practices Carnatic flute as a hobby"
+        },
+        {
+          "activity": "Hiking",
+          "details": "Enjoys going on impromptu hikes"
+        },
+        {
+          "activity": "Badminton",
+          "details": "Plays badminton"
+        }
+      ],
+      "leadership": [
+        {
+          "title": "Deputy Director of Private Policy",
+          "organization": "Harvard Undergraduate Foreign Policy Initiative"
+        }
+      ],
+      "id": "67346f0c-637b-4f12-8579-e8dc1bd63f5b"
+    },
+    {
+      "name": "Benjamin Rothman",
+      "university": "Harvard University",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "degree": "B.A.",
+          "institution": "Harvard University",
+          "field": "Psychology",
+          "honors": "Magna Cum Laude, Phi Beta Kappa",
+          "year": 1990
+        },
+        {
+          "degree": "M.A.",
+          "institution": "University of California, Los Angeles",
+          "field": "Social Psychology",
+          "year": 1992
+        }
+      ],
+      "experience": [
+        {
+          "position": "Professor",
+          "institution": "University of California, Los Angeles",
+          "department": "Department of Psychology"
+        }
+      ],
+      "research_interests": [
+        "Social Psychology",
+        "Interpersonal Relationships",
+        "Marriage and Family"
+      ],
+      "publications": [
+        {
+          "title": "Longitudinal associations between relationship maintenance behaviors and marital satisfaction in long-term marriage",
+          "journal": "Journal of Family Psychology",
+          "year": 2020,
+          "link": "https://psycnet.apa.org/record/2020-13951-001"
+        }
+      ],
+      "awards": [
+        "Phi Beta Kappa"
+      ],
+      "professional_memberships": [
+        "American Psychological Association",
+        "Society for Personality and Social Psychology"
+      ],
+      "id": "444b890a-7b02-4f38-94ea-c2ea8b6bc530"
+    },
+    {
+      "name": "Waseem Ahmad",
+      "phone": "ask_the_required_format_number",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Data Science Professional Certificate",
+          "year": "2020"
+        },
+        {
+          "institution": "University of Cambridge",
+          "degree": "Applied Corporate Finance Certificate",
+          "year": null
+        }
+      ],
+      "experience": [
+        {
+          "title": "Gastroenterologist",
+          "organization": "University of California, San Francisco",
+          "startDate": "2022",
+          "endDate": "Present",
+          "description": "Cares for patients with digestive conditions and symptoms. Performs diagnostic procedures including colonoscopy and esophagogastroduodenoscopy (EGD)."
+        },
+        {
+          "title": "Gastroenterology Fellow",
+          "organization": "University of California, San Diego",
+          "startDate": "2019",
+          "endDate": "2022",
+          "description": "Completed fellowship training in gastroenterology. Served as chief fellow."
+        }
+      ],
+      "skills": [
+        "Gastroenterology",
+        "Colonoscopy",
+        "Endoscopy",
+        "Data Science",
+        "Corporate Finance"
+      ],
+      "certifications": [
+        {
+          "name": "Board Certified in Gastroenterology",
+          "issuer": "American Board of Internal Medicine",
+          "year": null
+        }
+      ],
+      "publications": [
+        {
+          "title": "CS50x Completion Certificate",
+          "issuer": "Harvard University",
+          "year": "2020",
+          "url": "https://certificates.cs50.io/2212ea31-55e1-4439-bcf6-91b16bf91b7a"
+        }
+      ],
+      "projects": [
+        {
+          "name": "CS50x Final Project",
+          "description": "Completed nine problem sets and one final project as part of Harvard's CS50x online course",
+          "year": "2020"
+        }
+      ],
+      "id": "13870542-7b96-4496-b0dc-51bb1dc7511e"
+    },
+    {
+      "name": "Heather Park",
+      "university": "Harvard University",
+      "personal_info": {
+        "email": "h***@fas.harvard.edu",
+        "phone": "ask_the_required_format_number",
+        "location": "Cambridge, Massachusetts"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor's Degree",
+          "field_of_study": "Unspecified",
+          "year": "Current student"
+        }
+      ],
+      "experience": [
+        {
+          "title": "President",
+          "organization": "Harvard Association for U.S.-China Relations (HAUSCR)",
+          "duration": "2023-present",
+          "description": "Leads the organization dedicated to promoting exchange of ideas and opportunities between students from Harvard University and China. Organizes cross-cultural exchange programs in Harvard, Beijing, and Shanghai."
+        },
+        {
+          "title": "Staff Writer",
+          "organization": "Harvard Undergraduate Law Review",
+          "duration": "2023-present"
+        },
+        {
+          "title": "Director, Programs",
+          "organization": "Harvard Model Congress Middle East",
+          "duration": "2023-present"
+        },
+        {
+          "title": "President",
+          "organization": "Harvard Undergraduate Taiwanese Cultural Society",
+          "duration": "2023-present"
+        },
+        {
+          "title": "Strategy and Business Development Intern",
+          "organization": "Corning",
+          "duration": "2023"
+        }
+      ],
+      "leadership": [
+        {
+          "title": "Co-Founder",
+          "organization": "Harvard Undergraduate Pole Dancing Club (HUPDC)",
+          "year_founded": "2021"
+        }
+      ],
+      "activities": [
+        "Writes for the Harvard Undergraduate Law Review",
+        "Covers sports for the Harvard Crimson",
+        "Teaches civics classes to middle schoolers in the Boston area"
+      ],
+      "projects": [
+        {
+          "name": "HAUSCR Summit for Young Leaders in China (HSYLC)",
+          "description": "A week-long program of exploration and development for Chinese high-school students conducted by Harvard undergraduates, faculty, and prominent leaders from both nations."
+        },
+        {
+          "name": "U.S. Programs Symposium",
+          "description": "Educates the Harvard community on issues that confront the US and China with a mix of political, artistic, career-oriented, and cultural activities."
+        }
+      ],
+      "skills": [
+        "Cross-cultural communication",
+        "Event organization",
+        "Leadership",
+        "Writing",
+        "Teaching"
+      ],
+      "id": "7ed28b36-8803-45c3-a241-5eba665abded"
+    },
+    {
+      "name": "Katherine McPhie",
+      "phone": "ask_the_required_format_number",
+      "university": "Harvard University",
+      "graduation_year": "2025",
+      "major": "Computer Science",
+      "location": "Cambridge, MA / Irvine, CA",
+      "linkedin": "linkedin.com/in/katherine-mcphie",
+      "github": "https://github.com/kmcphie",
+      "personal_info": {
+        "languages": [
+          "English",
+          "Mandarin",
+          "Russian"
+        ],
+        "interests": [
+          "Software Engineering",
+          "Data Visualization",
+          "Languages"
+        ]
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor of Arts in Computer Science",
+          "year": "2025"
+        },
+        {
+          "institution": "University High School",
+          "location": "Irvine, CA",
+          "year": "2020"
+        }
+      ],
+      "experience": [
+        {
+          "title": "Firmware Development Engineer Intern",
+          "company": "Western Digital",
+          "duration": "Summer"
+        },
+        {
+          "title": "Information Research Intern",
+          "company": "Dow Chemical",
+          "duration": "Summer"
+        },
+        {
+          "title": "Research Intern",
+          "company": "University of California, Irvine",
+          "description": "Performed mathematical modeling of unstructured proteins"
+        }
+      ],
+      "projects": [
+        {
+          "name": "ts-vis",
+          "description": "A data visualization dashboard of Taylor Swift's music and impact",
+          "technologies": [
+            "JavaScript",
+            "d3.js"
+          ],
+          "link": "https://github.com/kmcphie/ts-vis"
+        },
+        {
+          "name": "Social_Connections_2024",
+          "description": "Analyzing social connectedness in the Harvard Class of 2024",
+          "technologies": [
+            "R"
+          ],
+          "link": "https://github.com/kmcphie/Social_Connections_2024"
+        },
+        {
+          "name": "Harvard Commencement Speeches: Historical Context and Themes",
+          "description": "Analyzed final call to action for graduates in relation to world events",
+          "link": "https://www.hodp.org/project/harvard-commencement-speeches"
+        }
+      ],
+      "skills": [
+        "C++",
+        "Python",
+        "Java",
+        "JavaScript",
+        "d3.js",
+        "R",
+        "MATLAB",
+        "Data Visualization",
+        "Firmware Development"
+      ],
+      "awards": [
+        "Coolidge Scholar (four-year, full-ride presidential scholarship)",
+        "NCWIT Computing Award National Winner",
+        "General Motors STEM for Changemaking Challenge Winner",
+        "Gloria Barron Prize for Young Heroes",
+        "Prudential Spirit of Community Award",
+        "National Latin Exam Winner"
+      ],
+      "activities": [
+        {
+          "organization": "Harvard Women Engineers Code",
+          "role": "Associate Director of Tech & Media"
+        },
+        {
+          "organization": "Harvard Open Data Project",
+          "role": "Member"
+        },
+        {
+          "organization": "Harvard Computer Society",
+          "role": "Member"
+        },
+        {
+          "organization": "Harvard Women in Computer Science",
+          "role": "Member"
+        },
+        {
+          "organization": "Harvard University Choir",
+          "role": "Singer"
+        },
+        {
+          "organization": "Harvard Wind Ensemble",
+          "role": "Past Member"
+        },
+        {
+          "organization": "Harvard Latter-day Saint Student Association",
+          "role": "Member"
+        },
+        {
+          "organization": "Christian Faith and Action club",
+          "role": "Member"
+        }
+      ],
+      "achievements": [
+        "Named one of Orange County Register's Top 100 Most Influential People in Orange County",
+        "Featured in Diversity in Action magazine as one of '20 Under 20: Young Innovators Who Are Already Changing the World'",
+        "Second place at the International Space Settlement Design Competition at Kennedy Space Center (high school team)",
+        "Second place in the New England Olympiada of Spoken Russian (2024)"
+      ],
+      "publications": [
+        {
+          "title": "Finding A Voice",
+          "type": "Essay",
+          "link": "https://www.chapman.edu/research/institutes-and-centers/holocaust-education/_files/docs/contest-entries/katherine-mcphie.pdf"
+        }
+      ],
+      "additional_info": [
+        "Served as a missionary for The Church of Jesus Christ of Latter-day Saints in Scotland and Northern Ireland for 18 months",
+        "Drum Major for University High School's Marching Band",
+        "Sang in the Orange County Millennial Choir",
+        "Played trumpet and piano",
+        "Served on the board of high school's Junior Classical League"
+      ],
+      "id": "a8f5265d-eeaf-4ca7-87a9-100d9213f9e4"
+    },
+    {
+      "name": "Ryan Noorbakhsh",
+      "university": "Harvard University",
+      "personalInfo": {
+        "email": "ryan.noorbakhsh@harvard.edu",
+        "phone": "ask_the_required_format_number",
+        "location": "Cambridge, Massachusetts"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Undergraduate",
+          "field": "Computer Science",
+          "startDate": "2024",
+          "endDate": "Present"
+        },
+        {
+          "institution": "Clear Creek High School",
+          "location": "League City, Texas",
+          "graduationYear": "2024"
+        }
+      ],
+      "interests": [
+        "Computer Science",
+        "Mathematics",
+        "Artificial Intelligence",
+        "Neurotechnology"
+      ],
+      "experience": [
+        {
+          "position": "Undergraduate Research Assistant",
+          "organization": "Zomorrodi Lab, Massachusetts General Hospital",
+          "startDate": "January 2025",
+          "endDate": "Present",
+          "description": "Conducting research on microbiome multi-omics analysis and its role in various diseases."
+        },
+        {
+          "position": "Founder",
+          "organization": "Computer Science Club",
+          "institution": "Clear Creek High School",
+          "description": "Founded and led the school's Computer Science Club."
+        }
+      ],
+      "leadership": [
+        {
+          "position": "Leader",
+          "organization": "Mu Alpha Theta Club"
+        },
+        {
+          "position": "Leader",
+          "organizations": [
+            "Computer Science UIL",
+            "Math UIL",
+            "Science UIL"
+          ]
+        }
+      ],
+      "skills": [
+        "Programming",
+        "Data Analysis",
+        "Machine Learning",
+        "Problem Solving",
+        "Leadership"
+      ],
+      "extracurricular": [
+        "Basketball",
+        "Graphic Design",
+        "Travel"
+      ],
+      "projects": [
+        {
+          "title": "Microbiome Research Project",
+          "description": "Assisting in research on the role of the gut microbiome in Celiac Disease as part of the Zomorrodi Lab's NIH-funded study.",
+          "startDate": "January 2025",
+          "endDate": "Present"
+        }
+      ],
+      "awards": [
+        {
+          "title": "Iranian-American Scholarship Fund Recipient",
+          "year": "2024",
+          "description": "Awarded scholarship for demonstrating academic excellence, financial need, and commitment to community service."
+        }
+      ],
+      "id": "81d7ed65-d577-4142-8513-18f8b90a2a95"
+    },
+    {
+      "name": "Michelle Lin",
+      "phone": "ask_the_required_format_number",
+      "email": "michellelin@g.harvard.edu",
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Ph.D. candidate",
+          "field": "Music Theory",
+          "startYear": 2021
+        }
+      ],
+      "research_interests": [
+        "Music Theory",
+        "Music Cognition",
+        "Computational Musicology"
+      ],
+      "academic_positions": [
+        {
+          "title": "Graduate Student",
+          "institution": "Harvard University Department of Music",
+          "startYear": 2021
+        }
+      ],
+      "performances": [
+        {
+          "event": "University Hall Recital Series",
+          "instrument": "Piano",
+          "date": "November 7, 2024",
+          "venue": "University Hall, Harvard University"
+        }
+      ],
+      "skills": [
+        "Music Analysis",
+        "Piano Performance",
+        "Research Methodology"
+      ],
+      "languages": [
+        "English",
+        "Mandarin Chinese"
+      ],
+      "awards": [],
+      "publications": [],
+      "projects": [],
+      "professional_affiliations": [
+        "Society for Music Theory"
+      ],
+      "id": "a584d53f-7bc7-4746-8e2b-88e42b0645c4"
+    },
+    {
+      "personal_info": {
+        "name": "Erik Wang",
+        "university": "Harvard University",
+        "major": "Physics and Computer Science",
+        "class_year": "Senior",
+        "house": "Winthrop House",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "research_interests": [
+        "Intersection of AI and climate",
+        "Machine learning for sustainability",
+        "Computational methods in science"
+      ],
+      "academic_experience": [
+        {
+          "position": "Undergraduate Researcher",
+          "lab": "Brenner Group",
+          "focus": "Using machine learning to accelerate scientific discovery"
+        }
+      ],
+      "extracurricular_activities": [
+        {
+          "organization": "AI Group at Harvard",
+          "role": "Member"
+        },
+        {
+          "organization": "Harvard Varsity Squash",
+          "role": "Team Member"
+        }
+      ],
+      "athletic_achievements": [
+        {
+          "sport": "Squash",
+          "achievements": [
+            "Four-year varsity letterman",
+            "New England Junior Champion (2019)",
+            "Ranked 30th nationally for juniors"
+          ]
+        }
+      ],
+      "publications": [
+        {
+          "title": "HARDMath: A Benchmark Dataset for Challenging Problems in Applied Mathematics",
+          "authors": "J Fan, S Martinson, EY Wang, K Hausknecht, J Brenner, D Liu, N Peng",
+          "year": 2024,
+          "link": "https://arxiv.org/abs/2410.09988"
+        },
+        {
+          "title": "Humanity's Last Exam",
+          "authors": "L Phan, A Gatti, Z Han, N Li, J Hu, H Zhang, S Shi, M Choi, A Agrawal, ... EY Wang",
+          "year": 2025,
+          "link": "https://arxiv.org/abs/2501.14249"
+        },
+        {
+          "title": "Training Dynamics of Convolutional Neural Networks for Learning the Derivative Operator",
+          "authors": "EY Wang, Y Wang, CY Lai",
+          "year": 2024,
+          "venue": "NeurIPS 2024 Workshop on Scientific Methods for Understanding Deep Learning"
+        }
+      ],
+      "conference_presentations": [
+        {
+          "title": "Polarimetric Characteristics of Tornado Debris Fallout During the May 28 2019 Lawrence/Kansas City, KS Tornado",
+          "authors": "EY Wang, DJ Bodine, JM Kurdzo, J Barham, C Bowman, P Pietrycha",
+          "year": 2020,
+          "venue": "100th Annual Meeting of the American Meteorological Society"
+        },
+        {
+          "title": "A Comparative Analysis of Tornadic Debris and Debris Fallout Signatures from the 10\u201311 December 2021 and 28\u201329 May 2019 Tornadoes",
+          "authors": "RN Cross, SJ Southward, E Wang, DJ Bodine, JM Kurdzo",
+          "year": 2025,
+          "venue": "105th AMS Annual Meeting"
+        }
+      ],
+      "awards": [
+        "U.S. Presidential Scholar",
+        "2020 Research Science Institute Scholar",
+        "Oscar L. Tang Scholar at Phillips Academy Andover"
+      ],
+      "skills": [
+        "Machine Learning",
+        "AI",
+        "Computational Methods",
+        "Physics",
+        "Computer Science",
+        "Data Analysis",
+        "Scientific Research"
+      ],
+      "interests": [
+        "Science and space exploration",
+        "Art",
+        "Soccer",
+        "Tennis"
+      ],
+      "id": "60475656-29f6-4f97-b218-00f22c4ae98f"
+    },
+    {
+      "personal_info": {
+        "name": "Bradford Dickson",
+        "university": "Harvard University",
+        "class_year": "2027",
+        "major": "Economics",
+        "phone_number": "ask_the_required_format_number"
+      },
+      "academic_info": {
+        "gpa": 3.85,
+        "honors": [
+          "Harvard College Scholar"
+        ]
+      },
+      "athletics": {
+        "sport": "Water Polo",
+        "position": "Attacker",
+        "team": "Harvard Crimson Men's Water Polo",
+        "jersey_number": 9,
+        "height": "6'1\"",
+        "achievements": [
+          "Member of NCAA Division I team",
+          "Defensive Standout (2020, 2023)",
+          "1st Team All-League (2021, 2022, 2023)",
+          "2nd Team All-League (2020)"
+        ]
+      },
+      "music": {
+        "instrument": "Cello",
+        "programs": [
+          "Harvard-Berklee Dual Degree Program",
+          "San Diego Youth Symphony (2019-2023)",
+          "Hausman Chamber Music Program (2017-2023)"
+        ],
+        "performances": [
+          "National Anthem performance at Harvard women's water polo senior day game"
+        ]
+      },
+      "high_school": {
+        "name": "Mar Vista High School",
+        "location": "Imperial Beach, California",
+        "graduation_year": 2023,
+        "achievements": [
+          "Salutatorian",
+          "Water Polo Team Captain (2022)",
+          "Metro Conference Fall Athlete of the Year (2023)",
+          "Academic All-American (USA Water Polo, 2019-2020)"
+        ]
+      },
+      "awards": [
+        "Junior Olympic Medalist (2019)",
+        "California State Games Medalist (2018, 2019, 2022)",
+        "ACWPC Academic Team (2023)"
+      ],
+      "extracurricular_activities": [
+        "Harvard College Peer Health Exchange",
+        "Harvard Square Homeless Shelter",
+        "Harvard College Global Health and AIDS Coalition",
+        "Boys and Girls Club program volunteer"
+      ],
+      "skills": [
+        "Water Polo",
+        "Cello Performance",
+        "Leadership",
+        "Time Management",
+        "Public Speaking"
+      ],
+      "languages": [
+        "English"
+      ],
+      "interests": [
+        "Music",
+        "Athletics",
+        "Economics",
+        "Public Service"
+      ],
+      "id": "2d2d2e9d-0d45-443e-91ef-235ff6c2fc59"
+    }
+  ]
+}
