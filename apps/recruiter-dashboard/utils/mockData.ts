@@ -1,4 +1,4 @@
-import { ApplicantType } from './types';
+import { ApplicantType, ShortlistedApplicant } from './types';
 
 export const mockApplicants: ApplicantType[] = [
   {
@@ -36,43 +36,94 @@ export const mockApplicants: ApplicantType[] = [
   }
 ];
 
-export const shortlistedApplicants = [
+export const shortlistedApplicants: ShortlistedApplicant[] = [
   {
     id: '1',
     name: 'Sarah Chen',
+    profileImage: '/placeholder-avatar.png',
     currentPosition: 'ML Engineer at Stanford AI Lab',
-    callStatus: 'picked_up',
-    experience: [/* ... */],
+    experience: [
+      {
+        company: 'Stanford AI Lab',
+        title: 'ML Engineer',
+        startDate: '2022',
+        endDate: 'Present',
+        description: 'Leading research in transformer architectures',
+      }
+    ],
+    skills: ['Python', 'PyTorch', 'Transformers', 'MLOps'],
+    projects: [
+      {
+        name: 'Attention Mechanisms',
+        description: 'Novel attention mechanism for transformer models',
+        metrics: {
+          citations: 45,
+          implementations: 12
+        }
+      }
+    ],
+    outreachStatus: {
+      stage: 'initial',
+      linkedin: 'pending',
+      email: 'pending',
+      call: 'scheduled'
+    },
+    callStatus: 'not_started'
   },
   {
     id: '2',
     name: 'Michael Rodriguez',
+    profileImage: '/placeholder-avatar.png',
     currentPosition: 'Senior Data Scientist at Google',
-    callStatus: 'in_progress',
-    experience: [/* ... */],
+    experience: [
+      {
+        company: 'Google',
+        title: 'Senior Data Scientist',
+        startDate: '2021',
+        endDate: 'Present',
+        description: 'Leading ML infrastructure development',
+      }
+    ],
+    skills: ['Python', 'TensorFlow', 'Kubernetes', 'GCP'],
+    projects: [
+      {
+        name: 'ML Pipeline Optimization',
+        description: 'Scalable ML training infrastructure',
+        metrics: {
+          deployments: 100,
+          efficiency: 40
+        }
+      }
+    ],
+    outreachStatus: {
+      stage: 'initial',
+      linkedin: 'pending',
+      email: 'pending',
+      call: 'scheduled'
+    },
+    callStatus: 'in_progress'
   },
   {
     id: '3',
     name: 'Priya Patel',
     currentPosition: 'Research Engineer at DeepMind',
-    callStatus: 'conversation_ended',
+    callStatus: 'conversation_ended' as const,
     callSummary: 'Strong technical background in ML/AI. Excellent communication skills. Demonstrated deep knowledge of transformer architectures and practical implementation experience.',
     screeningScore: 92,
-    experience: [/* ... */],
+    experience: []
   },
   {
     id: '4',
     name: 'James Wilson',
     currentPosition: 'Computer Vision Engineer at Tesla',
-    callStatus: 'hung_up',
-    experience: [/* ... */],
+    callStatus: 'not_started' as const,
+    experience: []
   },
   {
     id: '5',
     name: 'Emma Thompson',
     currentPosition: 'NLP Researcher at OpenAI',
-    callStatus: 'rescheduled',
-    rescheduleDate: '2024-02-20T15:00:00Z',
-    experience: [/* ... */],
-  },
+    callStatus: 'not_started' as const,
+    experience: []
+  }
 ]; 

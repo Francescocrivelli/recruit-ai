@@ -1,5 +1,5 @@
 import { ApplicantType } from '../../utils/types';
-import ApplicantCard from './ApplicantCard';
+import { ApplicantCard } from './ApplicantCard';
 
 interface ApplicantDirectoryProps {
   applicants: ApplicantType[];
@@ -23,4 +23,6 @@ export default function ApplicantDirectory({ applicants }: ApplicantDirectoryPro
       ))}
     </div>
   );
-} 
+}
+
+export { ApplicantCard }; 

@@ -1,44 +1,34 @@
 'use client';
 
 import { useState } from 'react';
-import SearchBar from '../components/SearchBar';
-import ApplicantDirectory from '../components/ApplicantDirectory';
-import { ApplicantType } from '../utils/types';
 import { mockApplicants } from '../utils/mockData';
+import { ApplicantCard } from '../../../packages/ui/src/ApplicantCard/ApplicantCard';
 
-export default function RecruiterDashboard() {
+export default function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [applicants, setApplicants] = useState<ApplicantType[]>(mockApplicants);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSearch = async (query: string) => {
-    setIsLoading(true);
-    try {
-      // TODO: Replace with actual API call
-      // Simulating API call with mock data
-      setTimeout(() => {
-        setApplicants(mockApplicants);
-        setIsLoading(false);
-      }, 1000);
-    } catch (error) {
-      console.error('Error searching applicants:', error);
-      setIsLoading(false);
-    }
-  };
 
   return (
-    <main className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">Recruiter Dashboard</h1>
-        <SearchBar onSearch={handleSearch} />
-        {isLoading ? (
-          <div className="flex justify-center my-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900" />
-          </div>
-        ) : (
-          <ApplicantDirectory applicants={applicants} />
-        )}
+    <div className="max-w-7xl mx-auto p-8">
+      <h1 className="text-4xl font-bold mb-8">Recruiter Dashboard</h1>
+      
+      <div className="flex gap-4 mb-8">
+        <input
+          type="text"
+          placeholder="Try searching 'Python developer with 4 years experience'"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        />
+        <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+          Search
+        </button>
       </div>
-    </main>
+
+      <div className="space-y-6">
+        {mockApplicants.map((applicant) => (
+          <ApplicantCard key={applicant.id} applicant={applicant} />
+        ))}
+      </div>
+    </div>
   );
 } 

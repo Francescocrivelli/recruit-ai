@@ -26,4 +26,13 @@ export interface ApplicantType {
     email?: 'pending' | 'sent' | 'responded';
     call?: 'scheduled' | 'completed' | 'no-show';
   };
+}
+
+export type CallStatus = 'not_started' | 'picked_up' | 'in_progress' | 'conversation_ended' | 'hung_up' | 'rescheduled';
+
+export interface ShortlistedApplicant extends ApplicantType {
+  callStatus: CallStatus;
+  callSummary?: string;
+  screeningScore?: number;
+  rescheduleDate?: string;
 } 
