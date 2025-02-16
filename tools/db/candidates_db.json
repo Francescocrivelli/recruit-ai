@@ -1,0 +1,382 @@
+[
+    {
+      "personal_info": {
+        "name": "Katherine Fang",
+        "email": "katherine.fang@yale.edu",
+        "phone": "+16179559106",
+        "location": "New Haven, Connecticut",
+        "education": [
+          {
+            "degree": "J.D./Ph.D. Candidate",
+            "institution": "Yale Law School and Yale School of Management",
+            "year": "Expected 2025"
+          },
+          {
+            "degree": "B.A. in Global Affairs and Modern Middle East Studies",
+            "institution": "Yale University",
+            "year": "2017"
+          }
+        ]
+      },
+      "experience": [
+        {
+          "title": "Research Assistant",
+          "company": "The Center for Law, Brain, & Behavior at Harvard University",
+          "description": "Aided retired federal Judge Nancy Gertner in ongoing academic projects and in developing a training program to encourage federal judges to integrate scientific evidence on addiction and mental health into sentencing decisions."
+        },
+        {
+          "title": "Economics Research Associate",
+          "company": "Harvard Business School",
+          "description": "Investigated issues of gender equity in the labor market."
+        },
+        {
+          "title": "Fulbright Scholar",
+          "company": "United Nations Development Program",
+          "location": "Amman, Jordan",
+          "description": "Taught English and worked on refugee policy at the Middle East Regional Office."
+        },
+        {
+          "title": "Speechwriter",
+          "company": "International Organization for Migration",
+          "location": "Geneva, Switzerland",
+          "description": "Served as a speechwriter at the headquarters."
+        }
+      ],
+      "projects": [
+        {
+          "name": "Capital Assistance Project",
+          "description": "Co-runs the project which pairs law student interns with legal aid organizations seeking to overturn the death penalty.",
+          "role": "Co-leader"
+        },
+        {
+          "name": "Portrait Project 2.0",
+          "description": "Collaborates with California Supreme Court Justice Goodwin Liu on an empirical study into Asian American representation in law and politics.",
+          "role": "Collaborator"
+        },
+        {
+          "name": "COVID-19 Relief Initiative",
+          "description": "Worked on an initiative to ensure COVID-19 relief checks remained in the hands of incarcerated individuals during an internship at the Georgia Justice Project in Atlanta.",
+          "role": "Intern"
+        }
+      ],
+      "publications": [
+        {
+          "title": "A Portrait of Asian Americans in the Law 2.0: Identity and Action in Challenging Times",
+          "authors": "Hon. Goodwin Liu, Tyler Dang, Katherine Fang, Michael Tayag",
+          "year": "2022",
+          "publisher": "American Bar Foundation",
+          "summary": "This report provides an updated analysis of Asian American representation and experiences in the legal profession, focusing on identity issues and responses to recent challenges faced by the community.",
+          "snippet": "The study examines trends in Asian American participation in various sectors of the legal field, including law firms, judiciary, and public service. It also explores how recent social and political events have impacted Asian American lawyers' professional experiences and community engagement."
+        },
+        {
+          "title": "Portrait Project 2.0 Policy Brief: Identity and Action in Challenging Times",
+          "authors": "Tyler Dang, Katherine Fang, Benji Lu, Hon. Goodwin Liu, Michael Tayag",
+          "year": "2022",
+          "publisher": "American Bar Foundation",
+          "summary": "This policy brief presents key findings and recommendations from the Portrait Project 2.0 study on Asian Americans in the legal profession.",
+          "snippet": "The brief highlights critical issues facing Asian American lawyers, including representation disparities, career advancement challenges, and the impact of recent anti-Asian sentiment. It offers policy recommendations for law schools, legal employers, and professional organizations to address these concerns."
+        }
+      ],
+      "awards": [
+        {
+          "name": "Paul & Daisy Soros Fellowship for New Americans",
+          "year": "2021",
+          "description": "Merit-based fellowship for immigrants and children of immigrants in the United States, providing up to $90,000 in funding for graduate education."
+        },
+        {
+          "name": "Fulbright Scholarship",
+          "year": "2017",
+          "description": "Awarded to teach English and work on refugee policy in Jordan."
+        },
+        {
+          "name": "Kerry Initiative Fellowship",
+          "description": "Supported Secretary John Kerry in researching and organizing conferences on pressing international challenges."
+        }
+      ],
+      "skills": [
+        "Legal Research",
+        "Policy Analysis",
+        "Quantitative Methods",
+        "Arabic Language",
+        "Speechwriting",
+        "Economic Research",
+        "International Development"
+      ],
+      "languages": [
+        "English",
+        "Arabic"
+      ],
+      "interests": [
+        "Immigration Law",
+        "Criminal Justice Reform",
+        "Public Policy",
+        "Middle East Studies",
+        "Government Responsiveness",
+        "Civic Participation"
+      ],
+      "id": "eaf52126-0410-4c6b-b408-2309d81e5e93"
+    },
+    {
+      "name": "Jack Fan",
+      "university": "Harvard University",
+      "personal_info": {
+        "phone": "+16179559106",
+        "email": "jackfan@harvard.edu"
+      },
+      "education": [
+        {
+          "institution": "Harvard University",
+          "degree": "Bachelor of Arts",
+          "field": "Computer Science",
+          "year": "2024"
+        }
+      ],
+      "experience": [
+        {
+          "position": "Research Assistant",
+          "organization": "Harvard Computer Science Department",
+          "duration": "Summer 2023",
+          "description": "Assisted in machine learning research projects under the supervision of faculty members."
+        },
+        {
+          "position": "Software Engineering Intern",
+          "organization": "Tech Startup X",
+          "duration": "Summer 2022",
+          "description": "Developed and maintained web applications using React and Node.js."
+        }
+      ],
+      "projects": [
+        {
+          "name": "AI-Powered Chess Engine",
+          "description": "Developed a chess engine using deep learning techniques to predict optimal moves and evaluate board positions.",
+          "technologies": [
+            "Python",
+            "TensorFlow",
+            "PyTorch"
+          ],
+          "summary": "This project implements an AI-powered chess engine that utilizes deep learning algorithms to analyze chess positions and suggest optimal moves. The engine employs convolutional neural networks trained on a large dataset of professional chess games to evaluate board states and predict the best possible moves."
+        },
+        {
+          "name": "Sustainable Energy Tracker",
+          "description": "Created a web application to track and visualize renewable energy usage across different regions.",
+          "technologies": [
+            "React",
+            "D3.js",
+            "Node.js",
+            "MongoDB"
+          ],
+          "summary": "The Sustainable Energy Tracker is a web-based platform that allows users to monitor and analyze renewable energy consumption patterns across various geographical areas. It features interactive visualizations and real-time data updates to promote awareness and encourage sustainable energy practices."
+        }
+      ],
+      "research": [
+        {
+          "title": "Explainable AI in Healthcare Decision Making",
+          "summary": "This research explores the application of explainable AI techniques in healthcare decision-making processes. It focuses on developing interpretable machine learning models that can assist medical professionals in diagnosis and treatment planning while providing clear explanations for their predictions.",
+          "snippet": "In this study, we propose a novel approach to integrate explainable AI methods into clinical decision support systems. Our framework combines state-of-the-art machine learning algorithms with domain-specific knowledge to generate human-readable explanations for AI-driven medical recommendations. The results demonstrate improved trust and adoption of AI systems among healthcare practitioners."
+        }
+      ],
+      "publications": [
+        {
+          "title": "Towards Interpretable Deep Learning Models for Medical Diagnosis",
+          "authors": "Fan, J., Smith, A., Johnson, B.",
+          "journal": "Journal of Artificial Intelligence in Medicine",
+          "year": 2023,
+          "link": "https://example.com/publication1",
+          "summary": "This paper presents a novel approach to creating interpretable deep learning models for medical diagnosis. The proposed method combines attention mechanisms with layer-wise relevance propagation to provide clear explanations for model predictions in various medical imaging tasks.",
+          "snippet": "We introduce a hybrid architecture that leverages the power of convolutional neural networks and transformer models to analyze medical images. Our approach not only achieves state-of-the-art accuracy in diagnosing various conditions but also generates heat maps and textual explanations to highlight the regions and features that contributed most to the model's decision."
+        }
+      ],
+      "awards": [
+        {
+          "name": "Dean's List",
+          "year": 2022,
+          "description": "Recognized for outstanding academic achievement at Harvard University"
+        },
+        {
+          "name": "Best Project Award",
+          "year": 2023,
+          "description": "Awarded for the AI-Powered Chess Engine project at the Harvard CS Fair"
+        }
+      ],
+      "skills": [
+        "Python",
+        "JavaScript",
+        "Machine Learning",
+        "Data Analysis",
+        "Web Development",
+        "Git",
+        "TensorFlow",
+        "React"
+      ],
+      "id": "516b1884-e7bf-49d3-addd-5a0a26611759"
+    },
+    {
+      "personal_info": {
+        "name": "Ryan Brewington",
+        "university": "Harvard University",
+        "class_year": 2028,
+        "major": "Undeclared",
+        "phone": "+16179559106"
+      },
+      "athletic_career": {
+        "sport": "Men's Lightweight Rowing",
+        "position": "Rower",
+        "team": "Harvard Crimson",
+        "achievements": [
+          "Member of the Harvard Lightweight Rowing team for the 2024-25 season[2]",
+          "Competed in the Head of the Charles Regatta 2024, finishing 13th out of 42 boats in the Men's Club Fours division[6]"
+        ]
+      },
+      "high_school": {
+        "name": "The Haverford School",
+        "location": "Haverford, Pennsylvania",
+        "graduation_year": 2024,
+        "achievements": [
+          "Captain of the Haverford Crew team[1]",
+          "Four-year member of Spring Crew[1]",
+          "Full-time rower for two years[1]",
+          "Won City Championships with the Varsity Quad on May 5, 2024[1]"
+        ]
+      },
+      "leadership": {
+        "roles": [
+          {
+            "title": "Captain",
+            "organization": "Haverford Crew",
+            "description": "Selected as one of four captains for the rowing team, responsible for being a role model and representing the team[1]"
+          }
+        ]
+      },
+      "extracurricular_activities": [
+        {
+          "organization": "Patriot Polling",
+          "role": "Quantitative Analyst",
+          "description": "Worked as a quantitative analyst for Patriot Polling, a non-partisan organization conducting surveys across America[3]"
+        }
+      ],
+      "notable_experiences": [
+        "Participated in the christening of a donated boat during an alumni event at Haverford Crew[1]",
+        "Competed in championship races including Stotesbury Cup and Nationals[1]"
+      ],
+      "skills": [
+        "Rowing",
+        "Leadership",
+        "Teamwork",
+        "Quantitative Analysis"
+      ],
+      "interests": [
+        "Competitive rowing",
+        "Data analysis",
+        "Political polling"
+      ],
+      "id": "33dbecad-5761-40f8-9036-4569a230b868"
+    },
+    {
+      "name": "Ishan Sinha",
+      "university": "Stanford University",
+      "personal_info": {
+        "email": "isinha@stanford.edu",
+        "phone": "+16179559106",
+        "location": "San Francisco Bay Area"
+      },
+      "education": [
+        {
+          "institution": "Stanford University",
+          "degree": "Masters in Management Science and Engineering",
+          "year": "2023 - Present"
+        },
+        {
+          "institution": "Princeton University",
+          "degree": "A.B.",
+          "year": "Graduated"
+        },
+        {
+          "institution": "Bellarmine College Preparatory",
+          "degree": "High School",
+          "year": "Graduated"
+        }
+      ],
+      "experience": [
+        {
+          "company": "LinkedIn",
+          "position": "Product",
+          "location": "San Francisco Bay Area"
+        }
+      ],
+      "skills": [
+        "Product Management",
+        "Computer Science"
+      ],
+      "id": "7ea36cc8-8259-40a9-8dc7-185460716f35"
+    },
+    {
+      "name": "Benjamin Megan",
+      "university": "Harvard University",
+      "personal_info": {
+        "position": "Graduate Student",
+        "department": "Mathematics",
+        "phone": "+16179559106",
+        "email": "bmegan@math.harvard.edu"
+      },
+      "education": [
+        {
+          "degree": "Ph.D. Candidate",
+          "field": "Mathematics",
+          "institution": "Harvard University",
+          "year": "Current"
+        },
+        {
+          "degree": "B.A.",
+          "field": "Mathematics",
+          "institution": "Harvard University",
+          "year": "2021"
+        }
+      ],
+      "research": [
+        {
+          "title": "Algebraic Geometry and Number Theory",
+          "description": "Focusing on the intersection of algebraic geometry and number theory, particularly in the study of arithmetic properties of algebraic varieties."
+        }
+      ],
+      "publications": [
+        {
+          "title": "On the Arithmetic of Certain Modular Curves",
+          "journal": "Journal of Number Theory",
+          "year": "2024",
+          "summary": "This paper explores the arithmetic properties of specific modular curves, providing new insights into their structure and behavior. The research contributes to our understanding of the interplay between geometry and number theory in these mathematical objects.",
+          "snippet": "We investigate the arithmetic of X_0(N) for certain values of N, focusing on the distribution of rational points and their relation to modular forms. Our main result establishes a novel connection between the j-invariants of these points and certain arithmetic progressions, shedding light on the deep structure of these curves."
+        }
+      ],
+      "projects": [
+        {
+          "title": "Computational Methods in Algebraic Number Theory",
+          "description": "Developed algorithms for efficient computation of class groups and unit groups in number fields.",
+          "technologies": [
+            "Python",
+            "SageMath",
+            "C++"
+          ],
+          "summary": "This project focused on implementing and optimizing algorithms for fundamental computations in algebraic number theory. The work resulted in significant improvements in the speed and efficiency of calculating class groups and unit groups for high-degree number fields."
+        }
+      ],
+      "awards": [
+        {
+          "title": "NSF Graduate Research Fellowship",
+          "year": "2022"
+        },
+        {
+          "title": "Harvard Mathematics Department Teaching Award",
+          "year": "2023"
+        }
+      ],
+      "skills": [
+        "Mathematical Research",
+        "Algorithm Development",
+        "Scientific Computing",
+        "LaTeX",
+        "Python",
+        "SageMath"
+      ],
+      "id": "91d70442-59ce-47a4-a05e-50b6d4e3f5ee"
+    }
+]
