@@ -1,0 +1,5208 @@
+# Introduction
+
+> Scrapybara deploys, scales, and maintains remote desktop instances for agents
+
+<img src="file:903b6494-f5db-4484-bab7-646446891006" alt="Hero" />
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="bolt" href="/quickstart">
+    Deploy your first instance
+  </Card>
+
+  <Card title="Act SDK" icon="robot" href="/act-sdk">
+    Take action with computer use agents
+  </Card>
+
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Check out our API reference docs
+  </Card>
+
+  <Card title="Official Examples" icon="book" href="/official-examples">
+    Official open source examples
+  </Card>
+</CardGroup>
+
+## Why Scrapybara?
+
+Scrapybara provides powerful remote desktop infrastructure for AI agents with:
+
+* **Flexible deployments**: Easily deploy and manage remote desktop instances through our API and SDKs. Configure instance types and timeouts to match your needs.
+
+* **Unified integration**: Seamlessly connect your instances to models like Claude Computer Use and define custom tools.
+
+* **Granular control**: Get complete remote desktop access with all the tools your agents need, including Browser, File, Env, Notebook, and Code protocols.
+
+* **Lightning speed**: Instantly spin up full desktops under 1 second.
+
+* **Authenticated sessions**: Save and reuse browser authentication states across instances.
+
+* **Session persistence**: Pause and resume instances with a single API call.
+
+## Dashboard
+
+Get your API key and manage your instances on the [dashboard](https://scrapybara.com/dashboard).
+
+## Get support
+
+Need help or want to stay up to date? Reach out to us on Discord or X.
+
+<CardGroup cols={2}>
+  <Card title="Discord" icon="brands discord" href="https://discord.gg/s4bPUVFXqA">
+    Join our Discord community
+  </Card>
+
+  <Card title="X" icon="brands x-twitter" href="https://x.com/scrapybara">
+    Follow us on X
+  </Card>
+</CardGroup>
+
+
+# Quickstart
+
+> Deploy your first instance
+
+## Deploy your first instance
+
+<Tabs>
+  <Tab title="Python">
+    <Steps>
+      <Step title="Generate API key">
+        Sign up on our [dashboard](https://scrapybara.com/dashboard). An API key will be generated for you automatically.
+      </Step>
+
+      <Step title="Install SDK">
+        Install the Python SDK with pip.
+
+        ```bash
+        pip install scrapybara
+        ```
+      </Step>
+
+      <Step title="Configure client">
+        Configure the client with your API key.
+
+        ```python
+        from scrapybara import Scrapybara
+
+        client = Scrapybara(api_key="your_api_key")
+        ```
+      </Step>
+
+      <Step title="Start an instance">
+        Start an instance with your desired configuration. You can choose from Ubuntu, Browser, and Windows instances. We recommend using Ubuntu for most tasks.
+
+        ```python
+        instance = client.start_ubuntu(
+            timeout_hours=1,
+        )
+
+        # browser_instance = client.start_browser(
+        #     timeout_hours=1,
+        # )
+
+        # windows_instance = client.start_windows(
+        #     timeout_hours=1,
+        # )
+        ```
+      </Step>
+
+      <Step title="Get the stream URL">
+        Get the stream URL to view and interact with the instance manually.
+
+        ```python
+        stream_url = instance.get_stream_url().stream_url
+        ```
+      </Step>
+
+      <Step title="Interact with the instance">
+        Interact with the instance with `computer` and `bash`.
+
+        ```python Move the mouse
+        instance.computer(
+            action="mouse_move",
+            coordinate=[200, 100]
+        )
+        ```
+
+        ```python Left click
+        instance.computer(
+            action="left_click"
+        )
+        ```
+
+        ```python Type hello
+        instance.computer(
+            action="type",
+            text="Hello, world!"
+        )
+        ```
+
+        ```python Run a bash command
+        result = instance.bash(
+            command="ls -la"
+        )
+        ```
+      </Step>
+
+      <Step title="Connect to the browser">
+        Connect to the browser with Playwright to enable programmatic browser control and authenticated browser sessions. Learn more [here](/browser).
+
+        ```python Connect to Playwright
+        from playwright.sync_api import sync_playwright
+
+        cdp_url = instance.browser.start().cdp_url
+        playwright = sync_playwright().start()
+        browser = playwright.chromium.connect_over_cdp(cdp_url)
+        ```
+
+        ```python Save the auth state
+        auth_state_id = instance.browser.save_auth(name="default").auth_state_id
+        ```
+
+        ```python Reuse the auth state on other instances
+        instance.browser.authenticate(auth_state_id=auth_state_id)
+        ```
+      </Step>
+
+      <Step title="Take action!">
+        Build your first agent with the Act SDK to control your Scrapybara instance with `BashTool`, `ComputerTool`, `EditTool`. Learn more [here](/act-sdk).
+
+        ```python
+        from scrapybara.tools import BashTool, ComputerTool, EditTool
+        from scrapybara.anthropic import Anthropic
+        from scrapybara.prompts import UBUNTU_SYSTEM_PROMPT
+
+        response = client.act(
+            model=Anthropic(),
+            tools=[
+                BashTool(instance),
+                ComputerTool(instance),
+                EditTool(instance),
+            ],
+            system=UBUNTU_SYSTEM_PROMPT,
+            prompt="Go to the top link on Hacker News",
+            on_step=lambda step: print(step.text),
+        )
+        ```
+      </Step>
+
+      <Step title="Stop the instance">
+        Stop the instance when you're done. This will delete all data stored during the session.
+
+        ```python
+        instance.stop()
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="TypeScript">
+    <Steps>
+      <Step title="Generate API key">
+        Sign up on our [dashboard](https://scrapybara.com/dashboard). An API key will be generated for you automatically.
+      </Step>
+
+      <Step title="Install SDK">
+        Install the TypeScript SDK with npm, yarn, or pnpm.
+
+        ```bash
+        npm install scrapybara
+        yarn add scrapybara
+        pnpm add scrapybara
+        ```
+      </Step>
+
+      <Step title="Configure client">
+        Configure the client with your API key.
+
+        ```typescript
+        import { ScrapybaraClient } from "scrapybara";
+
+        const client = new ScrapybaraClient({ apiKey: "your_api_key" });
+        ```
+      </Step>
+
+      <Step title="Start an instance">
+        Start an instance with your desired configuration. You can choose from Ubuntu, Browser, and Windows instances. We recommend using Ubuntu for most tasks.
+
+        ```typescript
+        const instance = await client.startUbuntu({
+            timeoutHours: 1,
+        });
+
+        // const browserInstance = await client.startBrowser({
+        //     timeoutHours: 1,
+        // });
+
+        // const windowsInstance = await client.startWindows({
+        //     timeoutHours: 1,
+        // });
+        ```
+      </Step>
+
+      <Step title="Get the stream URL">
+        Get the stream URL to view and interact with the instance manually.
+
+        ```typescript
+        const streamUrl = await instance.getStreamUrl().streamUrl;
+        ```
+      </Step>
+
+      <Step title="Interact with the instance">
+        Interact with the instance with `computer` and `bash`.
+
+        ```typescript Move the mouse
+        await instance.computer({
+            action: "mouse_move",
+            coordinate: [200, 100]
+        });
+        ```
+
+        ```typescript Left click
+        await instance.computer({
+            action: "left_click"
+        });
+        ```
+
+        ```typescript Type hello
+        await instance.computer({
+            action: "type",
+            text: "Hello, world!"
+        });
+        ```
+
+        ```typescript Run a bash command
+        const result = await instance.bash({
+            command: "ls -la"
+        });
+        ```
+      </Step>
+
+      <Step title="Connect to the browser">
+        Connect to the browser with Playwright to enable programmatic browser control and authenticated browser sessions. Learn more [here](/browser).
+
+        ```typescript Connect to Playwright
+        import { chromium } from "playwright";
+
+        const cdpUrl = await instance.browser.start().cdpUrl;
+        const browser = await chromium.connectOverCDP(cdpUrl);
+        ```
+
+        ```typescript Save the auth state
+        const authStateId = await instance.browser.saveAuth({ name: "default" }).authStateId;
+        ```
+
+        ```typescript Reuse the auth state on other instances
+        await instance.browser.authenticate({ authStateId });
+        ```
+      </Step>
+
+      <Step title="Take action!">
+        Build your first agent with the Act SDK to control your Scrapybara instance with `BashTool`, `ComputerTool`, `EditTool`. Learn more [here](/act-sdk).
+
+        ```typescript
+        import { bashTool, computerTool, editTool } from "scrapybara/tools";
+        import { anthropic } from "scrapybara/anthropic";
+        import { UBUNTU_SYSTEM_PROMPT } from "scrapybara/prompts";
+
+        const { messages, steps, text, usage } = await client.act({
+          tools: [
+            bashTool(instance),
+            computerTool(instance),
+            editTool(instance),
+          ],
+          model: anthropic(),
+          system: UBUNTU_SYSTEM_PROMPT,
+          prompt: "Go to the top link on Hacker News",
+          onStep: (step) => console.log(step.text),
+        });
+        ```
+      </Step>
+
+      <Step title="Stop the instance">
+        Stop the instance when you're done. This will delete all data stored during the session.
+
+        ```typescript
+        await instance.stop();
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Start building
+
+Be sure to check out our other resources to learn more. Happy building! ₍ᐢ•(ܫ)•ᐢ₎
+
+<CardGroup cols={2}>
+  <Card title="Act SDK" icon="robot" href="/act-sdk">
+    Take action with computer use agents
+  </Card>
+
+  <Card title="Ubuntu" icon="brands ubuntu" href="/ubuntu">
+    Learn about the UbuntuInstance
+  </Card>
+
+  <Card title="Browser" icon="globe" href="/browser">
+    Learn about the BrowserInstance
+  </Card>
+
+  <Card title="Windows" icon="brands windows" href="/windows">
+    Learn about the WindowsInstance
+  </Card>
+
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Check out our API reference docs
+  </Card>
+
+  <Card title="Official Examples" icon="book" href="/official-examples">
+    Official open source examples
+  </Card>
+</CardGroup>
+
+
+# Best Practices
+
+> Best practices for using Scrapybara
+
+## Manage instance usage
+
+Instances are billed per usage. When launching an instance, you can specify its timeout before it is automatically terminated (default is 1 hour).
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance = client.start_ubuntu(timeout=3) # 3 hours
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const instance = await client.startUbuntu({ timeout: 3 }); // 3 hours
+    ```
+  </Tab>
+</Tabs>
+
+To save costs, pause the instance to resume it later, or stop the instance once you no longer need to control the desktop environment and access its stored data.
+
+<Tabs>
+  <Tab title="Python">
+    ```python Pause/resume
+    instance.pause()
+    instance.resume()
+    ```
+
+    ```python Stop
+    instance.stop()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Pause/resume
+    await instance.pause();
+    await instance.resume();
+    ```
+
+    ```typescript Stop
+    await instance.stop();
+    ```
+  </Tab>
+</Tabs>
+
+## Take actions programmatically
+
+When possible, take actions programmatically rather than relying on the agent to do so. For example, using `instance.bash` provides a faster way to launch apps compared to having the model use mouse/keyboard interactions. If you know the agent's workflow will happen on a specific application, you can launch it before prompting the agent to take actions. The same applies for browser automation: it is often easier to manipulate the browser programmatically with `instance.browser` and Playwright than relying on the agent itself.
+
+## Initialize the browser
+
+For agents requiring programmatic browser interaction, initialize and configure the browser immediately after instance creation. This ensures the browser environment is ready before any browser tool calls are made.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance = client.start_ubuntu()
+    instance.browser.start()
+    instance.browser.authenticate(auth_state_id="auth_state_id")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const instance = await client.startUbuntu();
+    await instance.browser.start();
+    await instance.browser.authenticate(auth_state_id="auth_state_id");
+    ```
+  </Tab>
+</Tabs>
+
+## Optimize your prompt
+
+We recommend using our provided `UBUNTU_SYSTEM_PROMPT` for most general-purpose computer tasks.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara.prompts import UBUNTU_SYSTEM_PROMPT
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { UBUNTU_SYSTEM_PROMPT } from "scrapybara/prompts";
+    ```
+  </Tab>
+</Tabs>
+
+For more complex tasks, define the task within the system prompt.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    system = f"""{UBUNTU_SYSTEM_PROMPT}
+
+    <TASK>
+    {task}
+    </TASK>"""
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const system = `${UBUNTU_SYSTEM_PROMPT}
+
+    <TASK>
+    ${task}
+    </TASK>`;
+    ```
+  </Tab>
+</Tabs>
+
+Here are some tips from [Anthropic](https://docs.anthropic.com/en/docs/build-with-claude/computer-use) to improve the agent's performance:
+
+1. Specify simple, well-defined tasks and provide explicit instructions for each step.
+2. Claude sometimes assumes outcomes of its actions without explicitly checking their results. To prevent this you can prompt Claude with `After each step, take a screenshot and carefully evaluate if you have achieved the right outcome. Explicitly show your thinking: "I have evaluated step X..." If not correct, try again. Only when you confirm a step was executed correctly should you move on to the next one.`
+3. Some UI elements (like dropdowns and scrollbars) might be tricky for Claude to manipulate using mouse movements. If you experience this, try prompting the model to use keyboard shortcuts.
+4. For repeatable tasks or UI interactions, include example screenshots and tool calls of successful outcomes in your prompt.
+5. If you need the model to log in, provide it with the username and password in your prompt inside xml tags like `<robot_credentials>`. Using computer use within applications that require login increases the risk of bad outcomes as a result of prompt injection.
+
+
+# Overview
+
+> Build computer use agents with one unified SDK — any model, any tool
+
+## Act SDK
+
+The Act SDK is a unified SDK for building computer use agents with Python and TypeScript. It provides a simple interface for executing looping agentic actions with support for many models and tools. Build production-ready computer use agents with pre-built tools to connect to Scrapybara instances.
+
+## How it works
+
+`act` initiates an interaction loop that continues until the agent achieves its objective. Each iteration of the loop is called a `step`, which consists of the agent's text response, the agent's tool calls, and the results of those tool calls. The loop terminates when the agent returns a message without invoking any tools, and returns `messages`, `steps`, `text`, `output` (if `schema` is provided), and `usage` after the agent's execution.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    response = client.act(
+        model=Anthropic(),
+        tools=[
+            BashTool(instance),
+            ComputerTool(instance),
+            EditTool(instance),
+        ],
+        system=UBUNTU_SYSTEM_PROMPT,
+        prompt="Go to the top link on Hacker News",
+        on_step=lambda step: print(step.text),
+    )
+    messages = response.messages
+    steps = response.steps
+    text = response.text
+    usage = response.usage
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const { messages, steps, text, usage } = await client.act({
+      model: anthropic(),
+      tools: [
+        bashTool(instance),
+        computerTool(instance),
+        editTool(instance),
+      ],
+      system: UBUNTU_SYSTEM_PROMPT,
+      prompt: "Go to the top link on Hacker News",
+      onStep: (step) => console.log(step.text),
+    });
+    ```
+  </Tab>
+</Tabs>
+
+An `act` call consists of 3 core components:
+
+### Model
+
+The model specifies the base LLM for the agent. At each step, the model examines the previous messages, the current state of the computer, and uses tools to take action. Currently, the SDK supports [Anthropic](/anthropic) models, with more providers coming soon.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara.anthropic import Anthropic
+
+    model = Anthropic()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { anthropic } from "scrapybara/anthropic";
+
+    const model = anthropic();
+    ```
+  </Tab>
+</Tabs>
+
+### Tools
+
+Tools are functions that enable agents to interact with the computer. Each tool is defined by a `name`, `description`, and how it can be executed with `parameters` and an execution function. A tool can take in a Scrapybara instance to interact with it directly. Learn more about pre-built tools and how to define custom tools [here](/tools).
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara import Scrapybara
+    from scrapybara.tools import BashTool, ComputerTool, EditTool
+
+    client = Scrapybara()
+    instance = client.start_ubuntu()
+
+    tools = [
+        BashTool(instance),
+        ComputerTool(instance),
+        EditTool(instance),
+    ]
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { ScrapybaraClient } from "scrapybara";
+    import { bashTool, computerTool, editTool } from "scrapybara/tools";
+
+    const client = new ScrapybaraClient();
+    const instance = await client.startUbuntu();
+
+    const tools = [
+      bashTool(instance),
+      computerTool(instance),
+      editTool(instance),
+    ];
+    ```
+  </Tab>
+</Tabs>
+
+### Prompt
+
+The prompt is split into two parts, the `system` prompt and a user `prompt`. `system` defines the general behavior of the agent, such as its capabilities and constraints. You can use our provided `UBUNTU_SYSTEM_PROMPT`, `BROWSER_SYSTEM_PROMPT`, and `WINDOWS_SYSTEM_PROMPT` to get started, or define your own. `prompt` should denote the agent's current objective. Alternatively, you can provide `messages` instead of `prompt` to start the agent with a history of messages. `act` conveniently returns `messages` after the agent's execution, so you can reuse it in another `act` call.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara.prompts import UBUNTU_SYSTEM_PROMPT
+
+    system = UBUNTU_SYSTEM_PROMPT
+    prompt = "Go to the top link on Hacker News"
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { UBUNTU_SYSTEM_PROMPT } from "scrapybara/prompts";
+
+    const system = UBUNTU_SYSTEM_PROMPT;
+    const prompt = "Go to the top link on Hacker News";
+    ```
+  </Tab>
+</Tabs>
+
+## Structured output
+
+Use the `schema` parameter to define a desired structured output. The response's `output` field will contain the typed data returned by the model. This is particularly useful when scraping or collecting structured data from websites.
+
+Under the hood, we pass in a `StructuredOutputTool` to enforce and parse the schema.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from pydantic import BaseModel
+    from typing import List
+
+    class HNSchema(BaseModel):
+        class Post(BaseModel):
+            title: str
+            url: str 
+            points: int
+        
+        posts: List[Post]
+
+    response = client.act(
+        model=Anthropic(),
+        tools=[
+            BashTool(instance),
+            ComputerTool(instance),
+            EditTool(instance),
+        ],
+        schema=HNSchema,
+        system=UBUNTU_SYSTEM_PROMPT,
+        prompt="Get the top 10 posts on Hacker News",
+    )
+
+    posts = response.output.posts
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { z } from "zod";
+
+    const { output } = await client.act({
+      model: anthropic(),
+      tools: [
+        bashTool(instance),
+        computerTool(instance),
+        editTool(instance),
+      ],
+      schema: z.object({
+        posts: z.array(
+          z.object({
+            title: z.string(),
+            url: z.string(),
+            points: z.number(),
+          })
+        ),
+      }),
+      system: UBUNTU_SYSTEM_PROMPT,
+      prompt: "Get the top 10 posts on Hacker News",
+    });
+
+    const posts = output?.posts;
+    ```
+  </Tab>
+</Tabs>
+
+## Agent credits
+
+Consume agent credits or bring your own API key. Without an API key, each step consumes 1 [agent credit](https://scrapybara.com/#pricing). With your own API key, model charges are billed directly to your provider API key.
+
+## Full example
+
+Here is how you can build a computer use agent that can output structured data.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara import Scrapybara
+    from scrapybara.anthropic import Anthropic
+    from scrapybara.prompts import UBUNTU_SYSTEM_PROMPT
+    from scrapybara.tools import BashTool, ComputerTool, EditTool
+    from pydantic import BaseModel
+    from typing import List
+
+    client = Scrapybara()
+    instance = client.start_ubuntu()
+
+    class HNSchema(BaseModel):
+        class Post(BaseModel):
+            title: str
+            url: str 
+            points: int
+        
+        posts: List[Post]
+
+    response = client.act(
+        model=Anthropic(),
+        tools=[
+            BashTool(instance),
+            ComputerTool(instance),
+            EditTool(instance),
+        ],
+        system=UBUNTU_SYSTEM_PROMPT,
+        prompt="Get the top 10 posts on Hacker News",
+        schema=HNSchema,
+        on_step=lambda step: print(step.text),
+    )
+
+    posts = response.output.posts
+    print(posts)
+
+    instance.stop()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { ScrapybaraClient } from "scrapybara";
+    import { anthropic } from "scrapybara/anthropic";
+    import { UBUNTU_SYSTEM_PROMPT } from "scrapybara/prompts";
+    import { bashTool, computerTool, editTool } from "scrapybara/tools";
+    import { z } from "zod";
+
+    const client = new ScrapybaraClient();
+    const instance = await client.startUbuntu();
+
+    const { output } = await client.act({
+      model: anthropic(),
+      tools: [
+        bashTool(instance),
+        computerTool(instance),
+        editTool(instance),
+      ],
+      system: UBUNTU_SYSTEM_PROMPT,
+      prompt: "Get the top 10 posts on Hacker News",
+      schema: z.object({
+        posts: z.array(
+          z.object({
+            title: z.string(),
+            url: z.string(),
+            points: z.number(),
+          })
+        ),
+      }),
+      onStep: (step) => console.log(step.text),
+    });
+
+    const posts = output?.posts;
+    console.log(posts);
+
+    await instance.browser.stop();
+    await instance.stop();
+    ```
+  </Tab>
+</Tabs>
+
+
+# Tools
+
+> Pre-built Scrapybara tools and how to define custom tools
+
+## Pre-built tools
+
+### BashTool, ComputerTool, EditTool
+
+`BashTool`, `ComputerTool`, and `EditTool` follow the same interface as the instance `bash`, `computer`, and `edit` methods. They each take in an `instance` parameter to interact with the instance.
+
+* `ComputerTool` allows the agent to allows the agent to control mouse and keyboard. Supported for Ubuntu, Browser, and Windows instances.
+* `BashTool` allows the agent to run bash commands. Supported only for Ubuntu instances.
+* `EditTool` allows the agent to view, create, and edit files. Supported only for Ubuntu instances.
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara import Scrapybara
+    from scrapybara.tools import BashTool, ComputerTool, EditTool
+
+    client = Scrapybara()
+    instance = client.start_ubuntu()
+
+    tools = [
+      BashTool(instance),
+      ComputerTool(instance),
+      EditTool(instance),
+    ]
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { ScrapybaraClient } from "scrapybara";
+    import { bashTool, computerTool, editTool } from "scrapybara/tools";
+
+    const client = new ScrapybaraClient();
+    const instance = await client.startUbuntu();
+
+    const tools = [
+      bashTool(instance),
+      computerTool(instance),
+      editTool(instance),
+    ];
+    ```
+  </Tab>
+</Tabs>
+
+### BrowserTool
+
+`BrowserTool` allows the agent to interact with a browser using Playwright.
+
+<Error>
+  Custom tools like BrowserTool may degrade model performance, as the models have not been trained on custom tools. For browser automation, we recommend sticking to ComputerTool.
+</Error>
+
+<Note>
+  The BrowserTool requires the browser to be started first.
+</Note>
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara import Scrapybara
+    from scrapybara.tools import BrowserTool
+
+    client = Scrapybara()
+    instance = client.start_ubuntu()
+    instance.browser.start()
+
+    tools = [
+      BrowserTool(instance),
+    ]
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { ScrapybaraClient } from "scrapybara";
+    import { browserTool } from "scrapybara/tools";
+
+    const client = new ScrapybaraClient();
+    const instance = await client.startUbuntu();
+    await instance.browser.start();
+
+    const tools = [
+      browserTool(instance),
+    ];
+    ```
+  </Tab>
+</Tabs>
+
+The tool is defined as follows:
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from playwright.sync_api import sync_playwright
+
+    class BrowserToolParameters(BaseModel):
+    """Parameters for browser interaction commands."""
+
+    command: Literal[
+        "go_to",  # Navigate to a URL
+        "get_html",  # Get current page HTML
+        "evaluate",  # Run JavaScript code
+        "click",  # Click on an element
+        "type",  # Type into an element
+        "screenshot",  # Take a screenshot
+        "get_text",  # Get text content of element
+        "get_attribute",  # Get attribute of element
+    ] = Field(
+        description="The browser command to execute. Required parameters per command:\n"
+        "- go_to: requires 'url'\n"
+        "- evaluate: requires 'code'\n"
+        "- click: requires 'selector'\n"
+        "- type: requires 'selector' and 'text'\n"
+        "- get_text: requires 'selector'\n"
+        "- get_attribute: requires 'selector' and 'attribute'\n"
+        "- get_html: no additional parameters\n"
+        "- screenshot: no additional parameters"
+    )
+    url: Optional[str] = Field(
+        None, description="URL for go_to command (required for go_to)"
+    )
+    selector: Optional[str] = Field(
+        None,
+        description="CSS selector for element operations (required for click, type, get_text, get_attribute)",
+    )
+    code: Optional[str] = Field(
+        None, description="JavaScript code for evaluate command (required for evaluate)"
+    )
+    text: Optional[str] = Field(
+        None, description="Text to type for type command (required for type)"
+    )
+    timeout: Optional[int] = Field(
+        30000, description="Timeout in milliseconds for operations"
+    )
+    attribute: Optional[str] = Field(
+        None,
+        description="Attribute name for get_attribute command (required for get_attribute)",
+    )
+
+
+    class BrowserTool(Tool):
+    """A browser interaction tool that allows the agent to interact with a browser."""
+
+    _instance: Union[UbuntuInstance, BrowserInstance]
+
+    def __init__(self, instance: Union[UbuntuInstance, BrowserInstance]) -> None:
+        super().__init__(
+            name="browser",
+            description="Interact with a browser for web scraping and automation",
+            parameters=BrowserToolParameters,
+        )
+        self._instance = instance
+
+    def __call__(self, **kwargs: Any) -> Any:
+        params = BrowserToolParameters.model_validate(kwargs)
+        command = params.command
+        url = params.url
+        selector = params.selector
+        code = params.code
+        text = params.text
+        timeout = params.timeout or 30000
+        attribute = params.attribute
+
+        cdp_url = self._instance.browser.get_cdp_url().cdp_url
+        if cdp_url is None:
+            raise ValueError("CDP URL is not available, start the browser first")
+
+        with sync_playwright() as playwright:
+            browser = playwright.chromium.connect_over_cdp(cdp_url)
+            context = browser.contexts[0]
+            if not context.pages:
+                page = context.new_page()
+            else:
+                page = context.pages[0]
+
+            try:
+                if command == "go_to":
+                    if not url:
+                        raise ValueError("URL is required for go_to command")
+                    page.goto(url, timeout=timeout)
+                    return True
+
+                elif command == "get_html":
+                    try:
+                        return page.evaluate("() => document.documentElement.outerHTML")
+                    except Exception:
+                        # If page is navigating, just return what we can get
+                        return page.evaluate("() => document.documentElement.innerHTML")
+
+                elif command == "evaluate":
+                    if not code:
+                        raise ValueError("Code is required for evaluate command")
+                    return page.evaluate(code)
+
+                elif command == "click":
+                    if not selector:
+                        raise ValueError("Selector is required for click command")
+                    page.click(selector, timeout=timeout)
+                    return True
+
+                elif command == "type":
+                    if not selector:
+                        raise ValueError("Selector is required for type command")
+                    if not text:
+                        raise ValueError("Text is required for type command")
+                    page.type(selector, text, timeout=timeout)
+                    return True
+
+                elif command == "screenshot":
+                    return image_result(
+                        base64.b64encode(page.screenshot(type="png")).decode("utf-8")
+                    )
+
+                elif command == "get_text":
+                    if not selector:
+                        raise ValueError("Selector is required for get_text command")
+                    element = page.wait_for_selector(selector, timeout=timeout)
+                    if element is None:
+                        raise ValueError(f"Element not found: {selector}")
+                    return element.text_content()
+
+                elif command == "get_attribute":
+                    if not selector:
+                        raise ValueError(
+                            "Selector is required for get_attribute command"
+                        )
+                    if not attribute:
+                        raise ValueError(
+                            "Attribute is required for get_attribute command"
+                        )
+                    element = page.wait_for_selector(selector, timeout=timeout)
+                    if element is None:
+                        raise ValueError(f"Element not found: {selector}")
+                    return element.get_attribute(attribute)
+
+                else:
+                    raise ValueError(f"Unknown command: {command}")
+
+            except Exception as e:
+                raise ValueError(f"Browser command failed: {str(e)}")
+
+            finally:
+                browser.close()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { chromium } from "playwright";
+
+    export function browserTool(instance: UbuntuInstance | BrowserInstance) {
+        return tool({
+            name: "browser",
+            description: "Interact with a browser for web scraping and automation",
+            parameters: z.object({
+                command: z
+                    .enum(["go_to", "get_html", "evaluate", "click", "type", "screenshot", "get_text", "get_attribute"])
+                    .describe(
+                        "The browser command to execute. Required parameters per command:\n- go_to: requires 'url'\n- evaluate: requires 'code'\n- click: requires 'selector'\n- type: requires 'selector' and 'text'\n- get_text: requires 'selector'\n- get_attribute: requires 'selector' and 'attribute'\n- get_html: no additional parameters\n- screenshot: no additional parameters"
+                    ),
+                url: z.string().optional().describe("URL for go_to command (required for go_to)"),
+                selector: z
+                    .string()
+                    .optional()
+                    .describe("CSS selector for element operations (required for click, type, get_text, get_attribute)"),
+                code: z.string().optional().describe("JavaScript code for evaluate command (required for evaluate)"),
+                text: z.string().optional().describe("Text to type for type command (required for type)"),
+                timeout: z.number().optional().default(30000).describe("Timeout in milliseconds for operations"),
+                attribute: z
+                    .string()
+                    .optional()
+                    .describe("Attribute name for get_attribute command (required for get_attribute)"),
+            }),
+            execute: async (params) => {
+                const { command, url, selector, code, text, timeout = 30000, attribute } = params;
+
+                const cdpUrl = await instance.browser.getCdpUrl();
+                if (!cdpUrl.cdpUrl) {
+                    throw new Error("CDP URL is not available, start the browser first");
+                }
+
+                const browser = await chromium.connectOverCDP(cdpUrl.cdpUrl);
+                try {
+                    const context = browser.contexts()[0];
+                    const page = context.pages().length ? context.pages()[0] : await context.newPage();
+
+                    try {
+                        switch (command) {
+                            case "go_to":
+                                if (!url) throw new Error("URL is required for go_to command");
+                                await page.goto(url, { timeout });
+                                return true;
+
+                            case "get_html":
+                                try {
+                                    return await page.evaluate("document.documentElement.outerHTML");
+                                } catch {
+                                    // If page is navigating, just return what we can get
+                                    return await page.evaluate("document.documentElement.innerHTML");
+                                }
+
+                            case "evaluate":
+                                if (!code) throw new Error("Code is required for evaluate command");
+                                return await page.evaluate(code);
+
+                            case "click":
+                                if (!selector) throw new Error("Selector is required for click command");
+                                await page.click(selector, { timeout });
+                                return true;
+
+                            case "type":
+                                if (!selector) throw new Error("Selector is required for type command");
+                                if (!text) throw new Error("Text is required for type command");
+                                await page.type(selector, text, { timeout });
+                                return true;
+
+                            case "screenshot":
+                                const screenshot = await page.screenshot({ type: "png" });
+                                return imageResult(screenshot.toString("base64"));
+
+                            case "get_text":
+                                if (!selector) throw new Error("Selector is required for get_text command");
+                                const textElement = await page.waitForSelector(selector, { timeout });
+                                if (!textElement) throw new Error(`Element not found: ${selector}`);
+                                return await textElement.textContent();
+
+                            case "get_attribute":
+                                if (!selector) throw new Error("Selector is required for get_attribute command");
+                                if (!attribute) throw new Error("Attribute is required for get_attribute command");
+                                const element = await page.waitForSelector(selector, { timeout });
+                                if (!element) throw new Error(`Element not found: ${selector}`);
+                                return await element.getAttribute(attribute);
+
+                            default:
+                                throw new Error(`Unknown command: ${command}`);
+                        }
+                    } catch (error: any) {
+                        throw new Error(`Browser command failed: ${error?.message || String(error)}`);
+                    }
+                } finally {
+                    await browser.close();
+                }
+            },
+        });
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Define custom tools
+
+You can define custom tools just like `BrowserTool`. A tool needs a `name`, `description`, `parameters` (Pydantic model for Python, Zod object for TS), and an execute function (`__call__` for Python, `execute` for TS).
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from scrapybara.client import UbuntuInstance
+    from scrapybara.tools import Tool
+    from pydantic import BaseModel
+
+    class CapyParameters(BaseModel):
+        # Define your parameters here
+        pass
+
+    class CapyTool(Tool):
+        _instance: UbuntuInstance
+
+        def __init__(self, instance: UbuntuInstance) -> None:
+            super().__init__(
+                name="capy",
+                description="Use a capybara",
+                parameters=CapyParameters,
+            )
+            self._instance = instance
+
+        def __call__(self, **kwargs: Any) -> Any:
+            # Implement your tool logic here
+            pass
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    import { UbuntuInstance } from "scrapybara";
+    import { tool } from "scrapybara/tools";
+    import { z } from "zod";
+
+    export function capyTool(instance: UbuntuInstance) {
+        return tool({
+            name: "capy",
+            description: "Use a capybara",
+            parameters: z.object({}), // Define your parameters here
+            execute: async () => {
+                // Implement your tool logic here
+            },
+        });
+    }
+    ```
+  </Tab>
+</Tabs>
+
+
+# Cursor Rules
+
+> Recommended .cursorrules for working with Cursor
+
+## .cursorrules
+
+<Tabs>
+  <Tab title="Python">
+    ```md .cursorrules
+    You are working with Scrapybara, a Python SDK for deploying and managing remote desktop instances for AI agents. Use this guide to properly interact with the SDK.
+
+    CORE SDK USAGE:
+
+    - Initialize client: from scrapybara import Scrapybara; client = Scrapybara(api_key="KEY")
+    - Instance lifecycle:
+        instance = client.start_ubuntu(timeout_hours=1)
+        instance.pause() # Pause to save resources
+        instance.resume(timeout_hours=1) # Resume work
+        instance.stop() # Terminate and clean up
+    - Instance types:
+        ubuntu_instance = client.start_ubuntu(): supports bash, computer, edit, browser
+        browser_instance = client.start_browser(): supports computer, browser
+        windows_instance = client.start_windows(): supports computer
+
+    CORE INSTANCE OPERATIONS:
+
+    - Screenshots: instance.screenshot().base_64_image
+    - Bash commands: instance.bash(command="ls -la")
+    - Mouse control: instance.computer(action="mouse_move", coordinate=[x, y])
+    - Click actions: instance.computer(action="left_click")
+    - File operations: instance.file.read(path="/path/file"), instance.file.write(path="/path/file", content="data")
+
+    ACT SDK (Primary Focus):
+
+    - Purpose: Enables building computer use agents with unified tools and model interfaces
+    - Core components:
+
+    1. Model: Handles LLM integration (currently Anthropic)
+        from scrapybara.anthropic import Anthropic
+        model = Anthropic() # Or model = Anthropic(api_key="KEY") for own key
+
+    2. Tools: Interface for computer interactions
+        - BashTool: Run shell commands
+        - ComputerTool: Mouse/keyboard control
+        - EditTool: File operations
+        tools = [
+            BashTool(instance),
+            ComputerTool(instance),
+            EditTool(instance),
+        ]
+
+    3. Prompt:
+        - system: system prompt, recommend to use UBUNTU_SYSTEM_PROMPT, BROWSER_SYSTEM_PROMPT, WINDOWS_SYSTEM_PROMPT
+        - prompt: simple user prompt
+        - messages: list of messages
+        - Only include either prompt or messages, not both
+
+    response = client.act(
+        model=Anthropic(),
+        tools=tools,
+        system=UBUNTU_SYSTEM_PROMPT,
+        prompt="Task",
+        on_step=handle_step
+    )
+    messages = response.messages
+    steps = response.steps
+    text = response.text
+    output = response.output
+    usage = response.usage
+
+    MESSAGE HANDLING:
+
+    - Response Structure: Messages are structured with roles (user/assistant/tool) and typed content
+    - Content Types:
+    - TextPart: Simple text content
+        TextPart(type="text", text="content")
+    - ImagePart: Base64 or URL images
+        ImagePart(type="image", image="base64...", mime_type="image/png")
+    - ToolCallPart: Tool invocations
+        ToolCallPart(
+            type="tool-call",
+            tool_call_id="id",
+            tool_name="bash",
+            args={"command": "ls"}
+        )
+    - ToolResultPart: Tool execution results
+        ToolResultPart(
+            type="tool-result",
+            tool_call_id="id",
+            tool_name="bash",
+            result="output",
+            is_error=False
+        )
+
+    STEP HANDLING:
+
+    # Access step information in callbacks
+    def handle_step(step: Step):
+        print(f"Text: {step.text}")
+        if step.tool_calls:
+            for call in step.tool_calls:
+                print(f"Tool: {call.tool_name}")
+        if step.tool_results:
+            for result in step.tool_results:
+                print(f"Result: {result.result}")
+        print(f"Tokens: {step.usage.total_tokens if step.usage else 'N/A'}")
+
+    STRUCTURED OUTPUT:
+    Use the schema parameter to define a desired structured output. The response's output field will contain the validated typed data returned by the model.
+
+    class HNSchema(BaseModel):
+        class Post(BaseModel):
+            title: str
+            url: str 
+            points: int
+        posts: List[Post]
+
+    response = client.act(
+        model=Anthropic(),
+        tools=tools,
+        schema=HNSchema,
+        system=SYSTEM_PROMPT,
+        prompt="Get the top 10 posts on Hacker News",
+    )
+    posts = response.output.posts
+
+    TOKEN USAGE:
+
+    - Track token usage through TokenUsage objects
+    - Fields: prompt_tokens, completion_tokens, total_tokens
+    - Available in both Step and ActResponse objects
+
+    Here's a brief example of how to use the Scrapybara SDK:
+
+    from scrapybara import Scrapybara
+    from scrapybara.anthropic import Anthropic
+    from scrapybara.prompts import UBUNTU_SYSTEM_PROMPT
+    from scrapybara.tools import BashTool, ComputerTool, EditTool
+
+    client = Scrapybara()
+    instance = client.start_ubuntu()
+    instance.browser.start()
+
+    response = client.act(
+        model=Anthropic(),
+        tools=[
+            BashTool(instance),
+            ComputerTool(instance),
+            EditTool(instance),
+        ],
+        system=UBUNTU_SYSTEM_PROMPT,
+        prompt="Go to the YC website and fetch the HTML",
+        on_step=lambda step: print(f"{step}\n"),
+    )
+    messages = response.messages
+    steps = response.steps
+    text = response.text
+    output = response.output
+    usage = response.usage
+
+    instance.browser.stop()
+    instance.stop()
+
+    EXECUTION PATTERNS:
+
+    1. Basic agent execution:
+
+    response = client.act(
+        model=Anthropic(),
+        tools=tools,
+        system="System context here",
+        prompt="Task description"
+    )
+
+    2. Browser automation:
+
+    cdp_url = instance.browser.start().cdp_url
+    auth_state_id = instance.browser.save_auth(name="default").auth_state_id  # Save auth
+    instance.browser.authenticate(auth_state_id=auth_state_id)  # Reuse auth
+
+    3. File management:
+
+    instance.file.write("/tmp/data.txt", "content")
+    content = instance.file.read("/tmp/data.txt").content
+
+
+    IMPORTANT GUIDELINES:
+
+    - Always stop instances after use to prevent unnecessary billing
+    - Use async client (AsyncScrapybara) for non-blocking operations
+    - Handle API errors with try/except ApiError blocks
+    - Default timeout is 60s; customize with timeout parameter or request_options
+    - Instance auto-terminates after 1 hour by default
+    - For browser operations, always start browser before BrowserTool usage
+    - Prefer bash commands over GUI interactions for launching applications
+
+    ERROR HANDLING:
+
+    from scrapybara.core.api_error import ApiError
+    try:
+        client.start_ubuntu()
+    except ApiError as e:
+        print(f"Error {e.status_code}: {e.body}")
+
+    BROWSER TOOL OPERATIONS:
+
+    - Required setup:
+    cdp_url = instance.browser.start().cdp_url
+    tools = [BrowserTool(instance)]
+    - Commands: go_to, get_html, evaluate, click, type, screenshot, get_text, get_attribute
+    - Always handle browser authentication states appropriately
+
+    ENV VARIABLES & CONFIGURATION:
+
+    - Set env vars: instance.env.set({"API_KEY": "value"})
+    - Get env vars: vars = instance.env.get().variables
+    - Delete env vars: instance.env.delete(["VAR_NAME"])
+
+    Remember to handle resources properly and implement appropriate error handling in your code. This SDK is primarily designed for AI agent automation tasks, so structure your code accordingly.
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```md .cursorrules
+    You are working with Scrapybara, a TypeScript SDK for deploying and managing remote desktop instances for AI agents. Use this guide to properly interact with the SDK.
+
+    CORE SDK USAGE:
+
+    - Initialize client: import { ScrapybaraClient } from "scrapybara"; const client = new ScrapybaraClient({ apiKey: "KEY" });
+    - Instance lifecycle:
+        const instance = await client.startUbuntu({ timeoutHours: 1 });
+        await instance.pause(); // Pause to save resources
+        await instance.resume({ timeoutHours: 1 }); // Resume work
+        await instance.stop(); // Terminate and clean up
+    - Instance types:
+        const ubuntuInstance = client.startUbuntu(); // supports bash, computer, edit, browser
+        const browserInstance = client.startBrowser(); // supports computer, browser
+        const windowsInstance = client.startWindows(); // supports computer
+
+    CORE INSTANCE OPERATIONS:
+
+    - Screenshots: const base64Image = await instance.screenshot().base64Image;
+    - Bash commands: await instance.bash({ command: "ls -la" });
+    - Mouse control: await instance.computer({ action: "mouse_move", coordinate: [x, y] });
+    - Click actions: await instance.computer({ action: "left_click" });
+    - File operations: await instance.file.read({ path: "/path/file" }), await instance.file.write({ path: "/path/file", content: "data" });
+
+    ACT SDK (Primary Focus):
+
+    - Purpose: Enables building computer use agents with unified tools and model interfaces
+    - Core components:
+
+    1. Model: Handles LLM integration (currently Anthropic)
+        import { anthropic } from "scrapybara/anthropic";
+        const model = anthropic(); // Or model = anthropic({ apiKey: "KEY" }) for own key
+
+    2. Tools: Interface for computer interactions
+
+        - bashTool: Run shell commands
+        - computerTool: Mouse/keyboard control
+        - editTool: File operations
+        const tools = [
+            bashTool(instance),
+            computerTool(instance),
+            editTool(instance),
+        ];
+
+    3. Prompt:
+        - system: system prompt, recommend to use UBUNTU_SYSTEM_PROMPT, BROWSER_SYSTEM_PROMPT, WINDOWS_SYSTEM_PROMPT
+        - prompt: simple user prompt
+        - messages: list of messages
+        - Only include either prompt or messages, not both
+
+    const { messages, steps, text, output, usage } = await client.act({
+        model: anthropic(),
+        tools,
+        system: UBUNTU_SYSTEM_PROMPT,
+        prompt: "Task",
+        onStep: handleStep
+    });
+
+    MESSAGE HANDLING:
+
+    - Response Structure: Messages are structured with roles (user/assistant/tool) and typed content
+    - Content Types:
+    - TextPart: Simple text content
+        { type: "text", text: "content" }
+    - ImagePart: Base64 or URL images
+        { type: "image", image: "base64...", mimeType: "image/png" }
+    - ToolCallPart: Tool invocations
+        {
+            type: "tool-call",
+            toolCallId: "id",
+            toolName: "bash",
+            args: { command: "ls" }
+        }
+    - ToolResultPart: Tool execution results
+        {
+            type: "tool-result",
+            toolCallId: "id",
+            toolName: "bash",
+            result: "output",
+            isError: false
+        }
+
+    STEP HANDLING:
+
+    // Access step information in callbacks
+    const handleStep = (step: Step) => {
+        console.log(`Text: ${step.text}`);
+        if (step.toolCalls) {
+            for (const call of step.toolCalls) {
+                console.log(`Tool: ${call.toolName}`);
+            }
+        }
+        if (step.toolResults) {
+            for (const result of step.toolResults) {
+                console.log(`Result: ${result.result}`);
+            }
+        }
+        console.log(`Tokens: ${step.usage?.totalTokens ?? 'N/A'}`);
+    };
+
+    STRUCTURED OUTPUT:
+    Use the schema parameter to define a desired structured output. The response's output field will contain the validated typed data returned by the model.
+
+    const schema = z.object({
+        posts: z.array(z.object({
+            title: z.string(),
+            url: z.string(),
+            points: z.number(),
+        })),
+    });
+
+    const { output } = await client.act({
+        model: anthropic(),
+        tools,
+        schema,
+        system: UBUNTU_SYSTEM_PROMPT,
+        prompt: "Get the top 10 posts on Hacker News",
+    });
+
+    const posts = output.posts;
+
+    TOKEN USAGE:
+
+    - Track token usage through TokenUsage objects
+    - Fields: promptTokens, completionTokens, totalTokens
+    - Available in both Step and ActResponse objects
+
+    Here's a brief example of how to use the Scrapybara SDK:
+
+    import { ScrapybaraClient } from "scrapybara";
+    import { anthropic } from "scrapybara/anthropic";
+    import { UBUNTU_SYSTEM_PROMPT } from "scrapybara/prompts";
+    import { bashTool, computerTool, editTool } from "scrapybara/tools";
+
+    const client = new ScrapybaraClient();
+    const instance = await client.startUbuntu();
+    await instance.browser.start();
+
+    const { messages, steps, text, output, usage } = await client.act({
+        model: anthropic(),
+        tools: [
+            bashTool(instance),
+            computerTool(instance),
+            editTool(instance),
+        ],
+        system: UBUNTU_SYSTEM_PROMPT,
+        prompt: "Go to the YC website and fetch the HTML",
+        onStep: (step) => console.log(`${step}\n`),
+    });
+
+    await instance.browser.stop();
+    await instance.stop();
+
+    EXECUTION PATTERNS:
+
+    1. Basic agent execution:
+
+    const { messages, steps, text, output, usage } = await client.act({
+        model: anthropic(),
+        tools,
+        system: "System context here",
+        prompt: "Task description"
+    });
+
+    2. Browser automation:
+
+    const cdpUrl = await instance.browser.start().cdpUrl;
+    const authStateId = await instance.browser.saveAuth({ name: "default" }).authStateId;  // Save auth
+    await instance.browser.authenticate({ authStateId });  // Reuse auth
+
+    3. File management:
+
+    await instance.file.write({ path: "/tmp/data.txt", content: "content" });
+    const content = await instance.file.read({ path: "/tmp/data.txt" }).content;
+
+    IMPORTANT GUIDELINES:
+
+    - Always stop instances after use to prevent unnecessary billing
+    - Use async/await for all operations as they are asynchronous
+    - Handle API errors with try/catch blocks
+    - Default timeout is 60s; customize with timeout parameter or requestOptions
+    - Instance auto-terminates after 1 hour by default
+    - For browser operations, always start browser before browserTool usage
+    - Prefer bash commands over GUI interactions for launching applications
+
+    ERROR HANDLING:
+
+    import { ApiError } from "scrapybara/core";
+    try {
+        await client.startUbuntu();
+    } catch (e) {
+        if (e instanceof ApiError) {
+            console.error(`Error ${e.statusCode}: ${e.body}`);
+        }
+    }
+
+    BROWSER TOOL OPERATIONS:
+
+    - Required setup:
+    const cdpUrl = await instance.browser.start().cdpUrl;
+    const tools = [browserTool(instance)];
+    - Commands: goTo, getHtml, evaluate, click, type, screenshot, getText, getAttribute
+    - Always handle browser authentication states appropriately
+
+    ENV VARIABLES & CONFIGURATION:
+
+    - Set env vars: await instance.env.set({ API_KEY: "value" });
+    - Get env vars: const vars = await instance.env.get().variables;
+    - Delete env vars: await instance.env.delete(["VAR_NAME"]);
+
+    Remember to handle resources properly and implement appropriate error handling in your code. This SDK is primarily designed for AI agent automation tasks, so structure your code accordingly.
+    ```
+  </Tab>
+</Tabs>
+
+## llms-full.txt
+
+Need more context? Check out [llms-full.txt](/llms-full.txt).
+
+
+# Anthropic
+
+> Build Scrapybara agents with Anthropic models
+
+## Act SDK
+
+Use Anthropic models with the Act SDK:
+
+* `claude-3-5-sonnet-20241022` with computer use beta
+
+Consume agent credits or bring your own API key. Without an API key, each step consumes 1 [agent credit](https://scrapybara.com/#pricing). With your own API key, model charges are billed directly to your Anthropic account.
+
+<Tabs>
+  <Tab title="Python">
+    ```python Import model
+    from scrapybara.anthropic import Anthropic
+
+    # Consume agent credits
+    model = Anthropic()
+
+    # Bring your own API key
+    model = Anthropic(api_key="your_api_key")
+    ```
+
+    ```python Take action
+    from scrapybara import Scrapybara
+    from scrapybara.tools import BashTool, ComputerTool, EditTool
+    from scrapybara.prompts import UBUNTU_SYSTEM_PROMPT
+
+    client = Scrapybara()
+    instance = client.start_ubuntu()
+
+    client.act(
+        tools=[
+            BashTool(instance),
+            ComputerTool(instance),
+            EditTool(instance),
+        ],
+        model=model,
+        system=UBUNTU_SYSTEM_PROMPT,
+        prompt="Reseach Scrapybara",
+    )
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Import model
+    import { anthropic } from "scrapybara/anthropic";
+
+    // Consume agent credits
+    const model = () => anthropic();
+
+    // Bring your own API key
+    const model = () => anthropic({ apiKey: "your_api_key" });
+    ```
+
+    ```typescript Take action
+    import { ScrapybaraClient } from "scrapybara";
+    import { bashTool, computerTool, editTool } from "scrapybara/tools";
+    import { UBUNTU_SYSTEM_PROMPT } from "scrapybara/prompts";
+
+    const client = new ScrapybaraClient();
+    const instance = await client.startUbuntu();
+
+    await client.act({
+      tools: [
+        bashTool(instance),
+        computerTool(instance),
+        editTool(instance),
+      ],
+      model,
+      system: UBUNTU_SYSTEM_PROMPT,
+      prompt: "Reseach Scrapybara",
+    })
+    ```
+  </Tab>
+</Tabs>
+
+## Legacy Anthropic connector
+
+<Warning>
+  Legacy Anthropic connector is currently only available for the Python SDK.
+</Warning>
+
+<Steps>
+  <Step title="Basic setup">
+    ```python main.py
+    import asyncio
+    import os
+    import json
+    import base64
+    from io import BytesIO
+    from PIL import Image
+    from IPython.display import display
+    from typing import Any, cast
+    from datetime import datetime
+
+    from anthropic import Anthropic
+    from anthropic.types.beta import (
+        BetaContentBlockParam,
+        BetaTextBlockParam,
+        BetaImageBlockParam,
+        BetaToolResultBlockParam,
+        BetaToolUseBlockParam,
+        BetaMessageParam,
+    )
+
+    from scrapybara.anthropic import BashTool, ComputerTool, EditTool, ToolResult, ToolCollection
+    from scrapybara import Scrapybara
+
+    # Initialize Scrapybara
+    scrapybara_client = Scrapybara(api_key="your_scrapybara_api_key")
+    instance = scrapybara_client.start_ubuntu()
+
+    # Initialize Anthropic
+    anthropic_client = Anthropic(api_key="your_claude_api_key")
+
+    # System prompt from original Computer Use implementation
+    SYSTEM_PROMPT = """<SYSTEM_CAPABILITY>
+    * You are utilising an Ubuntu virtual machine using linux architecture with internet access.
+    * You can feel free to install Ubuntu applications with your bash tool. Use curl instead of wget.
+    * To open chromium, please just click on the web browser icon or use the (DISPLAY=:1 chromium &) command.  Note, chromium is what is installed on your system.
+    * Using bash tool you can start GUI applications, but you need to set export DISPLAY=:1 and use a subshell. For example "(DISPLAY=:1 xterm &)". GUI apps run with bash tool will appear within your desktop environment, but they may take some time to appear. Take a screenshot to confirm it did.
+    * When using your bash tool with commands that are expected to output very large quantities of text, redirect into a tmp file and use str_replace_editor or `grep -n -B <lines before> -A <lines after> <query> <filename>` to confirm output.
+    * When viewing a page it can be helpful to zoom out so that you can see everything on the page.  Either that, or make sure you scroll down to see everything before deciding something isn't available.
+    * When using your computer function calls, they take a while to run and send back to you.  Where possible/feasible, try to chain multiple of these calls all into one function calls request.
+    * The current date is {datetime.today().strftime('%A, %B %-d, %Y')}.
+    </SYSTEM_CAPABILITY>
+
+    <IMPORTANT>
+    * When using Chromium, if a startup wizard appears, IGNORE IT.  Do not even click "skip this step".  Instead, click on the address bar where it says "Search or enter address", and enter the appropriate search term or URL there.
+    * If the item you are looking at is a pdf, if after taking a single screenshot of the pdf it seems that you want to read the entire document instead of trying to continue to read the pdf from your screenshots + navigation, determine the URL, use curl to download the pdf, install and use pdftotext to convert it to a text file, and then read that text file directly with your StrReplaceEditTool.
+    </IMPORTANT>"""
+    ```
+  </Step>
+
+  <Step title="Define utility functions">
+    ```python main.py
+    def _make_api_tool_result(result: ToolResult, tool_use_id: str) -> BetaToolResultBlockParam:
+        tool_result_content: list[BetaTextBlockParam | BetaImageBlockParam] | str = []  # Changed this line
+        is_error = False
+        if result.error:
+            is_error = True
+            tool_result_content = result.error
+        else:
+            if result.output:
+                tool_result_content.append({
+                    "type": "text",
+                    "text": result.output,
+                })
+            if result.base64_image:
+                tool_result_content.append({
+                    "type": "image",
+                    "source": {
+                        "type": "base64",
+                        "media_type": "image/png",
+                        "data": result.base64_image,
+                    },
+                })
+        return {
+            "type": "tool_result",
+            "content": tool_result_content,
+            "tool_use_id": tool_use_id,
+            "is_error": is_error,
+        }
+
+    def _response_to_params(response):
+        res = []
+        for block in response.content:
+            if block.type == "text":
+                res.append({"type": "text", "text": block.text})
+            else:
+                res.append(block.model_dump())
+        return res
+
+    def _maybe_filter_to_n_most_recent_images(
+        messages: list[BetaMessageParam],
+        images_to_keep: int,
+        min_removal_threshold: int,
+    ):
+        if images_to_keep is None:
+            return messages
+
+        tool_result_blocks = cast(
+            list[BetaToolResultBlockParam],
+            [
+                item
+                for message in messages
+                for item in (
+                    message["content"] if isinstance(message["content"], list) else []
+                )
+                if isinstance(item, dict) and item.get("type") == "tool_result"
+            ],
+        )
+
+        total_images = sum(
+            1
+            for tool_result in tool_result_blocks
+            for content in tool_result.get("content", [])
+            if isinstance(content, dict) and content.get("type") == "image"
+        )
+
+        images_to_remove = total_images - images_to_keep
+        images_to_remove -= images_to_remove % min_removal_threshold
+
+        for tool_result in tool_result_blocks:
+            if isinstance(tool_result.get("content"), list):
+                new_content = []
+                for content in tool_result.get("content", []):
+                    if isinstance(content, dict) and content.get("type") == "image":
+                        if images_to_remove > 0:
+                            images_to_remove -= 1
+                            continue
+                    new_content.append(content)
+                tool_result["content"] = new_content
+    ```
+  </Step>
+
+  <Step title="Define sampling loop">
+    ```python main.py
+    def display_base64_image(base64_string, max_size=(800, 800)):
+        image_data = base64.b64decode(base64_string)
+        image = Image.open(BytesIO(image_data))
+
+        # Resize if larger than max_size while maintaining aspect ratio
+        if image.size[0] > max_size[0] or image.size[1] > max_size[1]:
+            image.thumbnail(max_size, Image.Resampling.LANCZOS)
+
+        display(image)
+
+    async def sampling_loop(command: str):
+        """
+        Run the sampling loop for a single command until completion.
+        """
+        messages: list[BetaMessageParam] = []
+        tool_collection = ToolCollection(
+            ComputerTool(instance),
+            BashTool(instance),
+            EditTool(instance),
+        )
+
+        # Add initial command to messages
+        messages.append({
+            "role": "user",
+            "content": [{"type": "text", "text": command}],
+        })
+
+        while True:
+            _maybe_filter_to_n_most_recent_images(messages, 2, 2)
+
+            # Get Claude's response
+            response = anthropic_client.beta.messages.create(
+                model="claude-3-5-sonnet-20241022",
+                max_tokens=4096,
+                messages=messages,
+                system=[{"type": "text", "text": SYSTEM_PROMPT}],
+                tools=tool_collection.to_params(),
+                betas=["computer-use-2024-10-22"]
+            )
+
+            # Convert response to params
+            response_params = _response_to_params(response)
+
+            # Process response content and handle tools before adding to messages
+            tool_result_content: list[BetaToolResultBlockParam] = []
+
+            for content_block in response_params:
+                if content_block["type"] == "text":
+                    print(f"\nAssistant: {content_block['text']}")
+
+                elif content_block["type"] == "tool_use":
+                    print(f"\nTool Use: {content_block['name']}")
+                    print(f"Input: {content_block['input']}")
+
+                    # Execute the tool
+                    result = await tool_collection.run(
+                        path=content_block["name"],
+                        tool_input=cast(dict[str, Any], content_block["input"])
+                    )
+
+                    print(f"Result: {result}")
+                    if content_block['name'] == 'bash' and not result:
+                        result = await tool_collection.run(
+                            path="computer",
+                            tool_input={"action": "screenshot"}
+                        )
+                        print("Updated result: ", result)
+
+                    if result:
+                        print("Converting tool result: ", result)
+                        tool_result = _make_api_tool_result(result, content_block["id"])
+                        print(f"Tool Result: {tool_result}")
+
+                        if result.output:
+                            print(f"\nTool Output: {result.output}")
+                        if result.error:
+                            print(f"\nTool Error: {result.error}")
+                        if result.base64_image:
+                            print("\nTool generated an image (base64 data available)")
+                            display_base64_image(result.base64_image)
+
+                        tool_result_content.append(tool_result)
+
+                        print("\n---")
+
+            # Add assistant's response to messages
+            messages.append({
+                "role": "assistant",
+                "content": response_params,
+            })
+
+            # If tools were used, add their results to messages
+            if tool_result_content:
+                messages.append({
+                    "role": "user",
+                    "content": tool_result_content
+                })
+            else:
+                # No tools used, task is complete
+                break
+    ```
+  </Step>
+
+  <Step title="Execute a command">
+    ```python main.py
+    command = "Google Scrapybara"
+
+    # Run the sampling loop for this command
+    await sampling_loop(command)
+    ```
+  </Step>
+</Steps>
+
+
+# OpenAI
+
+> Build Scrapybara agents with OpenAI models
+
+<Note>
+  OpenAI CUA integration is coming soon!
+</Note>
+
+
+# Ubuntu
+
+> Deploy an Ubuntu instance
+
+## UbuntuInstance
+
+The `UbuntuInstance` is a Ubuntu 22.04 desktop that supports interactive streaming, computer actions, bash commands, filesystem management, built-in Jupyter notebooks, and Chromium browser support. We recommend using this instance type for most tasks.
+
+* Fast start up time
+* 1x compute cost
+
+## Start an Ubuntu instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance = client.start_ubuntu()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const instance = await client.startUbuntu();
+    ```
+  </Tab>
+</Tabs>
+
+## Available actions
+
+### screenshot
+
+Take a base64 encoded image of the current desktop
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    base_64_image = instance.screenshot().base_64_image
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const base64Image = await instance.screenshot();
+    ```
+  </Tab>
+</Tabs>
+
+### get\_stream\_url
+
+Get the interactive stream URL
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    stream_url = instance.get_stream_url().stream_url
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const streamUrl = await instance.getStreamUrl();
+    ```
+  </Tab>
+</Tabs>
+
+### computer
+
+Perform computer actions with the mouse and keyboard
+
+#### `key`
+
+Press a key or combination of keys
+
+`text`
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="key", text="ctrl+c")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "key", text: "ctrl+c"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `type`
+
+Type text into the active window
+
+`text`
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="type", text="Hello world")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "type", text: "Hello world"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `mouse_move`
+
+Move mouse cursor to specific coordinates
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="mouse_move", coordinate=[100, 200])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "mouse_move", coordinate: [100, 200]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `left_click_drag`
+
+Click and drag from current position to specified coordinates
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="left_click_drag", coordinate=[300, 400])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "left_click_drag", coordinate: [300, 400]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `scroll`
+
+Scroll horizontally and/or vertically (pixels converted to clicks)
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python Scroll down 200px
+    instance.computer(action="scroll", coordinate=[0, 200])
+    ```
+
+    ```python Scroll right 300px
+    instance.computer(action="scroll", coordinate=[300, 0])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Scroll down 200px
+    await instance.computer({action: "scroll", coordinate: [0, 200]});
+    ```
+
+    ```typescript Scroll right 300px
+    await instance.computer({action: "scroll", coordinate: [300, 0]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `left_click`
+
+Perform a left mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="left_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "left_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `right_click`
+
+Perform a right mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="right_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "right_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `middle_click`
+
+Perform a middle mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="middle_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "middle_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `double_click`
+
+Perform a double left click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="double_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "double_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `screenshot`
+
+Take a screenshot of the desktop
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    screenshot = instance.computer(action="screenshot").base64_image
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const screenshot = await instance.computer({action: "screenshot"}).base64_image;
+    ```
+  </Tab>
+</Tabs>
+
+#### `cursor_position`
+
+Get current mouse cursor coordinates
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    cursor_position = instance.computer(action="cursor_position").output
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const cursorPosition = await instance.computer({action: "cursor_position"}).output;
+    ```
+  </Tab>
+</Tabs>
+
+#### `wait`
+
+Wait for 3 seconds
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="wait")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "wait"});
+    ```
+  </Tab>
+</Tabs>
+
+### bash
+
+Run a bash command
+
+<Tabs>
+  <Tab title="Python">
+    ```python Run a bash command
+    output = instance.bash(command="ls -la")
+    ```
+
+    ```python Restart the shell
+    instance.bash(restart=True)
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Run a bash command
+    const output = await instance.bash({command: "ls -la"});
+    ```
+
+    ```typescript Restart the shell
+    await instance.bash({restart: true});
+    ```
+  </Tab>
+</Tabs>
+
+### edit
+
+Edit a file on the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python Create a new file
+    instance.edit(command="create", path="hello.txt", file_text="Hello world")
+    ```
+
+    ```python Replace text in a file
+    instance.edit(command="replace", path="hello.txt", old_str="Hello", new_str="Hi")
+    ```
+
+    ```python Insert text at a specific line
+    instance.edit(command="insert", path="hello.txt", insert_line=2, file_text="New line")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Create a new file
+    await instance.edit({command: "create", path: "hello.txt", fileText: "Hello world"});
+    ```
+
+    ```typescript Replace text in a file
+    await instance.edit({command: "replace", path: "hello.txt", oldStr: "Hello", newStr: "Hi"});
+    ```
+
+    ```typescript Insert text at a specific line
+    await instance.edit({command: "insert", path: "hello.txt", insertLine: 2, fileText: "New line"});
+    ```
+  </Tab>
+</Tabs>
+
+### `stop`
+
+Stop the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.stop()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.stop();
+    ```
+  </Tab>
+</Tabs>
+
+### `pause`
+
+Pause the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.pause()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.pause();
+    ```
+  </Tab>
+</Tabs>
+
+### `resume`
+
+Resume the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python Resume with default timeout
+    instance.resume()
+    ```
+
+    ```python Resume with custom timeout
+    instance.resume(timeout_hours=2.5)
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Resume with default timeout
+    await instance.resume();
+    ```
+
+    ```typescript Resume with custom timeout
+    await instance.resume({timeoutHours: 2.5});
+    ```
+  </Tab>
+</Tabs>
+
+## Compatible tools
+
+* `BashTool`
+* `ComputerTool`
+* `EditTool`
+* `BrowserTool`
+
+## Additional protocols
+
+The Ubuntu instance supports several protocols that provide additional functionality:
+
+* [Browser](/protocols/browser) - Control the browser with Playwright
+* [Code Execution](/protocols/code) - Execute code in Python and JavaScript
+* [Environment Variables](/protocols/env) - Manage environment variables
+* [Filesystem](/protocols/file) - Read, write, upload, and download files
+
+
+# Browser
+
+> Control a browser directly in your Scrapybara instance with Playwright
+
+<Tabs>
+  <Tab title="Python">
+    <Steps>
+      <Step title="Start an instance">
+        ```python
+        from scrapybara import Scrapybara
+
+        client = Scrapybara(api_key="your_api_key")
+        instance = client.start_ubuntu()
+        ```
+      </Step>
+
+      <Step title="Start a browser session">
+        ```python
+        cdp_url = instance.browser.start().cdp_url
+        ```
+      </Step>
+
+      <Step title="Authenticate the session (optional)">
+        To save the authenticated state of a browser session, use the `saveAuth` method.
+
+        ```python
+        auth_state_id = instance.browser.save_auth(name="default").auth_state_id
+        ```
+
+        Now, you can reuse the saved auth state on other instances by passing the `auth_state_id` to the `authenticate` method. The browser needs to be started first.
+
+        ```python
+        instance.browser.authenticate(auth_state_id=auth_state_id)
+        ```
+      </Step>
+
+      <Step title="Connect to the browser">
+        ```python
+        from playwright.sync_api import sync_playwright
+
+        playwright = sync_playwright().start()
+        browser = playwright.chromium.connect_over_cdp(cdp_url)
+        ```
+      </Step>
+
+      <Step title="Interact with the browser">
+        ```python
+        page = browser.new_page()
+        page.goto("https://scrapybara.com")
+        screenshot = page.screenshot()
+        ```
+      </Step>
+
+      <Step title="Stop the browser session">
+        ```python
+        instance.browser.stop()
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="TypeScript">
+    <Steps>
+      <Step title="Start an instance">
+        ```typescript
+        import { ScrapybaraClient } from "scrapybara";
+
+        const client = new ScrapybaraClient({ apiKey: "your_api_key" });
+        const instance = await client.startUbuntu();
+        ```
+      </Step>
+
+      <Step title="Start a browser session">
+        ```typescript
+        const cdpUrl = await instance.browser.start().cdpUrl;
+        ```
+      </Step>
+
+      <Step title="Authenticate the session (optional)">
+        To save the authenticated state of a browser session, use the `saveAuth` method.
+
+        ```typescript
+        const authStateId = await instance.browser.saveAuth({
+          name: "default",
+        }).authStateId;
+        ```
+
+        Now, you can reuse the saved auth state on other instances by passing the `authStateId` to the `authenticate` method. The browser needs to be started first.
+
+        ```typescript
+        await instance.browser.authenticate({ authStateId });
+        ```
+      </Step>
+
+      <Step title="Connect to the browser">
+        ```typescript
+        import { chromium } from "playwright";
+
+        const browser = await chromium.connectOverCDP(cdpUrl);
+        ```
+      </Step>
+
+      <Step title="Interact with the browser">
+        ```typescript
+        const page = await browser.newPage();
+        await page.goto("https://scrapybara.com");
+        const screenshot = await page.screenshot();
+        ```
+      </Step>
+
+      <Step title="Stop the browser session">
+        ```typescript
+        await instance.browser.stop();
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+
+# Code Execution
+
+> Execute code in your Scrapybara instance
+
+<Tabs>
+  <Tab title="Python">
+    <Steps>
+      <Step title="Start an instance">
+        ```python
+        from scrapybara import Scrapybara
+
+        client = Scrapybara(api_key="your_api_key")
+        instance = client.start_ubuntu()
+        ```
+      </Step>
+
+      <Step title="Execute code directly">
+        ```python
+        result = instance.code.execute(
+            code="print('Hello from Scrapybara!')",
+            kernel_name="python3"  # Optional: specify kernel
+        )
+        ```
+      </Step>
+
+      <Step title="List available kernels">
+        ```python
+        kernels = instance.notebook.list_kernels()
+        ```
+      </Step>
+
+      <Step title="Create a notebook">
+        ```python
+        notebook = instance.notebook.create(
+            name="my_notebook",
+            kernel_name="python3"
+        )
+        ```
+      </Step>
+
+      <Step title="Add and execute cells">
+        ```python
+        # Add a code cell
+        cell = instance.notebook.add_cell(
+            notebook_id=notebook.id,
+            type="code",
+            content="print('Hello from Scrapybara!')"
+        )
+
+        # Execute the cell
+        result = instance.notebook.execute_cell(
+            notebook_id=notebook.id,
+            cell_id=cell.id
+        )
+        ```
+      </Step>
+
+      <Step title="Execute entire notebook">
+        ```python
+        # Execute all cells in the notebook
+        results = instance.notebook.execute(notebook_id=notebook.id)
+        ```
+      </Step>
+
+      <Step title="Clean up">
+        ```python
+        # Delete the notebook when done
+        instance.notebook.delete(notebook_id=notebook.id)
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="TypeScript">
+    <Steps>
+      <Step title="Start an instance">
+        ```typescript
+        import { ScrapybaraClient } from "scrapybara";
+
+        const client = new ScrapybaraClient({ apiKey: "your_api_key" });
+        const instance = await client.startUbuntu();
+        ```
+      </Step>
+
+      <Step title="Execute code directly">
+        ```typescript
+        const result = await instance.code.execute({
+            code: "print('Hello from Scrapybara!')",
+            kernelName: "python3"  // Optional: specify kernel
+        });
+        ```
+      </Step>
+
+      <Step title="List available kernels">
+        ```typescript
+        const kernels = await instance.notebook.listKernels();
+        ```
+      </Step>
+
+      <Step title="Create a notebook">
+        ```typescript
+        const notebook = await instance.notebook.create({
+            name: "my_notebook",
+            kernelName: "python3"
+        });
+        ```
+      </Step>
+
+      <Step title="Add and execute cells">
+        ```typescript
+        // Add a code cell
+        const cell = await instance.notebook.addCell({
+            notebookId: notebook.id,
+            type: "code",
+            content: "print('Hello from Scrapybara!')"
+        });
+
+        // Execute the cell
+        const result = await instance.notebook.executeCell({
+            notebookId: notebook.id,
+            cellId: cell.id
+        });
+        ```
+      </Step>
+
+      <Step title="Execute entire notebook">
+        ```typescript
+        // Execute all cells in the notebook
+        const results = await instance.notebook.execute({
+            notebookId: notebook.id
+        });
+        ```
+      </Step>
+
+      <Step title="Clean up">
+        ```typescript
+        // Delete the notebook when done
+        await instance.notebook.delete({
+            notebookId: notebook.id
+        });
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+
+# Environment Variables
+
+> Manage environment variables in your Scrapybara instance
+
+<Tabs>
+  <Tab title="Python">
+    <Steps>
+      <Step title="Start an instance">
+        ```python
+        from scrapybara import Scrapybara
+
+        client = Scrapybara(api_key="your_api_key")
+        instance = client.start_ubuntu()
+        ```
+      </Step>
+
+      <Step title="Set environment variables">
+        ```python
+        # Set one or more environment variables
+        instance.env.set(
+            variables={
+                "API_KEY": "secret_key",
+                "DEBUG": "true",
+                "DATABASE_URL": "postgresql://localhost:5432/db"
+            }
+        )
+        ```
+      </Step>
+
+      <Step title="Get environment variables">
+        ```python
+        # Get all environment variables
+        response = instance.env.get()
+        env_vars = response.variables
+        ```
+      </Step>
+
+      <Step title="Delete environment variables">
+        ```python
+        # Delete specific environment variables
+        instance.env.delete(
+            keys=["API_KEY", "DEBUG"]
+        )
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="TypeScript">
+    <Steps>
+      <Step title="Start an instance">
+        ```typescript
+        import { ScrapybaraClient } from "scrapybara";
+
+        const client = new ScrapybaraClient({ apiKey: "your_api_key" });
+        const instance = await client.startUbuntu();
+        ```
+      </Step>
+
+      <Step title="Set environment variables">
+        ```typescript
+        // Set one or more environment variables
+        await instance.env.set({
+            variables: {
+                API_KEY: "secret_key",
+                DEBUG: "true",
+                DATABASE_URL: "postgresql://localhost:5432/db"
+            }
+        });
+        ```
+      </Step>
+
+      <Step title="Get environment variables">
+        ```typescript
+        // Get all environment variables
+        const response = await instance.env.get();
+        const envVars = response.variables;
+        ```
+      </Step>
+
+      <Step title="Delete environment variables">
+        ```typescript
+        // Delete specific environment variables
+        await instance.env.delete({
+            keys: ["API_KEY", "DEBUG"]
+        });
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+
+# Filesystem
+
+> Read, write, upload and download files in your Scrapybara instance
+
+<Tabs>
+  <Tab title="Python">
+    <Steps>
+      <Step title="Start an instance">
+        ```python
+        from scrapybara import Scrapybara
+
+        client = Scrapybara(api_key="your_api_key")
+        instance = client.start_ubuntu()
+        ```
+      </Step>
+
+      <Step title="Write a file">
+        ```python
+        # Write content to a file
+        instance.file.write(
+            path="/path/to/file.txt",
+            content="Hello from Scrapybara!",
+            encoding="utf-8"  # Optional: specify encoding
+        )
+        ```
+      </Step>
+
+      <Step title="Read a file">
+        ```python
+        # Read file content
+        response = instance.file.read(
+            path="/path/to/file.txt",
+            encoding="utf-8"  # Optional: specify encoding
+        )
+        content = response.content
+        ```
+      </Step>
+
+      <Step title="Upload a file">
+        ```python
+        # Upload a file to the instance
+        instance.file.upload(
+            path="/destination/path/file.txt",
+            content="file_content_as_string"
+        )
+        ```
+      </Step>
+
+      <Step title="Download a file">
+        ```python
+        # Download a file from the instance
+        response = instance.file.download(
+            path="/path/to/file.txt"
+        )
+        downloaded_content = response.content
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="TypeScript">
+    <Steps>
+      <Step title="Start an instance">
+        ```typescript
+        import { ScrapybaraClient } from "scrapybara";
+
+        const client = new ScrapybaraClient({ apiKey: "your_api_key" });
+        const instance = await client.startUbuntu();
+        ```
+      </Step>
+
+      <Step title="Write a file">
+        ```typescript
+        // Write content to a file
+        await instance.file.write({
+            path: "/path/to/file.txt",
+            content: "Hello from Scrapybara!",
+            encoding: "utf-8"  // Optional: specify encoding
+        });
+        ```
+      </Step>
+
+      <Step title="Read a file">
+        ```typescript
+        // Read file content
+        const response = await instance.file.read({
+            path: "/path/to/file.txt",
+            encoding: "utf-8"  // Optional: specify encoding
+        });
+        const content = response.content;
+        ```
+      </Step>
+
+      <Step title="Upload a file">
+        ```typescript
+        // Upload a file to the instance
+        await instance.file.upload({
+            path: "/destination/path/file.txt",
+            content: "file_content_as_string"
+        });
+        ```
+      </Step>
+
+      <Step title="Download a file">
+        ```typescript
+        // Download a file from the instance
+        const response = await instance.file.download({
+            path: "/path/to/file.txt"
+        });
+        const downloadedContent = response.content;
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+
+# Browser
+
+> Deploy a Browser instance
+
+## BrowserInstance
+
+The `BrowserInstance` is a lightweight Chromium instance that supports interactive streaming, computer actions, Playwright CDP control, and saving/loading auth states. We recommend using this instance type if your task is constrained to the browser.
+
+* Fastest start up time
+* 1x compute cost
+
+## Start a browser instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance = client.start_browser()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const instance = await client.startBrowser();
+    ```
+  </Tab>
+</Tabs>
+
+## Available actions
+
+### get\_cdp\_url
+
+Get the Playwright CDP URL
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    cdp_url = instance.get_cdp_url().cdp_url
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const cdpUrl = await instance.getCdpUrl().cdpUrl;
+    ```
+  </Tab>
+</Tabs>
+
+### save\_auth
+
+Save the browser auth state
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    auth_state_id = instance.browser.save_auth(name="default").auth_state_id
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const authStateId = await instance.browser.saveAuth({name: "default"}).authStateId;
+    ```
+  </Tab>
+</Tabs>
+
+### authenticate
+
+Authenticate the browser using a saved auth state
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.browser.authenticate(auth_state_id=auth_state_id)
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.browser.authenticate({authStateId: authStateId});
+    ```
+  </Tab>
+</Tabs>
+
+### screenshot
+
+Take a base64 encoded image of the current desktop
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    base_64_image = instance.screenshot().base_64_image
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const base64Image = await instance.screenshot();
+    ```
+  </Tab>
+</Tabs>
+
+### get\_stream\_url
+
+Get the interactive stream URL
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    stream_url = instance.get_stream_url().stream_url
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const streamUrl = await instance.getStreamUrl();
+    ```
+  </Tab>
+</Tabs>
+
+### computer
+
+Perform computer actions with the mouse and keyboard
+
+#### `key`
+
+Press a key or combination of keys
+
+`text`
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="key", text="ctrl+c")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "key", text: "ctrl+c"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `type`
+
+Type text into the active window
+
+`text`
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="type", text="Hello world")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "type", text: "Hello world"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `mouse_move`
+
+Move mouse cursor to specific coordinates
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="mouse_move", coordinate=[100, 200])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "mouse_move", coordinate: [100, 200]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `left_click_drag`
+
+Click and drag from current position to specified coordinates
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="left_click_drag", coordinate=[300, 400])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "left_click_drag", coordinate: [300, 400]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `scroll`
+
+Scroll horizontally and/or vertically (pixels converted to clicks)
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python Scroll down 200px
+    instance.computer(action="scroll", coordinate=[0, 200])
+    ```
+
+    ```python Scroll right 300px
+    instance.computer(action="scroll", coordinate=[300, 0])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Scroll down 200px
+    await instance.computer({action: "scroll", coordinate: [0, 200]});
+    ```
+
+    ```typescript Scroll right 300px
+    await instance.computer({action: "scroll", coordinate: [300, 0]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `left_click`
+
+Perform a left mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="left_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "left_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `right_click`
+
+Perform a right mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="right_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "right_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `middle_click`
+
+Perform a middle mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="middle_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "middle_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `double_click`
+
+Perform a double left click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="double_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "double_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `screenshot`
+
+Take a screenshot of the desktop
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    screenshot = instance.computer(action="screenshot").base64_image
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const screenshot = await instance.computer({action: "screenshot"}).base64_image;
+    ```
+  </Tab>
+</Tabs>
+
+#### `cursor_position`
+
+Get current mouse cursor coordinates
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    cursor_position = instance.computer(action="cursor_position").output
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const cursorPosition = await instance.computer({action: "cursor_position"}).output;
+    ```
+  </Tab>
+</Tabs>
+
+#### `wait`
+
+Wait for 3 seconds
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="wait")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "wait"});
+    ```
+  </Tab>
+</Tabs>
+
+### `stop`
+
+Stop the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.stop()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.stop();
+    ```
+  </Tab>
+</Tabs>
+
+### `pause`
+
+Pause the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.pause()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.pause();
+    ```
+  </Tab>
+</Tabs>
+
+### `resume`
+
+Resume the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python Resume with default timeout
+    instance.resume()
+    ```
+
+    ```python Resume with custom timeout
+    instance.resume(timeout_hours=2.5)
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Resume with default timeout
+    await instance.resume();
+    ```
+
+    ```typescript Resume with custom timeout
+    await instance.resume({timeoutHours: 2.5});
+    ```
+  </Tab>
+</Tabs>
+
+## Compatible tools
+
+* `ComputerTool`
+* `BrowserTool`
+
+
+# Windows
+
+> Deploy a Windows instance
+
+<Note>
+  Windows instances are now in early access! Join our <a href="https://discord.gg/s4bPUVFXqA" target="_blank">Discord</a> to get started.
+</Note>
+
+## WindowsInstance
+
+The `WindowsInstance` is a full-fledged Windows 11 desktop that supports interactive streaming and computer actions. We recommend using this instance type if you need to interact with Windows-only applications.
+
+* Slow start up time
+* 2x compute cost
+
+## Start a Windows instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance = client.start_windows()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const instance = await client.startWindows();
+    ```
+  </Tab>
+</Tabs>
+
+## Available actions
+
+### screenshot
+
+Take a base64 encoded image of the current desktop
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    base_64_image = instance.screenshot().base_64_image
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const base64Image = await instance.screenshot();
+    ```
+  </Tab>
+</Tabs>
+
+### get\_stream\_url
+
+Get the interactive stream URL
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    stream_url = instance.get_stream_url().stream_url
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const streamUrl = await instance.getStreamUrl();
+    ```
+  </Tab>
+</Tabs>
+
+### computer
+
+Perform computer actions with the mouse and keyboard
+
+#### `key`
+
+Press a key or combination of keys
+
+`text`
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="key", text="ctrl+c")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "key", text: "ctrl+c"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `type`
+
+Type text into the active window
+
+`text`
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="type", text="Hello world")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "type", text: "Hello world"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `mouse_move`
+
+Move mouse cursor to specific coordinates
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="mouse_move", coordinate=[100, 200])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "mouse_move", coordinate: [100, 200]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `left_click_drag`
+
+Click and drag from current position to specified coordinates
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="left_click_drag", coordinate=[300, 400])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "left_click_drag", coordinate: [300, 400]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `scroll`
+
+Scroll horizontally and/or vertically (pixels converted to clicks)
+
+`coordinate` \[x, y]
+
+<Tabs>
+  <Tab title="Python">
+    ```python Scroll down 200px
+    instance.computer(action="scroll", coordinate=[0, 200])
+    ```
+
+    ```python Scroll right 300px
+    instance.computer(action="scroll", coordinate=[300, 0])
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Scroll down 200px
+    await instance.computer({action: "scroll", coordinate: [0, 200]});
+    ```
+
+    ```typescript Scroll right 300px
+    await instance.computer({action: "scroll", coordinate: [300, 0]});
+    ```
+  </Tab>
+</Tabs>
+
+#### `left_click`
+
+Perform a left mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="left_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "left_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `right_click`
+
+Perform a right mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="right_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "right_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `middle_click`
+
+Perform a middle mouse click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="middle_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "middle_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `double_click`
+
+Perform a double left click at current position
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="double_click")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "double_click"});
+    ```
+  </Tab>
+</Tabs>
+
+#### `screenshot`
+
+Take a screenshot of the desktop
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    screenshot = instance.computer(action="screenshot").base64_image
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const screenshot = await instance.computer({action: "screenshot"}).base64_image;
+    ```
+  </Tab>
+</Tabs>
+
+#### `cursor_position`
+
+Get current mouse cursor coordinates
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    cursor_position = instance.computer(action="cursor_position").output
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    const cursorPosition = await instance.computer({action: "cursor_position"}).output;
+    ```
+  </Tab>
+</Tabs>
+
+#### `wait`
+
+Wait for 3 seconds
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.computer(action="wait")
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.computer({action: "wait"});
+    ```
+  </Tab>
+</Tabs>
+
+### `stop`
+
+Stop the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.stop()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.stop();
+    ```
+  </Tab>
+</Tabs>
+
+### `pause`
+
+Pause the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python
+    instance.pause()
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript
+    await instance.pause();
+    ```
+  </Tab>
+</Tabs>
+
+### `resume`
+
+Resume the instance
+
+<Tabs>
+  <Tab title="Python">
+    ```python Resume with default timeout
+    instance.resume()
+    ```
+
+    ```python Resume with custom timeout
+    instance.resume(timeout_hours=2.5)
+    ```
+  </Tab>
+
+  <Tab title="TypeScript">
+    ```typescript Resume with default timeout
+    await instance.resume();
+    ```
+
+    ```typescript Resume with custom timeout
+    await instance.resume({timeoutHours: 2.5});
+    ```
+  </Tab>
+</Tabs>
+
+## Compatible tools
+
+* `ComputerTool`
+
+
+# Starter Templates
+
+> Templates for getting started with Scrapybara instances and the Act SDK
+
+## Python
+
+<Card title="GitHub" icon="brands github" href="https://github.com/Scrapybara/scrapybara-python-template">
+  View the template
+</Card>
+
+## TypeScript
+
+<Card title="GitHub" icon="brands github" href="https://github.com/Scrapybara/scrapybara-ts-template">
+  View the template
+</Card>
+
+
+# Official Examples
+
+> Official open source examples
+
+## Teleo
+
+A lightweight desktop application that provides an interface for interacting with AI agents in virtual desktop environments.
+
+<iframe width="100%" height="396" src="https://www.youtube.com/embed/H4VBFZkFl2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+<CardGroup cols={2}>
+  <Card title="Tweet" icon="brands x-twitter" href="https://x.com/scrapybara/status/1876113429385420937">
+    See the Tweet
+  </Card>
+
+  <Card title="GitHub" icon="brands github" href="https://github.com/Scrapybara/scrapybara-demos/tree/main/teleo">
+    View the source code
+  </Card>
+</CardGroup>
+
+## Copycat
+
+An AI-powered tool that automatically replicates websites by generating single-file HTML replicas using Claude, Scrapybara, and Playwright.
+
+<iframe width="100%" height="396" src="https://www.youtube.com/embed/4ofEK6Ibcmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+<CardGroup cols={2}>
+  <Card title="Tweet" icon="brands x-twitter" href="https://x.com/justinsunyt/status/1876058879307780567">
+    See the Tweet
+  </Card>
+
+  <Card title="GitHub" icon="brands github" href="https://github.com/Scrapybara/scrapybara-demos/tree/main/website-copycat">
+    View the source code
+  </Card>
+</CardGroup>
+
+## W25 Scraping
+
+A demonstration of Scrapybara's agent endpoints for automated data collection and processing of YC W25 companies.
+
+<iframe width="100%" height="396" src="https://www.youtube.com/embed/Yae2NwkbzhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+<CardGroup cols={2}>
+  <Card title="Tweet" icon="brands x-twitter" href="https://x.com/justinsunyt/status/1870958284049719409">
+    See the Tweet
+  </Card>
+
+  <Card title="GitHub" icon="brands github" href="https://github.com/Scrapybara/scrapybara-demos/tree/main/w25-scraping">
+    View the source code
+  </Card>
+</CardGroup>
+
+## Playground
+
+The FastAPI backend powering the official Scrapybara playground. It provides a WebSocket interface for users to interact with a Claude Computer Use agent running on a virtual Scrapybara instance.
+
+<iframe width="100%" height="396" src="https://www.youtube.com/embed/IthA-Mx7tI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+<CardGroup cols={2}>
+  <Card title="Tweet" icon="brands x-twitter" href="https://x.com/scrapybara/status/1868526637236560093">
+    See the Tweet
+  </Card>
+
+  <Card title="GitHub" icon="brands github" href="https://github.com/scrapybara/scrapybara-playground">
+    View the source code
+  </Card>
+</CardGroup>
+
+
+# Community Spotlight
+
+> Awesome projects built by the community!
+
+## Scrapyon by [@keell0renz](https://x.com/keell0renz)
+
+A convenient wrapper which makes easy to run computer use agents with Scrapybara.
+
+```python
+import scrapyon
+
+result = scrapyon.launch(
+    cmd="Research Deitz Nuutsen",
+    url="https://google.com",
+    instance_type="small",
+    verbose=True  # Set to True to see detailed progress
+)
+```
+
+<Card title="GitHub" icon="brands github" href="https://github.com/keell0renz/scrapyon">
+  View the source code
+</Card>
+
+## Telegram Agent by [@keell0renz](https://x.com/keell0renz)
+
+A Telegram bot powered by Claude Computer Use and Scrapybara to create AI agents that can control virtual machines.
+
+<img src="file:03441ff7-236a-4f32-8311-25b4fe9c8fdd" alt="Telegram Scrapybara Agent" />
+
+<Card title="GitHub" icon="brands github" href="https://github.com/keell0renz/scrapybara-agent">
+  View the source code
+</Card>
+
+## Scrapy Discord Bot by [@Dusknt](https://x.com/dusknt)
+
+Scrapy is a bot that allows you to interact with a virtual computer directly in your Discord server. Inspect links, browse files, and even play games.
+
+<iframe width="100%" height="396" src="https://www.youtube.com/embed/1I5WEOeC-Bo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+<CardGroup cols={1}>
+  <Card title="GitHub" icon="brands github" href="https://github.com/T1ldes/Scrapy">
+    View the source code
+  </Card>
+</CardGroup>
+
+## Event Listener by [@shreyashk2012](https://x.com/shreyashk2012)
+
+Event Listener is a Chrome extension powered by AI agents that watches websites for specific events and sends notifications when they happen.
+
+<iframe width="100%" height="396" src="https://www.youtube.com/embed/8Q9kCN4nhu0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+
+<CardGroup cols={1}>
+  <Card title="GitHub" icon="brands github" href="https://github.com/shreyash0k/Event-Listener">
+    View the source code
+  </Card>
+</CardGroup>
+
+## Submit your project
+
+Building with Scrapybara? Submit your project to the #built-with-scrapybara channel on [Discord](https://discord.gg/s4bPUVFXqA) to be featured here!
+
+
+# Start instance
+
+```http
+POST https://api.scrapybara.com/v1/start
+Content-Type: application/json
+```
+
+
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/start \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/start \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+# Get instance by ID
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instance/instance_id \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl https://api.scrapybara.com/v1/instance/:instance_id \
+     -H "x-api-key: <apiKey>"
+```
+
+# List all instances
+
+```http
+GET https://api.scrapybara.com/v1/instances
+```
+
+
+
+## Response Body
+
+- 200: Successful Response
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instances \
+     -H "x-api-key: <apiKey>"
+```
+
+# List all browser authentication states
+
+```http
+GET https://api.scrapybara.com/v1/auth_states
+```
+
+
+
+## Response Body
+
+- 200: Successful Response
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/auth_states \
+     -H "x-api-key: <apiKey>"
+```
+
+# Take screenshot
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/screenshot
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/screenshot \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/screenshot \
+     -H "x-api-key: <apiKey>"
+```
+
+# Get stream URL
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/stream_url
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instance/instance_id/stream_url \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl https://api.scrapybara.com/v1/instance/:instance_id/stream_url \
+     -H "x-api-key: <apiKey>"
+```
+
+# Run computer actions
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/computer
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/computer \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "action": "key"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/computer \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "action": "key"
+}'
+```
+
+# Run bash actions
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/bash
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/bash \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/bash \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+# Run edit actions
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/edit
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/edit \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "command": "view",
+  "path": "path"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/edit \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "command": "view",
+  "path": "string"
+}'
+```
+
+# Stop instance
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/stop
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/stop \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/stop \
+     -H "x-api-key: <apiKey>"
+```
+
+# Pause instance
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/pause
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/pause \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/pause \
+     -H "x-api-key: <apiKey>"
+```
+
+# Resume instance
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/resume
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Query Parameters
+
+- TimeoutHours (optional)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/resume \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST "https://api.scrapybara.com/v1/instance/:instance_id/resume?timeout_hours=1" \
+     -H "x-api-key: <apiKey>"
+```
+
+# Start browser
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/browser/start
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/browser/start \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/browser/start \
+     -H "x-api-key: <apiKey>"
+```
+
+# Get CDP URL
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/browser/cdp_url
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instance/instance_id/browser/cdp_url \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl https://api.scrapybara.com/v1/instance/:instance_id/browser/cdp_url \
+     -H "x-api-key: <apiKey>"
+```
+
+# Save browser authentication state
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/browser/save_auth
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Query Parameters
+
+- Name (optional)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/browser/save_auth \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST "https://api.scrapybara.com/v1/instance/:instance_id/browser/save_auth?name=string" \
+     -H "x-api-key: <apiKey>"
+```
+
+# Authenticate browser using saved state
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/browser/authenticate
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Query Parameters
+
+- AuthStateId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST "https://api.scrapybara.com/v1/instance/instance_id/browser/authenticate?auth_state_id=auth_state_id" \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST "https://api.scrapybara.com/v1/instance/:instance_id/browser/authenticate?auth_state_id=string" \
+     -H "x-api-key: <apiKey>"
+```
+
+# Stop browser
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/browser/stop
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/browser/stop \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/browser/stop \
+     -H "x-api-key: <apiKey>"
+```
+
+# Execute code without notebook
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/code/execute
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/code/execute \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "code": "code"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/code/execute \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "code": "string"
+}'
+```
+
+# List available notebook kernels
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/notebook/kernels
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instance/instance_id/notebook/kernels \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl https://api.scrapybara.com/v1/instance/:instance_id/notebook/kernels \
+     -H "x-api-key: <apiKey>"
+```
+
+# Create new notebook
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/notebook/create
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/notebook/create \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "name": "name"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/notebook/create \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "name": "string"
+}'
+```
+
+# Get notebook by ID
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/notebook/{notebook_id}
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+- NotebookId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instance/instance_id/notebook/notebook_id \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl https://api.scrapybara.com/v1/instance/:instance_id/notebook/:notebook_id \
+     -H "x-api-key: <apiKey>"
+```
+
+# Delete notebook
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/notebook/{notebook_id}/delete
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+- NotebookId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/notebook/notebook_id/delete \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/notebook/:notebook_id/delete \
+     -H "x-api-key: <apiKey>"
+```
+
+# Add cell to notebook
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/notebook/{notebook_id}/cell
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+- NotebookId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/notebook/notebook_id/cell \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "type": "code",
+  "content": "content"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/notebook/:notebook_id/cell \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "type": "code",
+  "content": "string"
+}'
+```
+
+# Execute notebook cell
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/notebook/{notebook_id}/cell/{cell_id}/execute
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+- NotebookId (required)
+- CellId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/notebook/notebook_id/cell/cell_id/execute \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/notebook/:notebook_id/cell/:cell_id/execute \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+# Execute all cells in notebook
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/notebook/{notebook_id}/execute
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+- NotebookId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/notebook/notebook_id/execute \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/notebook/:notebook_id/execute \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{}'
+```
+
+# Read file contents
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/file/read
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Query Parameters
+
+- Path (required)
+- Encoding (optional)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -G https://api.scrapybara.com/v1/instance/instance_id/file/read \
+     -H "x-api-key: <apiKey>" \
+     -d path=path
+```
+
+```shell
+curl -G https://api.scrapybara.com/v1/instance/:instance_id/file/read \
+     -H "x-api-key: <apiKey>" \
+     -d path=string \
+     -d encoding=string
+```
+
+# Write file contents
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/file/write
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/file/write \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "path": "path",
+  "content": "content"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/file/write \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "path": "string",
+  "content": "string"
+}'
+```
+
+# Upload base64 encoded file
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/file/upload
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/file/upload \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "path": "path",
+  "content": "content"
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/file/upload \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "path": "string",
+  "content": "string"
+}'
+```
+
+# Download file as base64
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/file/download
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Query Parameters
+
+- Path (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -G https://api.scrapybara.com/v1/instance/instance_id/file/download \
+     -H "x-api-key: <apiKey>" \
+     -d path=path
+```
+
+```shell
+curl -G https://api.scrapybara.com/v1/instance/:instance_id/file/download \
+     -H "x-api-key: <apiKey>" \
+     -d path=string
+```
+
+# Get environment variables
+
+```http
+GET https://api.scrapybara.com/v1/instance/{instance_id}/env
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl https://api.scrapybara.com/v1/instance/instance_id/env \
+     -H "x-api-key: <apiKey>"
+```
+
+```shell
+curl https://api.scrapybara.com/v1/instance/:instance_id/env \
+     -H "x-api-key: <apiKey>"
+```
+
+# Set environment variables
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/env
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/env \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "variables": {
+    "key": "value"
+  }
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/env \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "variables": {
+    "string": "string"
+  }
+}'
+```
+
+# Delete environment variables
+
+```http
+POST https://api.scrapybara.com/v1/instance/{instance_id}/env/delete
+Content-Type: application/json
+```
+
+
+
+## Path Parameters
+
+- InstanceId (required)
+
+## Response Body
+
+- 200: Successful Response
+- 422: Validation Error
+
+## Examples
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/instance_id/env/delete \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "keys": [
+    "keys"
+  ]
+}'
+```
+
+```shell
+curl -X POST https://api.scrapybara.com/v1/instance/:instance_id/env/delete \
+     -H "x-api-key: <apiKey>" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "keys": [
+    "string"
+  ]
+}'
+```
+
+# Python SDK
+
+[![pypi](https://img.shields.io/pypi/v/scrapybara)](https://pypi.python.org/pypi/scrapybara)
+
+<CardGroup cols={2}>
+  <Card title="GitHub repository" icon="brands github" href="https://github.com/scrapybara/scrapybara-python">
+    View the Python SDK source code
+  </Card>
+
+  <Card title="PyPI package" icon="brands python" href="https://pypi.org/project/scrapybara/">
+    View the Scrapybara package on PyPI
+  </Card>
+</CardGroup>
+
+The Scrapybara Python library provides convenient access to the Scrapybara API from Python.
+
+## Installation
+
+```sh
+pip install scrapybara
+```
+
+## Reference
+
+Please only refer to this documentation site for reference. The GitHub reference [here](https://github.com/scrapybara/scrapybara-python/blob/master/reference.md) is generated programmatically and incomplete.
+
+## Requirements
+
+* Python >= 3.8
+* `requests` >= 2.25.1
+* `anthropic` ^0.39.0
+* `pydantic` ^2.0.0
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/scrapybara/scrapybara-python/blob/master/LICENSE) file for details.
+
+## Usage
+
+Instantiate and use the client with the following:
+
+```python
+from scrapybara import Scrapybara
+
+client = Scrapybara(
+    api_key="YOUR_API_KEY",
+)
+instance = client.start_ubuntu()
+```
+
+## Async Client
+
+The SDK also exports an `async` client so that you can make non-blocking calls to our API.
+
+```python
+import asyncio
+
+from scrapybara import AsyncScrapybara
+
+client = AsyncScrapybara(
+    api_key="YOUR_API_KEY",
+)
+
+
+async def main() -> None:
+    await client.start_ubuntu()
+
+
+asyncio.run(main())
+```
+
+## Exception Handling
+
+When the API returns a non-success status code (4xx or 5xx response), a subclass of the following error
+will be thrown.
+
+```python
+from scrapybara.core.api_error import ApiError
+
+try:
+    client.start_ubuntu(...)
+except ApiError as e:
+    print(e.status_code)
+    print(e.body)
+```
+
+## Advanced
+
+### Retries
+
+The SDK is instrumented with automatic retries with exponential backoff. A request will be retried as long
+as the request is deemed retriable and the number of retry attempts has not grown larger than the configured
+retry limit (default: 2).
+
+A request is deemed retriable when any of the following HTTP status codes is returned:
+
+* [408](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408) (Timeout)
+* [429](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429) (Too Many Requests)
+* [5XX](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500) (Internal Server Errors)
+
+Use the `max_retries` request option to configure this behavior.
+
+```python
+client.start_ubuntu(..., request_options={
+    "max_retries": 1
+})
+```
+
+### Timeouts
+
+The SDK defaults to a 60 second timeout. You can configure this with a timeout option at the client or request level.
+
+```python
+
+from scrapybara import Scrapybara
+
+client = Scrapybara(
+    ...,
+    timeout=20.0,
+)
+
+
+# Override timeout for a specific method
+client.start_ubuntu(..., request_options={
+    "timeout_in_seconds": 1
+})
+```
+
+### Custom Client
+
+You can override the `httpx` client to customize it for your use-case. Some common use-cases include support for proxies
+and transports.
+
+```python
+import httpx
+from scrapybara import Scrapybara
+
+client = Scrapybara(
+    ...,
+    httpx_client=httpx.Client(
+        proxies="http://my.test.proxy.example.com",
+        transport=httpx.HTTPTransport(local_address="0.0.0.0"),
+    ),
+)
+```
+
+## Contributing
+
+While we value open-source contributions to this SDK, this library is generated programmatically.
+Additions made directly to this library would have to be moved over to our generation code,
+otherwise they would be overwritten upon the next generated release. Feel free to open a PR as
+a proof of concept, but know that we will not be able to merge it as-is. We suggest opening
+an issue first to discuss with us!
+
+On the other hand, contributions to the README are always very welcome!
+
+
+# TypeScript SDK
+
+[![npm shield](https://img.shields.io/npm/v/scrapybara)](https://www.npmjs.com/package/scrapybara)
+
+<CardGroup cols={2}>
+  <Card title="GitHub repository" icon="brands github" href="https://github.com/scrapybara/scrapybara-ts">
+    View the TypeScript SDK source code
+  </Card>
+
+  <Card title="NPM package" icon="brands npm" href="https://www.npmjs.com/package/scrapybara">
+    View the Scrapybara package on NPM
+  </Card>
+</CardGroup>
+
+The Scrapybara TypeScript library provides convenient access to the Scrapybara API from TypeScript.
+
+## Installation
+
+```sh
+npm i -s scrapybara
+```
+
+## Reference
+
+Please only refer to this documentation site for reference. The GitHub reference [here](https://github.com/scrapybara/scrapybara-ts/blob/main/reference.md) is generated programmatically and incomplete.
+
+## Usage
+
+Instantiate and use the client with the following:
+
+```typescript
+import { ScrapybaraClient } from "scrapybara";
+
+const client = new ScrapybaraClient({ apiKey: "YOUR_API_KEY" });
+await client.startUbuntu();
+```
+
+## Request And Response Types
+
+The SDK exports all request and response types as TypeScript interfaces. Simply import them with the
+following namespace:
+
+```typescript
+import { Scrapybara } from "scrapybara";
+
+const request: Scrapybara.ComputerRequest = {
+    ...
+};
+```
+
+## Exception Handling
+
+When the API returns a non-success status code (4xx or 5xx response), a subclass of the following error
+will be thrown.
+
+```typescript
+import { ScrapybaraError } from "scrapybara";
+
+try {
+    await client.startUbuntu(...);
+} catch (err) {
+    if (err instanceof ScrapybaraError) {
+        console.log(err.statusCode);
+        console.log(err.message);
+        console.log(err.body);
+    }
+}
+```
+
+## Advanced
+
+### Additional Headers
+
+If you would like to send additional headers as part of the request, use the `headers` request option.
+
+```typescript
+const response = await client.startUbuntu(..., {
+    headers: {
+        'X-Custom-Header': 'custom value'
+    }
+});
+```
+
+### Retries
+
+The SDK is instrumented with automatic retries with exponential backoff. A request will be retried as long
+as the request is deemed retriable and the number of retry attempts has not grown larger than the configured
+retry limit (default: 2).
+
+A request is deemed retriable when any of the following HTTP status codes is returned:
+
+* [408](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/408) (Timeout)
+* [429](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429) (Too Many Requests)
+* [5XX](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500) (Internal Server Errors)
+
+Use the `maxRetries` request option to configure this behavior.
+
+```typescript
+const response = await client.startUbuntu(..., {
+    maxRetries: 0 // override maxRetries at the request level
+});
+```
+
+### Timeouts
+
+The SDK defaults to a 60 second timeout. Use the `timeoutInSeconds` option to configure this behavior.
+
+```typescript
+const response = await client.startUbuntu(..., {
+    timeoutInSeconds: 30 // override timeout to 30s
+});
+```
+
+### Aborting Requests
+
+The SDK allows users to abort requests at any point by passing in an abort signal.
+
+```typescript
+const controller = new AbortController();
+const response = await client.startUbuntu(..., {
+    abortSignal: controller.signal
+});
+controller.abort(); // aborts the request
+```
+
+### Runtime Compatibility
+
+The SDK defaults to `node-fetch` but will use the global fetch client if present. The SDK works in the following
+runtimes:
+
+* Node.js 18+
+* Vercel
+* Cloudflare Workers
+* Deno v1.25+
+* Bun 1.0+
+* React Native
+
+### Customizing Fetch Client
+
+The SDK provides a way for your to customize the underlying HTTP client / Fetch function. If you're running in an
+unsupported environment, this provides a way for you to break glass and ensure the SDK works.
+
+```typescript
+import { ScrapybaraClient } from "scrapybara";
+
+const client = new ScrapybaraClient({
+    ...
+    fetcher: // provide your implementation here
+});
+```
+
+## Contributing
+
+While we value open-source contributions to this SDK, this library is generated programmatically.
+Additions made directly to this library would have to be moved over to our generation code,
+otherwise they would be overwritten upon the next generated release. Feel free to open a PR as
+a proof of concept, but know that we will not be able to merge it as-is. We suggest opening
+an issue first to discuss with us!
+
+On the other hand, contributions to the README are always very welcome!
