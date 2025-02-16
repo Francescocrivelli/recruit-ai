@@ -30,21 +30,21 @@ def naive_query_parser(user_input: str) -> Tuple[str, Dict[str, str]]:
     filters = {}
 
     # If user mentions publications
-    if "publications" in text or "publication" in text or 'published' in text:
+    if "publications" in text or "publication" in text or 'published' in text or 'paper' in text:
         filters["section"] = "publication"
         text = text.replace("publications", "")
         text = text.replace("publication", "")
 
     # If user mentions popular conferences
-    if "neurips" in text:
-        filters["publication"] = "Neurips"
-        text = text.replace("neurips", "")
-    if "icml" in text:
-        filters["publication"] = "ICML"
-        text = text.replace("icml", "")
-    if "iclr" in text:
-        filters["publication"] = "ICLR"
-        text = text.replace("iclr", "")
+    # if "neurips" in text:
+    #     filters["publication"] = "Neurips"
+    #     text = text.replace("neurips", "")
+    # if "icml" in text:
+    #     filters["publication"] = "ICML"
+    #     text = text.replace("icml", "")
+    # if "iclr" in text:
+    #     filters["publication"] = "ICLR"
+    #     text = text.replace("iclr", "")
 
     semantic_query = " ".join(text.split())
     return semantic_query, filters
@@ -61,15 +61,16 @@ def parse_subquery_for_filters(sub_text: str) -> Tuple[str, Dict[str, Any]]:
     sub_filters = {}
 
     # For example, look for 'industry'
-    if "experience" in sub_text or 'industry' in sub_text:
+    if 'industry' in sub_text:
         sub_filters["section"] = "experience"
         # remove the word 'industry' so it doesn't overly bias semantic part
         sub_text = sub_text.replace("industry", "")
+    
 
-    # If user specifically says "nature" => might expect 'journal=Nature'
-    if "nature" in sub_text:
-        sub_filters["journal"] = "Nature"
-        sub_text = sub_text.replace("nature", "")
+    # # If user specifically says "nature" => might expect 'journal=Nature'
+    # if "nature" in sub_text:
+    #     sub_filters["journal"] = "Nature"
+    #     sub_text = sub_text.replace("nature", "")
 
     # If subquery includes 'student', it's often about education
     # We can guess they want 'section=education'
@@ -84,15 +85,15 @@ def parse_subquery_for_filters(sub_text: str) -> Tuple[str, Dict[str, Any]]:
         sub_text = sub_text.replace("publication", "")
 
     # If user mentions popular conferences
-    if "neurips" in sub_text:
-        sub_filters["publication"] = "Neurips"
-        sub_text = sub_text.replace("neurips", "")
-    if "icml" in sub_text:
-        sub_filters["publication"] = "ICML"
-        sub_text = sub_text.replace("icml", "")
-    if "iclr" in sub_text:
-        sub_filters["publication"] = "ICLR"
-        sub_text = sub_text.replace("iclr", "")
+    # if "neurips" in sub_text:
+    #     sub_filters["publication"] = "Neurips"
+    #     sub_text = sub_text.replace("neurips", "")
+    # if "icml" in sub_text:
+    #     sub_filters["publication"] = "ICML"
+    #     sub_text = sub_text.replace("icml", "")
+    # if "iclr" in sub_text:
+    #     sub_filters["publication"] = "ICLR"
+    #     sub_text = sub_text.replace("iclr", "")
 
     # You can add more triggers: e.g., "biomedical" => do something 
     # For now, let's just rely on semantic text if "biomedical" is not structured.
@@ -190,9 +191,7 @@ class ChunkedCandidateDB:
             edu_text = (
                 f"Degree: {edu.get('degree','')}\n"
                 f"Institution: {edu.get('institution','')}\n"
-                f"Field: {edu.get('field','')}\n"
                 f"Year: {edu.get('year','')}\n"
-                f"Cross-registration: {edu.get('cross_registration','')}\n"
             )
             if edu_text.strip():
                 edu_metadata = {
@@ -202,15 +201,18 @@ class ChunkedCandidateDB:
                 }
                 self._upsert_chunk(f"{candidate_id}-education-{i}-{now_ts}", edu_text, edu_metadata)
 
-        # 3) Experience
+          # 3) Experience
         experiences = candidate_json.get("experience", [])
         for i, exp in enumerate(experiences):
-            exp_text = (
-                f"Title/Position: {exp.get('title') or exp.get('position','')}\n"
-                f"Company/Organization: {exp.get('company') or exp.get('organization','')}\n"
-                f"Location: {exp.get('location','')}\n"
-                f"Description: {exp.get('description','')}\n"
-            )
+            if isinstance(exp, dict):
+                exp_text = (
+                    f"Title/Position: {exp.get('title') or exp.get('position','')}\n"
+                    f"Company/Organization: {exp.get('company') or exp.get('organization','')}\n"
+                    f"Description: {exp.get('description','')}\n"
+                )
+            else:
+                # If it's not a dict, assume it's a string.
+                exp_text = str(exp)
             if exp_text.strip():
                 exp_metadata = {
                     "candidate_id": candidate_id,
@@ -236,20 +238,30 @@ class ChunkedCandidateDB:
                 }
                 self._upsert_chunk(f"{candidate_id}-project-{i}-{now_ts}", proj_text, proj_metadata)
 
-        # 5) Publications
+        # 5) Publications / Research Papers
         publications = candidate_json.get("publications", [])
         for i, pub in enumerate(publications):
-            pub_text = (
-                f"Title: {pub.get('title','')}\n"
-                f"Authors: {pub.get('authors','')}\n"
-                f"Journal/Publisher: {pub.get('journal') or pub.get('publisher','')}\n"
-                f"Year: {pub.get('year','')}\n"
-                f"Summary: {pub.get('summary','')}\n"
-                f"Snippet: {pub.get('snippet','')}\n"
-            )
-            # skip if not meaningful
-            if not pub.get('summary') or not pub.get('snippet') or (not pub.get('publisher') and not pub.get('journal')):
-                continue
+            if isinstance(pub, dict):
+                summary_text = pub.get('summary', '')
+                snippet_text = pub.get('snippet', '')
+                # Skip if both summary and snippet are missing
+                if (not pub.get('summary') and not pub.get('snippet')) or (not pub.get('publisher') and not pub.get('journal') and not pub.get('conference')):
+                    continue
+                pub_text = (
+                    f"Title: {pub.get('title','')}\n"
+                    f"Authors: {pub.get('authors','')}\n"
+                    f"Journal/Publisher: {pub.get('journal') or pub.get('publisher','')}\n"
+                    f"Year: {pub.get('year','')}\n"
+                    f"Summary: {summary_text}\n"
+                    f"Snippet: {snippet_text}\n"
+                )
+            else:
+                # If it's not a dict, use it directly as text.
+                pub_text = str(pub)
+                # Optionally, skip very short strings
+                if len(pub_text.strip()) < 20:
+                    continue
+
             if pub_text.strip():
                 pub_metadata = {
                     "candidate_id": candidate_id,
@@ -257,6 +269,7 @@ class ChunkedCandidateDB:
                     "section": "publication"
                 }
                 self._upsert_chunk(f"{candidate_id}-publication-{i}-{now_ts}", pub_text, pub_metadata)
+
 
         # 6) Research
         research_entries = candidate_json.get("research", [])
@@ -418,7 +431,7 @@ class ChunkedCandidateDB:
     def get_all_chunks(self):
         return self.collection.get(include=["documents", "metadatas", "embeddings"])
 
-    def query_chunks(self, semantic_query: str, filters: Dict[str, Any] = None, n_results: int = 200):
+    def query_chunks(self, semantic_query: str, filters: Dict[str, Any] = None, n_results: int = 400):
         """
         Takes a semantic_query (some text) and optional filters (e.g. {"section": "experience"}).
         Returns chunk-level matches grouped by candidate.
@@ -470,7 +483,7 @@ class ChunkedCandidateDB:
             new_similarity = min(similarity + bonus, 1.0)
 
             # Optionally skip very low scoring chunks
-            if new_similarity < -0.4:
+            if new_similarity < -0.5:
                 continue
 
             candidate_id = meta.get("candidate_id", "Unknown")
@@ -495,10 +508,11 @@ class ChunkedCandidateDB:
                 "chunks": data["chunks"]
             })
         candidate_list.sort(key=lambda x: x["score"], reverse=True)
+        candidate_list = candidate_list[:15]
         return candidate_list
 
 
-    def multi_subquery_search(self, user_input: str, n_results: int = 200):
+    def multi_subquery_search(self, user_input: str, n_results: int = 400):
         """
         Splits the user_input on "and" to create multiple subqueries.
         - Each subquery is further parsed for filters (e.g. 'industry' => section=experience, etc.).
@@ -511,7 +525,7 @@ class ChunkedCandidateDB:
 
         # If there is only one subquery, fall back to normal query_chunks
         if len(sub_texts) < 2:
-            base_semantic, base_filters = naive_query_parser(user_input)
+            base_semantic, base_filters = parse_subquery_for_filters(user_input)
             res = self.query_chunks(base_semantic, base_filters, n_results)
             # For each candidate in the fallback result, choose the best chunk as a single subquery.
             for cand in res:
@@ -659,7 +673,6 @@ if __name__ == "__main__":
         if user_input.lower().strip() in ["q", "quit", "exit"]:
             break
 
-        # Use the improved multi-subquery approach
         candidate_matches = db.multi_subquery_search(user_input)
         if not candidate_matches:
             print("No matches found.\n")
@@ -668,13 +681,14 @@ if __name__ == "__main__":
         for i, candidate in enumerate(candidate_matches, start=1):
             print(f"{i}. Candidate: {candidate['candidate_name']} (score={candidate['score']:.3f})")
             # Each candidate has chosen_subchunks: list of (subq_index, chunk_info)
-            # showing the best chunk from each sub-query.
-            for (sub_idx, chunk_info) in candidate["chosen_subchunks"]:
-                print(f"   Subquery {sub_idx+1} best chunk (score={chunk_info['similarity_score']:.3f}, section={chunk_info['section']}):")
-                snippet = chunk_info["snippet"]
-                # Truncate snippet for display
-                max_display = 800
-                snippet_display = snippet[:max_display] + ("..." if len(snippet) > max_display else "")
-                print(f"       {snippet_display}")
+            for (sub_idx, chunk_info) in candidate.get("chosen_subchunks", []):
+                if "similarity_score" in chunk_info:
+                    print(f"   Subquery {sub_idx+1} best chunk (score={chunk_info['similarity_score']:.3f}, section={chunk_info['section']}):")
+                    snippet = chunk_info["snippet"]
+                    max_display = 800
+                    snippet_display = snippet[:max_display] + ("..." if len(snippet) > max_display else "")
+                    print(f"       {snippet_display}")
+                else:
+                    print(f"   Subquery {sub_idx+1} no valid matching chunk found.")
             print()
         print("---------------------------------------------------")
