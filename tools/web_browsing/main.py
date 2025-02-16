@@ -4,6 +4,7 @@ from typing import List, Dict, Optional
 import asyncio
 import json
 from datetime import datetime
+import os
 
 # Import our service classes
 from linkedin_parallel_connect import LinkedInConnector, ConnectionResult
@@ -62,6 +63,11 @@ async def analyze_ai_posts(request: TwitterAnalysisRequest):
     finally:
         instance.browser.stop()
         instance.stop()
+
+# Basic test endpoint to verify deployment
+@app.get("/")
+async def root():
+    return {"message": "API is running"}
 
 if __name__ == "__main__":
     import uvicorn

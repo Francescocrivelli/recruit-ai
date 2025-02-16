@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: web-browser-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: API_KEY
+        value: scrapy-0a7bbe3d-b23a-4801-b412-d7aa56700f0a
+      - key: AUTH_STATE_ID
+        value: 246f3e24-f93d-4608-a05d-d188548ec737 
