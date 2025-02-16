@@ -32,7 +32,7 @@ print(stream_url)
 
 # Initialize browser
 instance.browser.start()
-instance.browser.authenticate(auth_state_id="9f4e835f-c116-41a3-b721-3c4e16621f3d")
+instance.browser.authenticate(auth_state_id="246f3e24-f93d-4608-a05d-d188548ec737")
 
 
 
