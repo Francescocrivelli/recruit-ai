@@ -22,5 +22,8 @@
     "packages/*",
     "tools/*",
     "agents/*"
-  ]
+  ],
+  "dependencies": {
+    "scrapybara": "^2.2.2"
+  }
 }
