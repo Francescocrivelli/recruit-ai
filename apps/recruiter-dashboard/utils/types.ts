@@ -21,6 +21,7 @@ export interface ApplicantType {
     };
   }>;
   outreachStatus: {
+    stage: 'initial' | 'pending' | 'stage_2';
     linkedin?: 'pending' | 'sent' | 'responded';
     email?: 'pending' | 'sent' | 'responded';
     call?: 'scheduled' | 'completed' | 'no-show';
