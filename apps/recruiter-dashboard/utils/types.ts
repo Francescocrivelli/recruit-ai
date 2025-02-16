@@ -33,6 +33,18 @@ export interface ApplicantType {
   education: ChunkType[];
   publications: ChunkType[];
   experience: ChunkType[];
+  matchScore: number;
+  education: string[];
+  experience: string[];
+  publications: string[];
+  projects: string[];
+  awards: string[];
+  personal_info?: any[];
+  relevantChunks?: Array<{
+    score: number;
+    content: string;
+    section: string;
+  }>;
 }
 
 export type CallStatus = 'not_started' | 'picked_up' | 'in_progress' | 'conversation_ended' | 'hung_up' | 'rescheduled';
