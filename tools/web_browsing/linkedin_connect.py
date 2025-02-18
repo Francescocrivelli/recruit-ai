@@ -156,7 +156,7 @@ async def create_connection(request: LinkedInConnectRequest, background_tasks: B
         request.name,
         request.university
     )
-    #this part below is not quite working 
+    #this part below is not quite working
     return LinkedInConnectResponse(
         request_id=request_id,
         message="Connection request is being processed",

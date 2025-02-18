@@ -44,6 +44,7 @@ def analyze_user(username: str) -> XUserAnalysis:
     instance = client.start_ubuntu(timeout_hours=1)
     
     try:
+
         instance.browser.start()
         instance.browser.authenticate(auth_state_id="246f3e24-f93d-4608-a05d-d188548ec737")
         
